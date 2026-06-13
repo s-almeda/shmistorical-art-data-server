@@ -1,0 +1,45 @@
+# ---- Data: never commit (large + licensing); mounted at runtime ----
+app/LOCALDB/
+app/generated_maps/
+LOCALDB/
+generated_maps/
+*.db
+*.sqlite
+*.sqlite3
+*.ndjson
+*.ndjson.gz
+
+# ---- Model cache / weights ----
+app/.cache/
+.cache/
+*.pt
+*.bin
+*.safetensors
+
+# ---- Secrets / local env ----
+.env
+.env.*
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- Runtime artifacts ----
+app/jobs/jobs.db
+
+# ---- data-cleaner runtime state (recreated at runtime) ----
+app/templates/not_duplicates.txt
+
+# ---- spreadsheets / build artifacts ----
+*.numbers
+*.csv
+.last_image_tag
+
+# ---- misc ----
+.DS_Store
+*.log

@@ -1,0 +1,2321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Data Cleaner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_styles.css') }}">
+</head>
+<body>
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+            <h3>Enter Admin Password</h3>
+            <p>Please enter the admin password to access the database cleaning functionality:</p>
+            <input type="password" id="passwordInput" placeholder="Admin password" style="width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px;">
+            <div style="margin-top: 15px;">
+                <button id="passwordSubmit" class="btn">Submit</button>
+                <button id="passwordCancel" class="btn-secondary" style="margin-left: 10px;">Cancel</button>
+            </div>
+            <div id="passwordError" style="color: red; margin-top: 10px; display: none;"></div>
+        </div>
+    </div>
+
+    <div class="data-cleaner-container" id="main-content" style="display: none;">
+        <h1>🧹 Database Data Cleaner</h1>
+        <p>Identify and fix data integrity issues in your database</p>
+
+        <!-- Database Stats Section -->
+        <div class="cleaner-section">
+            <h3>📊 Database Overview</h3>
+            <div id="database-stats">
+                <button type="button" class="btn" onclick="loadDatabaseStats()">Load Database Stats</button>
+                <div id="stats-display"></div>
+            </div>
+        </div>
+
+        <!-- Malformed JSON Section -->
+        <div class="cleaner-section">
+            <h3>🔧 Malformed JSON Repair</h3>
+            <p>Find and fix Python-style lists that should be proper JSON</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkMalformedJson()" id="json-check-btn">
+                    🔍 Check for Malformed JSON
+                </button>
+                <div class="loading" id="json-check-loading">Scanning for malformed JSON...</div>
+            </div>
+
+            <!-- JSON Results Section -->
+            <div id="json-results" style="display: none;">
+                <div class="results-header">
+                    <h4 id="json-results-title"></h4>
+                    <div id="json-results-summary"></div>
+                </div>
+
+                <!-- JSON Fix Button -->
+                <div id="json-fix-section" style="display: none;">
+                    <button type="button" class="btn btn-warning" onclick="fixMalformedJson()" id="json-fix-btn">
+                        🔧 Convert to Proper JSON
+                    </button>
+                    <div class="loading" id="json-fix-loading">Converting to JSON...</div>
+                    <p class="warning-text">⚠️ This will convert Python-style lists to proper JSON format.</p>
+                </div>
+
+                <!-- Malformed Entries List -->
+                <div id="malformed-entries-list"></div>
+            </div>
+
+            <!-- JSON Success Message -->
+            <div id="json-fix-success" class="success-message" style="display: none;"></div>
+        </div>
+
+
+        <!-- Artists Without Images Section -->
+        <div class="cleaner-section">
+            <h3>🎨 Artists Without Images</h3>
+            <p>Find artists without images, search for related artworks, and update or remove them</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkArtistsWithoutImages()" id="artists-check-btn">
+                    🔍 Check for Artists Without Images
+                </button>
+                <div class="loading" id="artists-check-loading">Scanning for artists without images...</div>
+            </div>
+
+            <!-- Artists Results Section -->
+            <div id="artists-results" style="display: none;">
+                <div class="results-header">
+                    <h4 id="artists-results-title"></h4>
+                    <div id="artists-results-summary"></div>
+                </div>
+
+                <!-- Search and Execute Buttons -->
+                <div id="artists-action-section" style="display: none;">
+                    <button type="button" class="btn btn-info" onclick="searchAllRelatedArtworks()" id="search-all-btn">
+                        🔍 Search for Related Artworks (All Artists)
+                    </button>
+                    <div class="loading" id="search-all-loading">Searching for related artworks for all artists...</div>
+                    <p class="info-text">⚠️ This will search for artworks that reference these artists in their relatedKeywordIds.</p>
+                </div>
+
+                <!-- Search Results Section -->
+                <div id="search-results-section" style="display: none;">
+                    <div class="results-header">
+                        <h4 id="search-results-title"></h4>
+                        <div id="search-results-summary"></div>
+                    </div>
+                    
+                    <div id="execute-action-section" style="display: none;">
+                        <button type="button" class="btn btn-warning" onclick="executeArtistUpdates()" id="execute-updates-btn">
+                            ⚡ Execute Updates
+                        </button>
+                        <div class="loading" id="execute-loading">Updating database...</div>
+                        <p class="warning-text">⚠️ This will add found images to artists' image lists and remove artists with no matches.</p>
+                    </div>
+                    
+                    <div id="search-results-details"></div>
+                </div>
+
+                <!-- Original Remove All Button (fallback) -->
+                <div id="artists-remove-section" style="display: none;">
+                    <button type="button" class="btn btn-danger" onclick="removeArtistsWithoutImages()" id="artists-remove-btn">
+                        🗑️ Remove All Artists Without Images
+                    </button>
+                    <div class="loading" id="artists-remove-loading">Removing artists...</div>
+                    <p class="warning-text">⚠️ This will permanently delete these artist entries from your database.</p>
+                </div>
+
+                <!-- Artists List -->
+                <div id="artists-list"></div>
+            </div>
+
+            <!-- Artists Success Message -->
+            <div id="artists-success" class="success-message" style="display: none;"></div>
+        </div>
+
+        <!-- Orphaned Image References Section -->
+        <div class="cleaner-section">
+            <h3>🔗 Orphaned Image References</h3>
+            <p>Find text entries that reference non-existent image IDs</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkOrphanedImages()" id="check-btn">
+                    🔍 Check for Orphaned References
+                </button>
+                <div class="loading" id="check-loading">Checking database...</div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="orphaned-results" style="display: none;">
+                <div class="results-header">
+                    <h4 id="results-title"></h4>
+                    <div id="results-summary"></div>
+                </div>
+
+                <!-- Fix Button (appears only when issues found) -->
+                <div id="fix-section" style="display: none;">
+                    <button type="button" class="btn btn-danger" onclick="fixOrphanedImages()" id="fix-btn">
+                        🔧 Fix All Orphaned References
+                    </button>
+                    <div class="loading" id="fix-loading">Fixing entries...</div>
+                    <p class="warning-text">⚠️ This will permanently remove invalid image references from your database.</p>
+                </div>
+
+                <!-- Faulty Entries List -->
+                <div id="faulty-entries-list"></div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="fix-success" class="success-message" style="display: none;"></div>
+        </div>
+
+
+        <!-- Artists <-> Images Integrity Check Section -->
+        <div class="cleaner-section">
+            <h3>� Artists ↔ Images Integrity Check</h3>
+            <p>Check that all image IDs in artist's images list exist and are properly linked back to the artist</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkArtistImageIntegrity()" id="integrity-check-btn">
+                    🔍 Check Artist-Image Integrity
+                </button>
+                <div class="loading" id="integrity-check-loading">Checking artist-image relationships...</div>
+            </div>
+
+            <!-- Integrity Results Section -->
+            <div id="integrity-results" style="display: none;">
+                <div class="results-header">
+                    <h4 id="integrity-results-title"></h4>
+                    <div id="integrity-results-summary"></div>
+                </div>
+
+                <!-- Integrity Fix Button -->
+                <div id="integrity-fix-section" style="display: none;">
+                    <button type="button" class="btn btn-warning" onclick="fixArtistImageIntegrity()" id="integrity-fix-btn">
+                        � Fix All Integrity Issues
+                    </button>
+                    <div class="loading" id="integrity-fix-loading">Fixing integrity issues...</div>
+                    <p class="warning-text">⚠️ This will fix missing references and remove invalid image IDs from artist lists.</p>
+                </div>
+
+                <!-- Integrity Issues List -->
+                <div id="integrity-issues-list"></div>
+            </div>
+
+            <!-- Integrity Success Message -->
+            <div id="integrity-fix-success" class="success-message" style="display: none;"></div>
+        </div>
+
+        <!-- Related Keywords Integrity Section -->
+        <div class="cleaner-section">
+            <h3>🔗 Related Keywords Integrity</h3>
+            <p>Check and fix RelatedKeywordIds references and ensure RelatedKeywordStrings match</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkRelatedKeywords()" id="keywords-check-btn">
+                    🔍 Check Related Keywords
+                </button>
+                <div class="loading" id="keywords-check-loading">Checking keyword references...</div>
+            </div>
+
+            <!-- Keywords Results Section -->
+            <div id="keywords-results" style="display: none;">
+                <div class="results-header">
+                    <h4 id="keywords-results-title"></h4>
+                    <div id="keywords-results-summary"></div>
+                </div>
+
+                <!-- Keywords Fix Button -->
+                <div id="keywords-fix-section" style="display: none;">
+                    <button type="button" class="btn btn-warning" onclick="fixRelatedKeywords()" id="keywords-fix-btn">
+                        🔧 Fix All Keyword Issues
+                    </button>
+                    <div class="loading" id="keywords-fix-loading">Fixing keyword references...</div>
+                    <p class="warning-text">⚠️ This will add missing IDs for valid keyword strings, add missing strings for valid IDs, and remove any truly invalid references.</p>
+                </div>
+
+                <!-- Keywords Issues List -->
+                <div id="keywords-issues-list"></div>
+            </div>
+
+            <!-- Keywords Success Message -->
+            <div id="keywords-success" class="success-message" style="display: none;"></div>
+        </div>
+
+        <!-- Duplicate Images Section -->
+        <div class="cleaner-section">
+            <h3>🔍 Duplicate Image Detection</h3>
+            <p>Find images with nearly identical visual features using vector similarity</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkDuplicateImagesByVector()" id="dup-images-check-btn">
+                    🔍 Find Near-Duplicate Images
+                </button>
+                <div class="loading" id="dup-images-check-loading" style="display: none;">Finding similar images by vector comparison...</div>
+            </div>
+
+            <!-- Duplicate Images Processing Interface -->
+            <div id="dup-images-processing" style="display: none;">
+                <div class="results-header">
+                    <h4 id="dup-images-results-title"></h4>
+                    <div id="dup-images-results-summary"></div>
+                    <div id="dup-images-progress" class="progress-indicator"></div>
+                </div>
+
+                <!-- Current Pair Display -->
+                <div id="current-image-pair-container" class="duplicate-items two-items">
+                    <!-- Left Image -->
+                    <div id="left-image" class="duplicate-item">
+                        <div class="item-checkbox">
+                            <input type="radio" name="keep-image" id="keep-left-image" value="left" checked>
+                            <label for="keep-left-image">Keep this image</label>
+                        </div>
+                        <div class="item-image">
+                            <img id="left-image-preview" src="" alt="Image preview" onerror="this.classList.add('image-error'); this.src=''; this.alt='Image not available'">
+                        </div>
+                        <div class="item-details">
+                            <p><strong>ID:</strong> <span id="left-image-id"></span></p>
+                            <p><strong>Title:</strong> <span id="left-image-title"></span></p>
+                            <p><strong>Artist:</strong> <span id="left-image-artist"></span></p>
+                            <p><strong>Similarity:</strong> <span id="similarity-score"></span></p>
+                        </div>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div id="right-image" class="duplicate-item">
+                        <div class="item-checkbox">
+                            <input type="radio" name="keep-image" id="keep-right-image" value="right">
+                            <label for="keep-right-image">Keep this image</label>
+                        </div>
+                        <div class="item-image">
+                            <img id="right-image-preview" src="" alt="Image preview" onerror="this.classList.add('image-error'); this.src=''; this.alt='Image not available'">
+                        </div>
+                        <div class="item-details">
+                            <p><strong>ID:</strong> <span id="right-image-id"></span></p>
+                            <p><strong>Title:</strong> <span id="right-image-title"></span></p>
+                            <p><strong>Artist:</strong> <span id="right-image-artist"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Buttons -->
+                <div class="decision-buttons" style="margin-top: 20px; text-align: center;">
+                    <button type="button" class="btn btn-success" onclick="processDuplicateImage('merge')" id="dup-images-merge-btn">
+                        ✓ Merge Images
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="processDuplicateImage('not_duplicate')" id="dup-images-skip-btn">
+                        ✗ Not Duplicates
+                    </button>
+                    <div class="loading" id="dup-images-process-loading" style="display: none;">Processing...</div>
+                </div>
+            </div>
+
+            <!-- Finished Message -->
+            <div id="dup-images-finished" class="success-message" style="display: none;"></div>
+            
+            <!-- Reset Button (only shown after completion) -->
+            <div id="dup-images-reset-section" style="display: none; margin-top: 20px; text-align: center;">
+                <button type="button" class="btn" onclick="resetDuplicateImages(false)" id="dup-images-reset-btn">
+                    🔄 Reset & Check Again
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="resetDuplicateImages(true)" id="dup-images-reset-all-btn">
+                    🔄 Reset Including "Not Duplicates"
+                </button>
+            </div>
+        </div>
+
+        <!-- Duplicate Artists Section -->
+        <div class="cleaner-section">
+            <h3>👯 Duplicate Artist Detection</h3>
+            <p>Find artists with identical names and merge them intelligently</p>
+            
+            <div class="action-buttons">
+                <button type="button" class="btn" onclick="checkDuplicateArtists()" id="dup-artists-check-btn">
+                    🔍 Check for Duplicate Artists
+                </button>
+                <div class="loading" id="dup-artists-check-loading" style="display: none;">Searching for duplicate artists...</div>
+            </div>
+
+            <!-- Duplicate Artists Processing Interface -->
+            <div id="dup-artists-processing" style="display: none;">
+                <div class="results-header">
+                    <h4 id="dup-artists-results-title"></h4>
+                    <div id="dup-artists-results-summary"></div>
+                    <div id="dup-artists-progress" class="progress-indicator"></div>
+                </div>
+
+                <!-- Current Pair Display -->
+                <div id="current-pair-container" class="duplicate-items two-items">
+                    <!-- Left Artist -->
+                    <div id="left-artist" class="duplicate-item">
+                        <div class="item-checkbox">
+                            <input type="radio" name="keep-artist" id="keep-left" value="left" checked>
+                            <label for="keep-left">Keep this artist</label>
+                        </div>
+                        <div class="item-details">
+                            <p><strong>ID:</strong> <span id="left-id"></span></p>
+                            <p><strong>Name:</strong> <span id="left-name"></span></p>
+                            <p><strong>Images:</strong> <span id="left-images-count"></span></p>
+                            <p><strong>Referenced by:</strong> <span id="left-references"></span> artworks</p>
+                            <p><strong>Related Keywords:</strong> <span id="left-keywords"></span></p>
+                        </div>
+                    </div>
+
+                    <!-- Right Artist -->
+                    <div id="right-artist" class="duplicate-item">
+                        <div class="item-checkbox">
+                            <input type="radio" name="keep-artist" id="keep-right" value="right">
+                            <label for="keep-right">Keep this artist</label>
+                        </div>
+                        <div class="item-details">
+                            <p><strong>ID:</strong> <span id="right-id"></span></p>
+                            <p><strong>Name:</strong> <span id="right-name"></span></p>
+                            <p><strong>Images:</strong> <span id="right-images-count"></span></p>
+                            <p><strong>Referenced by:</strong> <span id="right-references"></span> artworks</p>
+                            <p><strong>Related Keywords:</strong> <span id="right-keywords"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decision Buttons -->
+                <div class="decision-buttons" style="margin-top: 20px; text-align: center;">
+                    <button type="button" class="btn btn-success" onclick="processDuplicateArtist('merge')" id="dup-artists-merge-btn">
+                        ✓ Merge Artists
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="processDuplicateArtist('not_duplicate')" id="dup-artists-skip-btn">
+                        ✗ Not Duplicates
+                    </button>
+                    <div class="loading" id="dup-artists-process-loading" style="display: none;">Processing...</div>
+                </div>
+            </div>
+
+            <!-- Finished Message -->
+            <div id="dup-artists-finished" class="success-message" style="display: none;"></div>
+            
+            <!-- Reset Button (only shown after completion) -->
+            <div id="dup-artists-reset-section" style="display: none; margin-top: 20px; text-align: center;">
+                <button type="button" class="btn btn-secondary" onclick="resetDuplicateArtists(false)" id="dup-artists-reset-btn">
+                    🔄 Check Again
+                </button>
+                <button type="button" class="btn btn-warning" onclick="resetDuplicateArtists(true)" id="dup-artists-reset-all-btn">
+                    🔄 Reset All (Including Not-Duplicates)
+                </button>
+            </div>
+        </div>
+
+        <!-- Future Cleaning Options -->
+        <div class="cleaner-section">
+            <h3>🚀 More Cleaning Options</h3>
+            <p>Additional data cleaning features coming soon...</p>
+            <div class="placeholder-buttons">
+                <button type="button" class="btn btn-secondary disabled" disabled>Check Orphaned Text References</button>
+                <button type="button" class="btn btn-secondary disabled" disabled>Validate JSON Formatting</button>
+                <button type="button" class="btn btn-secondary disabled" disabled>Find Duplicate Entries</button>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        let adminPassword = null;
+        let currentFaultyEntries = [];
+        let currentMalformedEntries = [];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if password is stored in localStorage
+            const storedPassword = localStorage.getItem('staging_admin_password');
+            if (storedPassword) {
+                adminPassword = storedPassword;
+                showMainContent();
+                loadDatabaseStats();
+            } else {
+                showPasswordModal();
+            }
+        });
+
+        function showPasswordModal() {
+            document.getElementById('passwordModal').style.display = 'block';
+            document.getElementById('passwordInput').focus();
+            
+            // Handle password submission
+            document.getElementById('passwordSubmit').onclick = async function() {
+                const password = document.getElementById('passwordInput').value;
+                
+                if (!password) {
+                    showPasswordError('Please enter a password');
+                    return;
+                }
+                
+                const isValid = await validatePassword(password);
+                if (isValid) {
+                    adminPassword = password;
+                    localStorage.setItem('staging_admin_password', password);
+                    document.getElementById('passwordModal').style.display = 'none';
+                    showMainContent();
+                    loadDatabaseStats();
+                } else {
+                    showPasswordError('Invalid password');
+                }
+            };
+            
+            document.getElementById('passwordCancel').onclick = function() {
+                window.location.href = '/';
+            };
+            
+            // Handle Enter key
+            document.getElementById('passwordInput').onkeypress = function(e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('passwordSubmit').click();
+                }
+            };
+        }
+
+        function showPasswordError(message) {
+            const errorDiv = document.getElementById('passwordError');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        async function validatePassword(password) {
+            try {
+            // Call a dedicated endpoint that checks the password against the environment variable
+            const response = await fetch('/validate_admin_password', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                password: password
+                })
+            });
+
+            const result = await response.json();
+            // The backend should return { success: true } if password matches
+            return !!result.success;
+            } catch (error) {
+            return false;
+            }
+        }
+
+
+        function showMainContent() {
+            document.getElementById('main-content').style.display = 'block';
+        }
+
+        // Clear password function (for debugging)
+        function clearPassword() {
+            localStorage.removeItem('staging_admin_password');
+            location.reload();
+        }
+
+        function loadDatabaseStats() {
+            fetch('/get_database_stats')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const statsHtml = `
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">${data.stats.total_text_entries}</div>
+                                <div class="stat-label">Text Entries</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">${data.stats.total_image_entries}</div>
+                                <div class="stat-label">Image Entries</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">${data.stats.text_entries_with_images}</div>
+                                <div class="stat-label">Text w/ Image Refs</div>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('stats-display').innerHTML = statsHtml;
+                } else {
+                    document.getElementById('stats-display').innerHTML = `<div class="error">Error: ${data.error}</div>`;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('stats-display').innerHTML = `<div class="error">Failed to load stats</div>`;
+            });
+        }
+
+        function checkMalformedJson() {
+            const checkBtn = document.getElementById('json-check-btn');
+            const loading = document.getElementById('json-check-loading');
+            const resultsDiv = document.getElementById('json-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_malformed_json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    currentMalformedEntries = data.malformed_entries;
+                    displayMalformedResults(data);
+                } else {
+                    alert('Error checking malformed JSON: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to check malformed JSON');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displayMalformedResults(data) {
+            const resultsDiv = document.getElementById('json-results');
+            const titleEl = document.getElementById('json-results-title');
+            const summaryEl = document.getElementById('json-results-summary');
+            const fixSection = document.getElementById('json-fix-section');
+            const entriesList = document.getElementById('malformed-entries-list');
+            
+            if (data.total_malformed === 0) {
+                titleEl.textContent = '✅ All JSON is Properly Formatted';
+                summaryEl.innerHTML = '<div class="success">No malformed JSON found!</div>';
+                fixSection.style.display = 'none';
+                entriesList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_malformed} Entries with Malformed JSON`;
+                
+                const fixableCount = data.malformed_entries.filter(e => e.converted_json !== null).length;
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_malformed}</strong> entries have malformed JSON<br>
+                        <strong>${fixableCount}</strong> can be automatically converted to proper JSON
+                    </div>
+                `;
+                
+                if (fixableCount > 0) {
+                    fixSection.style.display = 'block';
+                } else {
+                    fixSection.style.display = 'none';
+                }
+                
+                // Display malformed entries
+                let entriesHtml = '<div class="malformed-entries">';
+                data.malformed_entries.forEach(entry => {
+                    let statusClass = '';
+                    let statusText = '';
+                    let conversionPreview = '';
+                    
+                    if (entry.type === 'python_list') {
+                        statusClass = 'fixable';
+                        statusText = '✅ Can convert Python list to JSON';
+                        conversionPreview = `<div class="conversion-preview">
+                            <strong>Will convert to:</strong> <code>${entry.converted_json}</code>
+                        </div>`;
+                    } else if (entry.type === 'python_string') {
+                        statusClass = 'fixable';
+                        statusText = '✅ Can convert Python string to JSON array';
+                        conversionPreview = `<div class="conversion-preview">
+                            <strong>Will convert to:</strong> <code>${entry.converted_json}</code>
+                        </div>`;
+                    } else if (entry.type === 'truly_malformed') {
+                        statusClass = 'unfixable';
+                        statusText = '❌ Cannot auto-fix: ' + entry.error;
+                    } else {
+                        statusClass = 'unfixable';
+                        statusText = '❌ Unknown format: ' + (entry.error || entry.type);
+                    }
+                    
+                    // In displayMalformedResults function, update the entry display part:
+                    entriesHtml += `
+                        <div class="malformed-entry ${statusClass}">
+                            <div class="entry-header">
+                                <strong>Table:</strong> ${entry.table}<br>
+                                <strong>Column:</strong> ${entry.column}<br>
+                                <strong>Entry ID:</strong> ${entry.entry_id}<br>
+                                <strong>Value:</strong> ${entry.value || 'N/A'}
+                            </div>
+                            <div class="entry-details">
+                                <strong>Current Text:</strong> <code class="current-text">${entry.current_text}</code><br>
+                                <strong>Status:</strong> <span class="status-${statusClass}">${statusText}</span>
+                                ${conversionPreview}
+                            </div>
+                        </div>
+                    `;
+                });
+                entriesHtml += '</div>';
+                
+                entriesList.innerHTML = entriesHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+
+        let currentInvalidUrls = [];
+
+        function checkInvalidImageUrls() {
+            console.log("DEBUG: Starting invalid image URLs check...");
+            const checkBtn = document.getElementById('urls-check-btn');
+            const loading = document.getElementById('urls-check-loading');
+            const resultsDiv = document.getElementById('urls-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_invalid_image_urls', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Got response from URLs check:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: URLs check data:", data);
+                if (data.success) {
+                    currentInvalidUrls = data.invalid_entries;
+                    console.log("DEBUG: Found", data.total_invalid, "images with invalid URLs");
+                    displayUrlsResults(data);
+                } else {
+                    console.error("DEBUG: Error in URLs check:", data.error);
+                    alert('Error checking image URLs: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in URLs check:', error);
+                alert('Failed to check image URLs');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displayUrlsResults(data) {
+            console.log("DEBUG: Displaying URLs results:", data);
+            const resultsDiv = document.getElementById('urls-results');
+            const titleEl = document.getElementById('urls-results-title');
+            const summaryEl = document.getElementById('urls-results-summary');
+            const fixSection = document.getElementById('urls-fix-section');
+            const urlsList = document.getElementById('urls-list');
+            
+            if (data.total_invalid === 0) {
+                titleEl.textContent = '✅ All Image URLs Are Valid';
+                summaryEl.innerHTML = '<div class="success">No invalid image URLs found!</div>';
+                fixSection.style.display = 'none';
+                urlsList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_invalid} Images with Invalid URLs`;
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_invalid}</strong> images have invalid or broken URLs<br>
+                        <small>Checked ${data.total_checked} total images</small>
+                    </div>
+                `;
+                fixSection.style.display = 'block';
+                
+                // Display invalid entries
+                let urlsHtml = '<div class="invalid-urls-list">';
+                data.invalid_entries.forEach(entry => {
+                    let statusClass = entry.type === 'json_error' ? 'json-error' : 'broken-urls';
+                    let invalidUrlsHtml = '';
+                    
+                    if (entry.invalid_urls && entry.invalid_urls.length > 0) {
+                        invalidUrlsHtml = '<strong>Invalid URLs:</strong><ul>';
+                        entry.invalid_urls.forEach(invalid => {
+                            invalidUrlsHtml += `<li><strong>${invalid.size}:</strong> ${invalid.error} - <code>${invalid.url}</code></li>`;
+                        });
+                        invalidUrlsHtml += '</ul>';
+                    }
+                    
+                    let validUrlsHtml = '';
+                    if (entry.valid_urls && Object.keys(entry.valid_urls).length > 0) {
+                        validUrlsHtml = `<br><strong>Valid URLs:</strong> ${Object.keys(entry.valid_urls).join(', ')}`;
+                    }
+                    
+                    urlsHtml += `
+                        <div class="invalid-url-entry ${statusClass}">
+                            <div class="entry-header">
+                                <strong>Image ID:</strong> ${entry.image_id}<br>
+                                <strong>Value:</strong> ${entry.value || 'N/A'}
+                            </div>
+                            <div class="entry-details">
+                                ${entry.error ? `<strong>Error:</strong> ${entry.error}<br>` : ''}
+                                ${invalidUrlsHtml}
+                                ${validUrlsHtml}
+                                ${entry.total_urls ? `<br><strong>Total URLs:</strong> ${entry.total_urls}` : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+                urlsHtml += '</div>';
+                urlsList.innerHTML = urlsHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        function fixInvalidImageUrls(action) {
+            console.log("DEBUG: Starting fix invalid URLs with action:", action);
+            if (currentInvalidUrls.length === 0) {
+                alert('No invalid URLs to fix');
+                return;
+            }
+            
+            const actionText = action === 'remove' ? 'permanently delete' : 'clean URLs for';
+            if (!confirm(`Are you sure you want to ${actionText} ${currentInvalidUrls.length} image entries?`)) {
+                console.log("DEBUG: User cancelled fix operation");
+                return;
+            }
+            
+            const cleanBtn = document.getElementById('urls-clean-btn');
+            const removeBtn = document.getElementById('urls-remove-btn');
+            const loading = document.getElementById('urls-fix-loading');
+            const successDiv = document.getElementById('urls-success');
+            
+            cleanBtn.disabled = true;
+            removeBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/fix_invalid_image_urls', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    invalid_entries: currentInvalidUrls,
+                    action: action
+                })
+            })
+            .then(response => {
+                console.log("DEBUG: Fix URLs response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Fix URLs response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>Database has been updated.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    document.getElementById('urls-fix-section').style.display = 'none';
+                    currentInvalidUrls = [];
+                    
+                    setTimeout(() => {
+                        document.getElementById('urls-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in fix response:", data.error);
+                    alert('Error fixing URLs: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in fix URLs:', error);
+                alert('Failed to fix URLs');
+            })
+            .finally(() => {
+                cleanBtn.disabled = false;
+                removeBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function fixMalformedJson() {
+            if (currentMalformedEntries.length === 0) {
+                alert('No malformed entries to fix');
+                return;
+            }
+            
+            const fixableCount = currentMalformedEntries.filter(e => e.converted_json !== null).length;
+            if (fixableCount === 0) {
+                alert('No entries can be automatically fixed');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to convert ${fixableCount} entries to proper JSON format?`)) {
+                return;
+            }
+            
+            const fixBtn = document.getElementById('json-fix-btn');
+            const loading = document.getElementById('json-fix-loading');
+            const successDiv = document.getElementById('json-fix-success');
+            
+            fixBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/fix_malformed_json', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    malformed_entries: currentMalformedEntries
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>You can now run the orphaned image check to verify the fixes.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    document.getElementById('json-fix-section').style.display = 'none';
+                    currentMalformedEntries = [];
+                    
+                    setTimeout(() => {
+                        document.getElementById('json-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    alert('Error fixing JSON: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to fix JSON');
+            })
+            .finally(() => {
+                fixBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+
+        let currentArtistsWithoutImages = [];
+
+        function checkArtistsWithoutImages() {
+            console.log("DEBUG: Starting artists without images check...");
+            const checkBtn = document.getElementById('artists-check-btn');
+            const loading = document.getElementById('artists-check-loading');
+            const resultsDiv = document.getElementById('artists-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_artists_without_images', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Got response from artists check:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Artists check data:", data);
+                if (data.success) {
+                    currentArtistsWithoutImages = data.artists_without_images;
+                    console.log("DEBUG: Found", data.total_artists_without_images, "artists without images");
+                    displayArtistsResults(data);
+                } else {
+                    console.error("DEBUG: Error in artists check:", data.error);
+                    alert('Error checking artists: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in artists check:', error);
+                alert('Failed to check artists');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displayArtistsResults(data) {
+            console.log("DEBUG: Displaying artists results:", data);
+            const resultsDiv = document.getElementById('artists-results');
+            const titleEl = document.getElementById('artists-results-title');
+            const summaryEl = document.getElementById('artists-results-summary');
+            const actionSection = document.getElementById('artists-action-section');
+            const removeSection = document.getElementById('artists-remove-section');
+            const artistsList = document.getElementById('artists-list');
+            
+            if (data.total_artists_without_images === 0) {
+                titleEl.textContent = '✅ All Artists Have Images';
+                summaryEl.innerHTML = '<div class="success">No artists without images found!</div>';
+                actionSection.style.display = 'none';
+                removeSection.style.display = 'none';
+                artistsList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_artists_without_images} Artists Without Images`;
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_artists_without_images}</strong> artists have no associated artwork
+                    </div>
+                `;
+                actionSection.style.display = 'block';
+                removeSection.style.display = 'block';
+                
+                // Display artists without images (simplified version without individual search buttons)
+                let artistsHtml = '<div class="artists-without-images">';
+                data.artists_without_images.forEach(artist => {
+                    const aliasesText = artist.aliases && artist.aliases.length > 0 ? 
+                        `<br><strong>Aliases:</strong> ${JSON.stringify(artist.aliases)}` : '';
+                    
+                    artistsHtml += `
+                        <div class="artist-entry">
+                            <div class="entry-header">
+                                <strong>Artist:</strong> ${artist.value || 'N/A'}<br>
+                                <strong>Entry ID:</strong> ${artist.entry_id}
+                                ${aliasesText}
+                            </div>
+                            <div class="entry-details">
+                                <strong>Images:</strong> ${artist.images || 'NULL'}
+                            </div>
+                        </div>
+                    `;
+                });
+                artistsHtml += '</div>';
+                artistsList.innerHTML = artistsHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        let currentSearchResults = null;
+
+        function searchAllRelatedArtworks() {
+            console.log("DEBUG: Starting search for all related artworks...");
+            const searchBtn = document.getElementById('search-all-btn');
+            const loading = document.getElementById('search-all-loading');
+            const searchResultsSection = document.getElementById('search-results-section');
+            
+            searchBtn.disabled = true;
+            loading.style.display = 'block';
+            searchResultsSection.style.display = 'none';
+            
+            fetch('/search_all_related_artworks', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Search all related artworks response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Search all related artworks response data:", data);
+                if (data.success) {
+                    currentSearchResults = data;
+                    displaySearchResults(data);
+                } else {
+                    console.error("DEBUG: Error in search all related artworks:", data.error);
+                    alert('Error searching for related artworks: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in search all related artworks:', error);
+                alert('Failed to search for related artworks');
+            })
+            .finally(() => {
+                searchBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displaySearchResults(data) {
+            const searchResultsSection = document.getElementById('search-results-section');
+            const titleEl = document.getElementById('search-results-title');
+            const summaryEl = document.getElementById('search-results-summary');
+            const executeSection = document.getElementById('execute-action-section');
+            const detailsDiv = document.getElementById('search-results-details');
+            
+            titleEl.textContent = `🔍 Search Results`;
+            summaryEl.innerHTML = `
+                <div class="info">
+                    <strong>${data.total_with_matches}</strong> artists have related artworks<br>
+                    <strong>${data.total_without_matches}</strong> artists have no related artworks
+                </div>
+            `;
+            
+            if (data.total_with_matches > 0 || data.total_without_matches > 0) {
+                executeSection.style.display = 'block';
+            }
+            
+            let detailsHtml = '';
+            
+            // Show artists with matches
+            if (data.total_with_matches > 0) {
+                detailsHtml += `<h4>✅ Artists with Related Artworks (${data.total_with_matches})</h4>`;
+                detailsHtml += '<div class="artists-with-matches">';
+                data.artists_with_matches.forEach(artist => {
+                    const aliasesText = artist.aliases && artist.aliases.length > 0 ? 
+                        `<br><strong>Aliases:</strong> ${JSON.stringify(artist.aliases)}` : '';
+                    
+                    detailsHtml += `
+                        <div class="artist-match-entry">
+                            <div class="entry-header">
+                                <strong>Artist:</strong> ${artist.value}<br>
+                                <strong>Entry ID:</strong> ${artist.entry_id}
+                                ${aliasesText}
+                            </div>
+                            <div class="entry-details">
+                                <strong>Found ${artist.total_related} related artwork(s):</strong>
+                                <ul>
+                    `;
+                    artist.related_images.forEach(image => {
+                        detailsHtml += `<li><strong>${image.value}</strong> (ID: ${image.image_id})</li>`;
+                    });
+                    detailsHtml += `
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                });
+                detailsHtml += '</div>';
+            }
+            
+            // Show artists without matches
+            if (data.total_without_matches > 0) {
+                detailsHtml += `<h4>❌ Artists without Related Artworks (${data.total_without_matches})</h4>`;
+                detailsHtml += '<div class="artists-without-matches">';
+                data.artists_without_matches.forEach(artist => {
+                    const aliasesText = artist.aliases && artist.aliases.length > 0 ? 
+                        `<br><strong>Aliases:</strong> ${JSON.stringify(artist.aliases)}` : '';
+                    
+                    detailsHtml += `
+                        <div class="artist-no-match-entry">
+                            <div class="entry-header">
+                                <strong>Artist:</strong> ${artist.value}<br>
+                                <strong>Entry ID:</strong> ${artist.entry_id}
+                                ${aliasesText}
+                            </div>
+                            <div class="entry-details">
+                                <em>No related artworks found - will be removed</em>
+                            </div>
+                        </div>
+                    `;
+                });
+                detailsHtml += '</div>';
+            }
+            
+            detailsDiv.innerHTML = detailsHtml;
+            searchResultsSection.style.display = 'block';
+        }
+
+        function executeArtistUpdates() {
+            console.log("DEBUG: Starting execute artist updates...");
+            if (!currentSearchResults) {
+                alert('No search results to execute');
+                return;
+            }
+            
+            const updatesCount = currentSearchResults.total_with_matches;
+            const removalsCount = currentSearchResults.total_without_matches;
+            
+            if (!confirm(`Are you sure you want to execute these updates?\n\n- Update ${updatesCount} artists with new images\n- Remove ${removalsCount} artists without matches\n\nThis cannot be undone.`)) {
+                console.log("DEBUG: User cancelled execute operation");
+                return;
+            }
+            
+            const executeBtn = document.getElementById('execute-updates-btn');
+            const loading = document.getElementById('execute-loading');
+            const successDiv = document.getElementById('artists-success');
+            
+            executeBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/execute_artist_updates', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    artists_with_matches: currentSearchResults.artists_with_matches,
+                    artists_without_matches: currentSearchResults.artists_without_matches
+                })
+            })
+            .then(response => {
+                console.log("DEBUG: Execute artist updates response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Execute artist updates response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>Database has been updated.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    // Hide all action sections
+                    document.getElementById('artists-action-section').style.display = 'none';
+                    document.getElementById('search-results-section').style.display = 'none';
+                    document.getElementById('artists-remove-section').style.display = 'none';
+                    currentSearchResults = null;
+                    
+                    setTimeout(() => {
+                        document.getElementById('artists-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in execute response:", data.error);
+                    alert('Error executing updates: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in execute artist updates:', error);
+                alert('Failed to execute updates');
+            })
+            .finally(() => {
+                executeBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function removeArtistsWithoutImages() {
+            console.log("DEBUG: Starting remove artists without images...");
+            if (currentArtistsWithoutImages.length === 0) {
+                alert('No artists to remove');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to permanently delete ${currentArtistsWithoutImages.length} artists? This cannot be undone.`)) {
+                console.log("DEBUG: User cancelled remove operation");
+                return;
+            }
+            
+            const removeBtn = document.getElementById('artists-remove-btn');
+            const loading = document.getElementById('artists-remove-loading');
+            const successDiv = document.getElementById('artists-success');
+            
+            removeBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/remove_artists_without_images', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    artists_to_remove: currentArtistsWithoutImages
+                })
+            })
+            .then(response => {
+                console.log("DEBUG: Remove artists response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Remove artists response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>Database has been updated.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    document.getElementById('artists-remove-section').style.display = 'none';
+                    currentArtistsWithoutImages = [];
+                    
+                    setTimeout(() => {
+                        document.getElementById('artists-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in remove response:", data.error);
+                    alert('Error removing artists: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in remove artists:', error);
+                alert('Failed to remove artists');
+            })
+            .finally(() => {
+                removeBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        // New function for checking artist-image integrity
+        function checkArtistImageIntegrity() {
+            console.log("DEBUG: Starting artist-image integrity check...");
+            const checkBtn = document.getElementById('integrity-check-btn');
+            const loading = document.getElementById('integrity-check-loading');
+            const resultsDiv = document.getElementById('integrity-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_artist_image_integrity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Artist-image integrity check response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Artist-image integrity check response data:", data);
+                if (data.success) {
+                    currentIntegrityIssues = data.integrity_issues;
+                    console.log("DEBUG: Found", data.total_issues, "integrity issues");
+                    displayIntegrityResults(data);
+                } else {
+                    console.error("DEBUG: Error in artist-image integrity check:", data.error);
+                    alert('Error checking artist-image integrity: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in artist-image integrity check:', error);
+                alert('Failed to check artist-image integrity');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        let currentIntegrityIssues = [];
+
+        function displayIntegrityResults(data) {
+            const resultsDiv = document.getElementById('integrity-results');
+            const titleEl = document.getElementById('integrity-results-title');
+            const summaryEl = document.getElementById('integrity-results-summary');
+            const fixSection = document.getElementById('integrity-fix-section');
+            const issuesList = document.getElementById('integrity-issues-list');
+            
+            if (data.total_issues === 0) {
+                titleEl.textContent = '✅ Artist-Image Integrity Check Complete';
+                summaryEl.innerHTML = '<div class="success">All artist-image relationships are correct!</div>';
+                fixSection.style.display = 'none';
+                issuesList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_issues} Artist-Image Integrity Issues`;
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_issues}</strong> integrity issues found
+                    </div>
+                `;
+                fixSection.style.display = 'block';
+                
+                // Group issues by type
+                const issuesByType = {
+                    'missing_image': [],
+                    'missing_artist_name': [],
+                    'missing_related_keyword': [],
+                    'malformed_json': []
+                };
+                
+                data.integrity_issues.forEach(issue => {
+                    if (issuesByType[issue.type]) {
+                        issuesByType[issue.type].push(issue);
+                    }
+                });
+                
+                let issuesHtml = '<div class="integrity-issues">';
+                
+                // Display missing images
+                if (issuesByType.missing_image.length > 0) {
+                    issuesHtml += `<h4>🚫 Missing Images (${issuesByType.missing_image.length})</h4>`;
+                    issuesByType.missing_image.forEach(issue => {
+                        issuesHtml += `
+                            <div class="issue-entry error">
+                                <strong>Artist:</strong> ${issue.artist_name}<br>
+                                <strong>Entry ID:</strong> ${issue.artist_entry_id}<br>
+                                <strong>Missing Image ID:</strong> ${issue.image_id}<br>
+                                <strong>Issue:</strong> ${issue.description}
+                            </div>
+                        `;
+                    });
+                }
+                
+                // Display missing artist names
+                if (issuesByType.missing_artist_name.length > 0) {
+                    issuesHtml += `<h4>👤 Missing Artist Names (${issuesByType.missing_artist_name.length})</h4>`;
+                    issuesByType.missing_artist_name.forEach(issue => {
+                        issuesHtml += `
+                            <div class="issue-entry warning">
+                                <strong>Image:</strong> ${issue.image_value}<br>
+                                <strong>Image ID:</strong> ${issue.image_id}<br>
+                                <strong>Missing Artist:</strong> ${issue.artist_name}<br>
+                                <strong>Current Artists:</strong> ${issue.current_artist_names.join(', ') || 'None'}<br>
+                                <strong>Issue:</strong> ${issue.description}
+                            </div>
+                        `;
+                    });
+                }
+                
+                // Display missing related keywords
+                if (issuesByType.missing_related_keyword.length > 0) {
+                    issuesHtml += `<h4>🔗 Missing Related Keywords (${issuesByType.missing_related_keyword.length})</h4>`;
+                    issuesByType.missing_related_keyword.forEach(issue => {
+                        issuesHtml += `
+                            <div class="issue-entry warning">
+                                <strong>Image:</strong> ${issue.image_value}<br>
+                                <strong>Image ID:</strong> ${issue.image_id}<br>
+                                <strong>Missing Artist Entry ID:</strong> ${issue.artist_entry_id}<br>
+                                <strong>Artist Name:</strong> ${issue.artist_name}<br>
+                                <strong>Issue:</strong> ${issue.description}
+                            </div>
+                        `;
+                    });
+                }
+                
+                // Display malformed JSON
+                if (issuesByType.malformed_json.length > 0) {
+                    issuesHtml += `<h4>📝 Malformed JSON (${issuesByType.malformed_json.length})</h4>`;
+                    issuesByType.malformed_json.forEach(issue => {
+                        issuesHtml += `
+                            <div class="issue-entry error">
+                                <strong>Artist:</strong> ${issue.artist_name}<br>
+                                <strong>Entry ID:</strong> ${issue.artist_entry_id}<br>
+                                <strong>Issue:</strong> ${issue.description}<br>
+                                <strong>Malformed JSON:</strong> <code>${issue.images_json}</code>
+                            </div>
+                        `;
+                    });
+                }
+                
+                issuesHtml += '</div>';
+                issuesList.innerHTML = issuesHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        function fixArtistImageIntegrity() {
+            console.log("DEBUG: Starting fix artist-image integrity...");
+            if (currentIntegrityIssues.length === 0) {
+                alert('No integrity issues to fix');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to fix ${currentIntegrityIssues.length} integrity issues? This will modify your database.`)) {
+                console.log("DEBUG: User cancelled fix operation");
+                return;
+            }
+            
+            const fixBtn = document.getElementById('integrity-fix-btn');
+            const loading = document.getElementById('integrity-fix-loading');
+            const successDiv = document.getElementById('integrity-fix-success');
+            
+            fixBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/fix_artist_image_integrity', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    integrity_issues: currentIntegrityIssues
+                })
+            })
+            .then(response => {
+                console.log("DEBUG: Fix artist-image integrity response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Fix artist-image integrity response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>Database has been updated.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    document.getElementById('integrity-fix-section').style.display = 'none';
+                    currentIntegrityIssues = [];
+                    
+                    setTimeout(() => {
+                        document.getElementById('integrity-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in fix response:", data.error);
+                    alert('Error fixing integrity issues: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in fix artist-image integrity:', error);
+                alert('Failed to fix integrity issues');
+            })
+            .finally(() => {
+                fixBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function checkOrphanedImages() {
+            console.log("DEBUG: Starting orphaned images check...");
+            const checkBtn = document.getElementById('check-btn');
+            const loading = document.getElementById('check-loading');
+            const resultsDiv = document.getElementById('orphaned-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_orphaned_images', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Got response from orphaned images check:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Orphaned images check data:", data);
+                if (data.success) {
+                    currentFaultyEntries = data.faulty_entries;
+                    console.log("DEBUG: Found", data.total_faulty, "faulty entries");
+                    displayOrphanedResults(data);
+                } else {
+                    console.error("DEBUG: Error in orphaned images check:", data.error);
+                    alert('Error checking orphaned images: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in orphaned images check:', error);
+                alert('Failed to check orphaned images');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displayOrphanedResults(data) {
+            const resultsDiv = document.getElementById('orphaned-results');
+            const titleEl = document.getElementById('results-title');
+            const summaryEl = document.getElementById('results-summary');
+            const fixSection = document.getElementById('fix-section');
+            const entriesList = document.getElementById('faulty-entries-list');
+            
+            if (data.total_faulty === 0) {
+                titleEl.textContent = '✅ No Orphaned References Found';
+                summaryEl.innerHTML = '<div class="success">All image references are valid!</div>';
+                fixSection.style.display = 'none';
+                entriesList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_faulty} Entries with Orphaned References`;
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_faulty}</strong> text entries have invalid image references<br>
+                        Database contains <strong>${data.total_valid_images}</strong> valid images
+                    </div>
+                `;
+                fixSection.style.display = 'block';
+                
+                // Display faulty entries
+                let entriesHtml = '<div class="faulty-entries">';
+                data.faulty_entries.forEach(entry => {
+                    const invalidIdsHtml = entry.invalid_image_ids.map(id => 
+                        `<span class="invalid-id">${id}</span>`
+                    ).join(', ');
+                    
+                    const validIdsHtml = entry.valid_image_ids.length > 0 ? 
+                        `<br><strong>Valid IDs:</strong> ${entry.valid_image_ids.join(', ')}` : '';
+                    
+                    entriesHtml += `
+                        <div class="faulty-entry">
+                            <div class="entry-header">
+                                <strong>Entry ID:</strong> ${entry.entry_id}<br>
+                                <strong>Value:</strong> ${entry.value || 'N/A'}
+                            </div>
+                            <div class="entry-details">
+                                <strong>Invalid Image IDs:</strong> ${invalidIdsHtml}
+                                ${validIdsHtml}
+                                <br><strong>Total Refs:</strong> ${entry.total_image_refs}
+                                ${entry.json_error ? '<br><span class="json-error">⚠️ Malformed JSON</span>' : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+                entriesHtml += '</div>';
+                entriesList.innerHTML = entriesHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        function fixOrphanedImages() {
+            console.log("DEBUG: Starting fix orphaned images...");
+            console.log("DEBUG: Current faulty entries:", currentFaultyEntries);
+            
+            if (currentFaultyEntries.length === 0) {
+                console.log("DEBUG: No faulty entries to fix");
+                alert('No faulty entries to fix');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to fix ${currentFaultyEntries.length} entries? This will permanently remove invalid image references.`)) {
+                console.log("DEBUG: User cancelled fix operation");
+                return;
+            }
+            
+            const fixBtn = document.getElementById('fix-btn');
+            const loading = document.getElementById('fix-loading');
+            const successDiv = document.getElementById('fix-success');
+            
+            console.log("DEBUG: Starting fetch to fix orphaned images...");
+            
+            fixBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            const requestData = {
+                faulty_entries: currentFaultyEntries
+            };
+            console.log("DEBUG: Sending request data:", requestData);
+            
+            fetch('/fix_orphaned_images', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => {
+                console.log("DEBUG: Fix orphaned images response status:", response.status);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Fix orphaned images response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>You can now run the check again to verify the fixes.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    // Hide the fix section and clear current data
+                    document.getElementById('fix-section').style.display = 'none';
+                    currentFaultyEntries = [];
+                    
+                    // Clear the results to encourage re-checking
+                    setTimeout(() => {
+                        document.getElementById('orphaned-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in fix response:", data.error);
+                    alert('Error fixing entries: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in fix orphaned images:', error);
+                alert('Failed to fix entries: ' + error.message);
+            })
+            .finally(() => {
+                console.log("DEBUG: Fix orphaned images operation completed");
+                fixBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        let currentKeywordIssues = [];
+
+        function checkRelatedKeywords() {
+            console.log("DEBUG: Starting related keywords check...");
+            const checkBtn = document.getElementById('keywords-check-btn');
+            const loading = document.getElementById('keywords-check-loading');
+            const resultsDiv = document.getElementById('keywords-results');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            resultsDiv.style.display = 'none';
+            
+            fetch('/check_related_keywords', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                console.log("DEBUG: Got response from keywords check:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Keywords check data:", data);
+                if (data.success) {
+                    currentKeywordIssues = data.issues;
+                    console.log("DEBUG: Found", data.total_issues, "entries with keyword issues");
+                    displayKeywordResults(data);
+                } else {
+                    console.error("DEBUG: Error in keywords check:", data.error);
+                    alert('Error checking related keywords: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in keywords check:', error);
+                alert('Failed to check related keywords');
+            })
+            .finally(() => {
+                checkBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        function displayKeywordResults(data) {
+            console.log("DEBUG: Displaying keyword results:", data);
+            const resultsDiv = document.getElementById('keywords-results');
+            const titleEl = document.getElementById('keywords-results-title');
+            const summaryEl = document.getElementById('keywords-results-summary');
+            const fixSection = document.getElementById('keywords-fix-section');
+            const issuesList = document.getElementById('keywords-issues-list');
+            
+            if (data.total_issues === 0) {
+                titleEl.textContent = '✅ All Related Keywords Are Valid';
+                summaryEl.innerHTML = '<div class="success">No keyword reference issues found!</div>';
+                fixSection.style.display = 'none';
+                issuesList.innerHTML = '';
+            } else {
+                titleEl.textContent = `⚠️ Found ${data.total_issues} Entries with Keyword Issues`;
+                
+                // Count different types of issues
+                let invalidIdCount = 0;
+                let invalidStringCount = 0;
+                let mismatchCount = 0;
+                data.issues.forEach(issue => {
+                    if (issue.invalid_ids && issue.invalid_ids.length > 0) invalidIdCount++;
+                    if (issue.invalid_strings && issue.invalid_strings.length > 0) invalidStringCount++;
+                    if (!issue.ids_match || !issue.strings_match) mismatchCount++;
+                });
+                
+                summaryEl.innerHTML = `
+                    <div class="warning">
+                        <strong>${data.total_issues}</strong> entries have keyword reference issues<br>
+                        <strong>${invalidIdCount}</strong> have invalid keyword IDs<br>
+                        <strong>${invalidStringCount}</strong> have invalid keyword strings<br>
+                        <strong>${mismatchCount}</strong> have mismatched keyword arrays<br>
+                        <small>Total valid entries in database: ${data.total_valid_entries}</small>
+                    </div>
+                `;
+                fixSection.style.display = 'block';
+                
+                // Display issues
+                let issuesHtml = '<div class="keyword-issues-list">';
+                data.issues.forEach(issue => {
+                    let issueTypes = [];
+                    if (issue.invalid_ids && issue.invalid_ids.length > 0) issueTypes.push('Invalid IDs');
+                    if (issue.invalid_strings && issue.invalid_strings.length > 0) issueTypes.push('Invalid Strings');
+                    if (!issue.ids_match) issueTypes.push('ID Mismatch');
+                    if (!issue.strings_match) issueTypes.push('String Mismatch');
+                    
+                    let invalidIdsHtml = '';
+                    if (issue.invalid_ids && issue.invalid_ids.length > 0) {
+                        invalidIdsHtml = `<br><strong>Invalid IDs:</strong> ${issue.invalid_ids.map(id => 
+                            `<span class="invalid-id">${id}</span>`
+                        ).join(', ')}`;
+                    }
+                    
+                    let invalidStringsHtml = '';
+                    if (issue.invalid_strings && issue.invalid_strings.length > 0) {
+                        invalidStringsHtml = `<br><strong>Invalid Strings:</strong> ${issue.invalid_strings.map(str => 
+                            `<span class="invalid-id">"${str}"</span>`
+                        ).join(', ')}`;
+                    }
+                    
+                    let arraysComparisonHtml = '';
+                    if (!issue.ids_match || !issue.strings_match) {
+                        arraysComparisonHtml = `
+                            <div class="strings-comparison">
+                                <div class="current-strings">
+                                    <strong>Current IDs:</strong> [${issue.current_ids ? issue.current_ids.map(id => `"${id}"`).join(', ') : ''}]<br>
+                                    <strong>Current Strings:</strong> [${issue.current_strings ? issue.current_strings.map(s => `"${s}"`).join(', ') : ''}]
+                                </div>
+                                <div class="correct-strings">
+                                    <strong>Corrected IDs:</strong> [${issue.corrected_ids ? issue.corrected_ids.map(id => `"${id}"`).join(', ') : ''}]<br>
+                                    <strong>Corrected Strings:</strong> [${issue.corrected_strings ? issue.corrected_strings.map(s => `"${s}"`).join(', ') : ''}]
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    issuesHtml += `
+                        <div class="keyword-issue-entry">
+                            <div class="entry-header">
+                                <strong>${issue.table === 'text_entries' ? 'Text Entry' : 'Image Entry'}:</strong> ${issue.value || 'N/A'}<br>
+                                <strong>ID:</strong> ${issue.entry_id}<br>
+                                <strong>Issues:</strong> <span class="issue-types">${issueTypes.join(', ')}</span>
+                            </div>
+                            <div class="entry-details">
+                                <strong>Valid IDs:</strong> ${issue.valid_ids && issue.valid_ids.length > 0 ? issue.valid_ids.join(', ') : '<em>None</em>'}
+                                <strong>Valid Strings:</strong> ${issue.valid_strings && issue.valid_strings.length > 0 ? issue.valid_strings.map(s => `"${s}"`).join(', ') : '<em>None</em>'}
+                                ${invalidIdsHtml}
+                                ${invalidStringsHtml}
+                                ${arraysComparisonHtml}
+                            </div>
+                        </div>
+                    `;
+                });
+                issuesHtml += '</div>';
+                issuesList.innerHTML = issuesHtml;
+            }
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        function fixRelatedKeywords() {
+            console.log("DEBUG: Starting fix related keywords...");
+            if (currentKeywordIssues.length === 0) {
+                alert('No keyword issues to fix');
+                return;
+            }
+            
+            if (!confirm(`Are you sure you want to fix ${currentKeywordIssues.length} entries? This will add missing IDs for valid strings, add missing strings for valid IDs, and remove invalid references.`)) {
+                console.log("DEBUG: User cancelled fix operation");
+                return;
+            }
+            
+            const fixBtn = document.getElementById('keywords-fix-btn');
+            const loading = document.getElementById('keywords-fix-loading');
+            const successDiv = document.getElementById('keywords-success');
+            
+            fixBtn.disabled = true;
+            loading.style.display = 'block';
+            successDiv.style.display = 'none';
+            
+            fetch('/fix_related_keywords', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    issues: currentKeywordIssues
+                })
+            })
+            .then(response => {
+                console.log("DEBUG: Fix keywords response status:", response.status);
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Fix keywords response data:", data);
+                if (data.success) {
+                    successDiv.innerHTML = `
+                        <div class="success">
+                            ✅ ${data.message}
+                            <br>Database has been updated with corrected keyword references.
+                        </div>
+                    `;
+                    successDiv.style.display = 'block';
+                    
+                    document.getElementById('keywords-fix-section').style.display = 'none';
+                    currentKeywordIssues = [];
+                    
+                    setTimeout(() => {
+                        document.getElementById('keywords-results').style.display = 'none';
+                        loadDatabaseStats(); // Refresh stats
+                    }, 3000);
+                } else {
+                    console.error("DEBUG: Error in fix response:", data.error);
+                    alert('Error fixing keyword references: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('DEBUG: Fetch error in fix keywords:', error);
+                alert('Failed to fix keyword references');
+            })
+            .finally(() => {
+                fixBtn.disabled = false;
+                loading.style.display = 'none';
+            });
+        }
+
+        // Duplicate Images Management by Vector Similarity
+        let currentImagePair = null;
+        
+        function checkDuplicateImagesByVector() {
+            console.log("DEBUG: Starting duplicate images check by vector similarity...");
+            const checkBtn = document.getElementById('dup-images-check-btn');
+            const loading = document.getElementById('dup-images-check-loading');
+            const processingDiv = document.getElementById('dup-images-processing');
+            const finishedDiv = document.getElementById('dup-images-finished');
+            const resetSection = document.getElementById('dup-images-reset-section');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            processingDiv.style.display = 'none';
+            finishedDiv.style.display = 'none';
+            resetSection.style.display = 'none';
+            
+            fetch('/check_duplicate_images_by_vector', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("DEBUG: Received duplicate images data:", data);
+                if (data.success) {
+                    if (data.total_pairs > 0) {
+                        // We have pairs to process
+                        const resultsTitle = document.getElementById('dup-images-results-title');
+                        const resultsSummary = document.getElementById('dup-images-results-summary');
+                        
+                        resultsTitle.textContent = `🔍 Found ${data.total_pairs} Potential Duplicate Images`;
+                        resultsSummary.innerHTML = `
+                            <p>Review each pair of images and decide whether to merge them or mark them as not duplicates.</p>
+                        `;
+                        
+                        // Start processing pairs
+                        getNextImagePair();
+                    } else {
+                        // No duplicates found
+                        finishedDiv.innerHTML = `<p>✓ No duplicate images found with the current similarity threshold!</p>`;
+                        finishedDiv.style.display = 'block';
+                        resetSection.style.display = 'block';
+                    }
+                } else {
+                    alert('Error checking for duplicate images: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to check for duplicate images');
+            })
+            .finally(() => {
+                loading.style.display = 'none';
+                checkBtn.disabled = false;
+            });
+        }
+        
+        function getNextImagePair() {
+            const processingDiv = document.getElementById('dup-images-processing');
+            const finishedDiv = document.getElementById('dup-images-finished');
+            const resetSection = document.getElementById('dup-images-reset-section');
+            
+            fetch('/get_next_duplicate_image_pair')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.finished) {
+                        // We've processed all pairs
+                        processingDiv.style.display = 'none';
+                        finishedDiv.innerHTML = `
+                            <p>✓ Finished processing all duplicate image pairs!</p>
+                            <p>Total pairs: ${data.total}<br>
+                               Processed: ${data.processed}<br>
+                               Marked as not duplicates: ${data.not_duplicates}</p>
+                        `;
+                        finishedDiv.style.display = 'block';
+                        resetSection.style.display = 'block';
+                    } else {
+                        // Show the next pair
+                        currentImagePair = data.pair;
+                        displayImagePair(data.pair, data);
+                        processingDiv.style.display = 'block';
+                    }
+                } else {
+                    alert('Error getting next image pair: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to get next image pair');
+            });
+        }
+        
+        function displayImagePair(pair, stats) {
+            console.log("DEBUG: Displaying image pair:", pair);
+            
+            // Set IDs
+            document.getElementById('left-image-id').textContent = pair.id1;
+            document.getElementById('right-image-id').textContent = pair.id2;
+            
+            // Set titles
+            document.getElementById('left-image-title').textContent = pair.image1.value || 'Untitled';
+            document.getElementById('right-image-title').textContent = pair.image2.value || 'Untitled';
+            
+            // Set artists - use the pair's artist_name if available
+            const artistName = pair.artist_name || pair.image1.artist_name || 'Unknown';
+            document.getElementById('left-image-artist').textContent = artistName;
+            document.getElementById('right-image-artist').textContent = artistName;
+            
+            // Set similarity score
+            document.getElementById('similarity-score').textContent = `${(pair.similarity * 100).toFixed(2)}%`;
+            
+            // Set image previews
+            const leftPreview = document.getElementById('left-image-preview');
+            const rightPreview = document.getElementById('right-image-preview');
+            
+            leftPreview.src = pair.image1.best_image_url || '';
+            rightPreview.src = pair.image2.best_image_url || '';
+            
+            // Reset radio buttons - prefer the one with more data
+            const preferLeft = !!(pair.image1.value || pair.image1.descriptions);
+            const preferRight = !!(pair.image2.value || pair.image2.descriptions);
+            
+            if (preferLeft && !preferRight) {
+                document.getElementById('keep-left-image').checked = true;
+            } else if (preferRight && !preferLeft) {
+                document.getElementById('keep-right-image').checked = true;
+            } else {
+                // If both have data or neither has data, default to left
+                document.getElementById('keep-left-image').checked = true;
+            }
+            
+            // Update progress indicator
+            const progress = document.getElementById('dup-images-progress');
+            progress.textContent = `Pair ${stats.processed + 1} of ${stats.total} (${stats.remaining} remaining)`;
+        }
+
+                // Duplicate Artists Management
+        let currentArtistPair = null;
+        
+        function checkDuplicateArtists() {
+            console.log("DEBUG: Starting duplicate artists check...");
+            const checkBtn = document.getElementById('dup-artists-check-btn');
+            const loading = document.getElementById('dup-artists-check-loading');
+            const processingDiv = document.getElementById('dup-artists-processing');
+            const finishedDiv = document.getElementById('dup-artists-finished');
+            const resetSection = document.getElementById('dup-artists-reset-section');
+            
+            checkBtn.disabled = true;
+            loading.style.display = 'block';
+            processingDiv.style.display = 'none';
+            finishedDiv.style.display = 'none';
+            resetSection.style.display = 'none';
+            
+            fetch('/check_duplicate_artists', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({})
+            })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log("DEBUG: Received duplicate artists data:", data);
+                if (data.success) {
+                    if (data.total_pairs > 0) {
+                        // We have pairs to process
+                        const resultsTitle = document.getElementById('dup-artists-results-title');
+                        const resultsSummary = document.getElementById('dup-artists-results-summary');
+                        
+                        resultsTitle.textContent = `🔍 Found ${data.total_pairs} Potential Duplicate Artists`;
+                        resultsSummary.innerHTML = `
+                            <p>Review each pair of artists and decide whether to merge them or mark them as not duplicates.</p>
+                        `;
+                        
+                        // Start processing pairs
+                        getNextArtistPair();
+                    } else {
+                        // No duplicates found
+                        finishedDiv.innerHTML = `<p>✓ No duplicate artists found in the database!</p>`;
+                        finishedDiv.style.display = 'block';
+                        resetSection.style.display = 'block';
+                    }
+                } else {
+                    alert('Error checking for duplicate artists: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to check for duplicate artists');
+            })
+            .finally(() => {
+                loading.style.display = 'none';
+                checkBtn.disabled = false;
+            });
+        }
+        
+        function getNextArtistPair() {
+            const processingDiv = document.getElementById('dup-artists-processing');
+            const finishedDiv = document.getElementById('dup-artists-finished');
+            const resetSection = document.getElementById('dup-artists-reset-section');
+            
+            fetch('/get_next_duplicate_artist_pair')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.finished) {
+                        // We've processed all pairs
+                        processingDiv.style.display = 'none';
+                        finishedDiv.innerHTML = `
+                            <p>✓ Finished processing all duplicate artist pairs!</p>
+                            <p>Total pairs: ${data.total}<br>
+                               Processed: ${data.processed}<br>
+                               Marked as not duplicates: ${data.not_duplicates}</p>
+                        `;
+                        finishedDiv.style.display = 'block';
+                        resetSection.style.display = 'block';
+                    } else {
+                        // Show the next pair
+                        currentArtistPair = data.pair;
+                        displayArtistPair(data.pair, data);
+                        processingDiv.style.display = 'block';
+                    }
+                } else {
+                    alert('Error getting next artist pair: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to get next artist pair');
+            });
+        }
+        
+        function displayArtistPair(pair, stats) {
+            console.log("DEBUG: Displaying artist pair:", pair);
+            
+            // Set IDs
+            document.getElementById('left-id').textContent = pair.id1;
+            document.getElementById('right-id').textContent = pair.id2;
+            
+            // Set names
+            document.getElementById('left-name').textContent = pair.artist1.value;
+            document.getElementById('right-name').textContent = pair.artist2.value;
+            
+            // Set image counts
+            document.getElementById('left-images-count').textContent = pair.artist1.image_count || 0;
+            document.getElementById('right-images-count').textContent = pair.artist2.image_count || 0;
+            
+            // Set references
+            document.getElementById('left-references').textContent = pair.artist1.artwork_references || 0;
+            document.getElementById('right-references').textContent = pair.artist2.artwork_references || 0;
+            
+            // Set keywords
+            const leftKeywords = pair.artist1.relatedKeywordStrings || [];
+            const rightKeywords = pair.artist2.relatedKeywordStrings || [];
+            
+            document.getElementById('left-keywords').textContent = 
+                Array.isArray(leftKeywords) ? leftKeywords.join(', ') : 'None';
+            document.getElementById('right-keywords').textContent = 
+                Array.isArray(rightKeywords) ? rightKeywords.join(', ') : 'None';
+            
+            // Reset radio buttons - prefer the one with more data
+            const leftValue = (pair.artist1.image_count || 0) + (pair.artist1.artwork_references || 0);
+            const rightValue = (pair.artist2.image_count || 0) + (pair.artist2.artwork_references || 0);
+            
+            if (leftValue >= rightValue) {
+                document.getElementById('keep-left').checked = true;
+            } else {
+                document.getElementById('keep-right').checked = true;
+            }
+            
+            // Update progress indicator
+            const progress = document.getElementById('dup-artists-progress');
+            progress.textContent = `Pair ${stats.processed + 1} of ${stats.total} (${stats.remaining} remaining)`;
+        }
+        
+        function processDuplicateArtist(action) {
+            if (!currentArtistPair) return;
+            
+            const mergeBtn = document.getElementById('dup-artists-merge-btn');
+            const skipBtn = document.getElementById('dup-artists-skip-btn');
+            const loading = document.getElementById('dup-artists-process-loading');
+            
+            mergeBtn.disabled = true;
+            skipBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            // Determine which ID to keep if merging
+            let keepId = null;
+            if (action === 'merge') {
+                if (document.getElementById('keep-left').checked) {
+                    keepId = currentArtistPair.id1;
+                } else {
+                    keepId = currentArtistPair.id2;
+                }
+            }
+            
+            fetch('/process_duplicate_artist', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id1: currentArtistPair.id1,
+                    id2: currentArtistPair.id2,
+                    action: action,
+                    keep_id: keepId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(`DEBUG: Successfully ${action === 'merge' ? 'merged' : 'marked as not duplicate'} artists`);
+                    // Get next pair
+                    getNextArtistPair();
+                } else {
+                    alert('Error processing artist pair: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to process artist pair');
+            })
+            .finally(() => {
+                loading.style.display = 'none';
+                mergeBtn.disabled = false;
+                skipBtn.disabled = false;
+            });
+        }
+        
+        function resetDuplicateArtists(includeNotDuplicates) {
+            fetch('/reset_duplicate_artists', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    reset_not_duplicates: includeNotDuplicates
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Start a new check
+                    checkDuplicateArtists();
+                } else {
+                    alert('Error resetting: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to reset duplicate artists');
+            });
+        }
+            
+        
+        function processDuplicateImage(action) {
+            if (!currentImagePair) return;
+            
+            const mergeBtn = document.getElementById('dup-images-merge-btn');
+            const skipBtn = document.getElementById('dup-images-skip-btn');
+            const loading = document.getElementById('dup-images-process-loading');
+            
+            mergeBtn.disabled = true;
+            skipBtn.disabled = true;
+            loading.style.display = 'block';
+            
+            // Determine which ID to keep if merging
+            let keepId = null;
+            if (action === 'merge') {
+                if (document.getElementById('keep-left-image').checked) {
+                    keepId = currentImagePair.id1;
+                } else {
+                    keepId = currentImagePair.id2;
+                }
+            }
+            
+            fetch('/process_duplicate_image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id1: currentImagePair.id1,
+                    id2: currentImagePair.id2,
+                    action: action,
+                    keep_id: keepId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(`DEBUG: Successfully ${action === 'merge' ? 'merged' : 'marked as not duplicate'} images`);
+                    // Get next pair
+                    getNextImagePair();
+                } else {
+                    alert('Error processing image pair: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to process image pair');
+            })
+            .finally(() => {
+                loading.style.display = 'none';
+                mergeBtn.disabled = false;
+                skipBtn.disabled = false;
+            });
+        }
+        
+        function resetDuplicateImages(includeNotDuplicates) {
+            fetch('/reset_duplicate_images', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    reset_not_duplicates: includeNotDuplicates
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Start a new check
+                    checkDuplicateImagesByVector();
+                } else {
+                    alert('Error resetting: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to reset duplicate images');
+            });
+        }
+    </script>
+
+
+</body>
+</html>

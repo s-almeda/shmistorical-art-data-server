@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staging Review - WikiArt Data</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/staging_review.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-clipboard-check"></i> Staging Review</h1>
+            <p>Review scraped WikiArt data before committing to database</p>
+        </div>
+
+        <div id="loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i> Loading staging data...
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="summary-container" style="display: none;">
+            <div class="summary-stats">
+                <div class="stat-card">
+                    <div id="total-artists" class="stat-value">0</div>
+                    <div class="stat-label">Total Artists</div>
+                </div>
+                <div class="stat-card">
+                    <div id="new-artists" class="stat-value">0</div>
+                    <div class="stat-label">New Artists</div>
+                </div>
+                <div class="stat-card">
+                    <div id="total-artworks" class="stat-value">0</div>
+                    <div class="stat-label">Total Artworks</div>
+                </div>
+                <div class="stat-card">
+                    <div id="new-artworks" class="stat-value">0</div>
+                    <div class="stat-label">New Artworks</div>
+                </div>
+            </div>
+            
+            <!-- Final submission controls -->
+            <div class="final-controls" style="margin-top: 20px; padding: 15px; border: 2px solid #007bff; border-radius: 8px; background: #f8f9fa;">
+                <h3><i class="fas fa-database"></i> Final Database Submission</h3>
+                <p>After reviewing and editing individual artist files:</p>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button id="generateFinalJson" class="btn btn-primary" style="font-size: 1.1em; padding: 10px 20px;">
+                        <i class="fas fa-cogs"></i> Generate Final SQL JSON
+                    </button>
+                    <button id="downloadFinalJson" class="btn btn-success" style="display: none; font-size: 1.1em; padding: 10px 20px;">
+                        <i class="fas fa-download"></i> Download Final JSON
+                    </button>
+                    <button class="btn btn-warning" disabled style="font-size: 1.1em; padding: 10px 20px; text-decoration: none; opacity: 0.6; cursor: not-allowed;" title="Disabled — only an admin can commit these changes">
+                        <i class="fas fa-database"></i> Commit to Database
+                    </button>
+                    <div id="finalJsonStatus" style="margin-left: 10px; font-weight: bold;"></div>
+                </div>
+                <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                    This feature has been disabled - only an admin can commit these changes to the database.
+                </div>
+            </div>
+        </div>
+
+    <div id="artist-list" class="artist-list" style="display: none;"></div>
+    <!-- Floating Save Changes Button -->
+    <button disabled id="floatingSaveBtn" aria-disabled="true" tabindex="-1" class="btn btn-primary" style="display:none;position:fixed;top:50%;right:32px;z-index:1000;font-size:1.1em;padding:14px 28px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);background:#007bff;color:#fff;transition:background 0.2s, transform 0.1s;opacity:0.6;cursor:not-allowed;pointer-events:none;" title="Disabled — only an admin can save">💾 Save Changes</button>
+    <div id="artistModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-content">
+                <!-- Modal content will be populated here -->
+            </div>
+        </div>
+    </div>
+
+
+<script>
+
+let artistFiles = [];
+let allArtistData = [];
+let currentArtistIdx = 0;
+let artistData = null;
+
+// Holds the summary stats for all artists
+let allArtistsStats = {
+    totalArtists: 0,
+    newArtists: 0,
+    totalArtworks: 0,
+    newArtworks: 0
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadArtistFiles();
+    document.querySelector('.close').onclick = function() {
+        document.getElementById('artistModal').style.display = 'none';
+    };
+    
+    // Add event listeners for final submission controls
+    document.getElementById('generateFinalJson').onclick = generateFinalSqlJson;
+    document.getElementById('downloadFinalJson').onclick = downloadFinalJson;
+});
+
+async function loadArtistFiles() {
+    try {
+        const response = await fetch('/staging_review/list_artist_files');
+        const result = await response.json();
+        if (result.success && result.files.length > 0) {
+            artistFiles = result.files;
+            // Preload all artist data for stats
+            allArtistData = await Promise.all(
+                artistFiles.map(f =>
+                    fetch(`/staging_review/load_artist_data/${f.filename}`)
+                        .then(r => r.json())
+                        .then(res => res.success ? res.data : null)
+                )
+            );
+            computeAllArtistsStats();
+            renderArtistNav();
+            loadArtistData(0);
+        } else {
+            showError('No artist files found.');
+        }
+    } catch (error) {
+        showError('Failed to load artist file list: ' + error.message);
+    }
+}
+
+
+function updateSummaryStats() {
+    document.getElementById('total-artists').textContent = allArtistsStats.totalArtists;
+    document.getElementById('new-artists').textContent = allArtistsStats.newArtists;
+    document.getElementById('total-artworks').textContent = allArtistsStats.totalArtworks;
+    document.getElementById('new-artworks').textContent = allArtistsStats.newArtworks;
+    document.getElementById('summary-container').style.display = 'block';
+}
+
+function computeAllArtistsStats() {
+    // Only count non-null loaded artist data
+    const validArtists = allArtistData.filter(d => d && d.artist);
+    allArtistsStats.totalArtists = validArtists.length;
+    allArtistsStats.newArtists = validArtists.filter(d => !d.artist.is_existing).length;
+    allArtistsStats.totalArtworks = validArtists.reduce((sum, d) => sum + (d.artist.artworks ? d.artist.artworks.length : 0), 0);
+    allArtistsStats.newArtworks = validArtists.reduce((sum, d) =>
+        sum + (d.artist.artworks ? d.artist.artworks.filter(aw => !aw.is_existing).length : 0), 0
+    );
+    updateSummaryStats();
+}
+
+// Call updateSummaryStats() after any change that affects the stats, e.g. after removing or approving/rejecting an artist file.
+// For example, after removing an artist file:
+function renderArtistNav() {
+    // Always re-render the nav bar for correct state
+    let navHtml = '<div id="artist-nav" style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">';
+    navHtml += `<button id="prevBtn" type="button" ${currentArtistIdx===0?'disabled':''}>&lt; Prev</button>`;
+    navHtml += `<span style="font-weight:bold;">Artist: </span>`;
+    navHtml += `<select id="artistSelect">`;
+    artistFiles.forEach((f, i) => {
+        let artistName = (allArtistData[i] && allArtistData[i].artist && allArtistData[i].artist.name) ? allArtistData[i].artist.name : f.name;
+        const displayName = artistName;
+        const optionStyle = '';
+        navHtml += `<option value="${i}" ${i === currentArtistIdx ? 'selected' : ''} ${optionStyle}>${displayName}</option>`;
+    });
+    navHtml += '</select>';
+    navHtml += `<button id="nextBtn" type="button" ${currentArtistIdx===artistFiles.length-1?'disabled':''}>Next &gt;</button>`;
+    navHtml += '</div>';
+
+    // Replace or insert the nav bar
+    const existingNav = document.getElementById('artist-nav');
+    if (existingNav) {
+        existingNav.outerHTML = navHtml;
+    } else {
+        document.getElementById('summary-container').insertAdjacentHTML('beforebegin', navHtml);
+    }
+
+    // Set up event handlers after DOM update
+    setTimeout(() => {
+        document.getElementById('prevBtn').onclick = prevArtist;
+        document.getElementById('nextBtn').onclick = nextArtist;
+        document.getElementById('artistSelect').onchange = function() { gotoArtist(this.value); };
+    }, 0);
+}
+
+function prevArtist() {
+    if (currentArtistIdx > 0) {
+        loadArtistData(currentArtistIdx - 1);
+    }
+}
+function nextArtist() {
+    if (currentArtistIdx < artistFiles.length - 1) {
+        loadArtistData(currentArtistIdx + 1);
+    }
+}
+function gotoArtist(idx) {
+    idx = Number(idx);
+    if (idx !== currentArtistIdx && idx >= 0 && idx < artistFiles.length) {
+        loadArtistData(idx);
+    } else {
+        // Even if same, update dropdown selection to reflect current
+        renderArtistNav();
+    }
+}
+
+async function loadArtistData(idx) {
+    currentArtistIdx = idx;
+    document.getElementById('loading').style.display = '';
+    document.getElementById('artist-list').style.display = 'none';
+    document.getElementById('error').style.display = 'none';
+    try {
+        const file = artistFiles[idx];
+        const response = await fetch(`/staging_review/load_artist_data/${file.filename}`);
+        const result = await response.json();
+        if (result.success) {
+            artistData = result.data;
+            renderArtistNav(); // Always update nav to reflect current selection
+            displayArtistData();
+        } else {
+            showError(result.error);
+        }
+    } catch (error) {
+        showError('Failed to load artist data: ' + error.message);
+    }
+}
+
+function displayArtistData() {
+    document.getElementById('loading').style.display = 'none';
+    if (!artistData) {
+        showError('No artist data available');
+        return;
+    }
+    updateSummaryStats();
+    displayArtistList();
+}
+
+function displayArtistList() {
+    const artistList = document.getElementById('artist-list');
+    artistList.innerHTML = '';
+    if (!artistData.artist) {
+        artistList.innerHTML = '<p class="loading">No artist found in this file</p>';
+        artistList.style.display = 'block';
+        return;
+    }
+    // Use the artist data as-is since artworks are now inside artist.artworks
+    const artistForm = createArtistForm(artistData.artist, 0);
+    artistList.appendChild(artistForm);
+    artistList.style.display = 'block';
+}
+
+function renderKeywordCheckboxes(keywords, keywordIds, allKeywords, prefix, checkedSet) {
+    // Wider and more spacious for artist keywords
+    const isArtist = prefix === 'artist';
+    let html = `<div class="checkbox-group" style="display: flex; flex-direction: column; gap: ${isArtist ? '8px' : '2px'};${isArtist ? 'max-width: 520px; min-width: 340px; width: 100%;' : ''}">`;
+    // Each row: more space for artist
+    allKeywords.forEach((kw, i) => {
+        const checked = checkedSet.has(kw) ? 'checked' : '';
+        // Find the corresponding keyword ID
+        const kwIndex = keywords.indexOf(kw);
+        const kwId = kwIndex >= 0 && keywordIds.length > kwIndex ? keywordIds[kwIndex] : '';
+        const dataEntryId = kwId ? `data-entry-id="${kwId}"` : '';
+        
+        // Add "copy to all" and "assign" buttons for all keyword lists
+        const copyButton = `<button type="button" onclick="window.copyKeywordToAllArtworks('${kw}', '${kwId}', this)" style="font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;">Copy to All</button>`;
+        const assignButton = `<button type="button" onclick="window.openAssignKeywordModal('${kw}', '${kwId}', this)" style="font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #28a745; color: white; border: none; border-radius: 3px; cursor: pointer;">Assign</button>`;
+        // Use the keyword value as the checkbox name for backend processing
+        html += `<div style='display:flex;align-items:center;gap:${isArtist ? '12px' : '6px'};padding:${isArtist ? '6px 0' : '0'};${isArtist ? 'min-width:320px;' : ''}'><input type="checkbox" id="${prefix}_kw_${i}" name="${prefix}_kw_${i}" value="${kw}" ${dataEntryId} ${checked}><label for="${prefix}_kw_${i}" style="flex:1 1 auto;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${kw}</label>${copyButton}${assignButton}</div>`;
+// Modal logic for assigning a keyword to selected artworks
+window.openAssignKeywordModal = function(keyword, keywordId, buttonElement) {
+    // Find the form and artist data
+    const form = buttonElement.closest('form');
+    if (!form) return;
+    // Find the artist data from the global artistData
+    const artist = artistData && artistData.artist ? artistData.artist : null;
+    if (!artist || !Array.isArray(artist.artworks)) return;
+    // Modal elements
+    const modal = document.getElementById('artistModal');
+    const modalContent = document.getElementById('modal-content');
+    // Build modal HTML
+    let html = `<div style="font-size:1.2em;font-weight:bold;margin-bottom:10px;">Assign keyword: <span style='color:#007bff;'>${keyword}</span></div>`;
+    html += `<div style='display:flex;justify-content:flex-end;gap:10px;margin-bottom:6px;'>`;
+    html += `<button type='button' id='assignModalSelectAllBtn' style='font-size:0.95em;padding:4px 14px;border-radius:5px;background:#e0e0e0;color:#333;border:none;cursor:pointer;'>Select All</button>`;
+    html += `<button type='button' id='assignModalDeselectAllBtn' style='font-size:0.95em;padding:4px 14px;border-radius:5px;background:#e0e0e0;color:#333;border:none;cursor:pointer;'>Deselect All</button>`;
+    html += `</div>`;
+    html += `<div id='assignModalGrid' style="max-height:550px;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px;margin-bottom:16px;">`;
+    // For each artwork, show image and selection state
+    artist.artworks.forEach((aw, idx) => {
+        const awKeywords = [];
+        try {
+            if (aw.relatedKeywordStrings) awKeywords.push(...(Array.isArray(aw.relatedKeywordStrings) ? aw.relatedKeywordStrings : JSON.parse(aw.relatedKeywordStrings)));
+        } catch(e) {}
+        const isSelected = awKeywords.includes(keyword);
+        const imageUrl = aw.image_urls && (aw.image_urls.medium || aw.image_urls.large || aw.image_urls.small) ? (aw.image_urls.medium || aw.image_urls.large || aw.image_urls.small) : '';
+        html += `<div class='assign-artwork-thumb' data-awidx='${idx}' data-selected='${isSelected ? '1' : '0'}' style='border:2px solid ${isSelected ? '#007bff' : '#ccc'};border-radius:6px;padding:6px;text-align:center;cursor:pointer;transition:border 0.2s;background:#fafbfc;'>`;
+        html += imageUrl ? `<img src='${imageUrl}' style='width:80px;height:80px;object-fit:cover;border-radius:4px;display:block;margin:0 auto 6px auto;'>` : `<div style='width:80px;height:80px;background:#eee;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#aaa;'>No Image</div>`;
+        html += `<div style='font-size:0.82em;line-height:1.2;max-width:100%;word-break:break-word;white-space:normal;margin:0 auto 2px auto;'>${aw.value || aw.title || 'Untitled'}</div>`;
+        html += `<div style='margin-top:4px;'><i class=\"fas fa-check-circle\" style=\"color:${isSelected ? '#007bff' : '#ccc'};font-size:1.2em;\"></i></div>`;
+        html += `</div>`;
+    });
+    html += `</div>`;
+    html += `<div style='display:flex;justify-content:space-between;align-items:center;'>`;
+    html += `<button id='assignModalDoneBtn' class='btn btn-primary' style='font-size:1.1em;padding:8px 24px;border-radius:6px;background:#007bff;color:#fff;'>Done</button>`;
+    html += `<button id='assignModalCancelBtn' class='btn btn-secondary' style='font-size:1.1em;padding:8px 24px;border-radius:6px;background:#aaa;color:#fff;'>Cancel</button>`;
+    html += `</div>`;
+    modalContent.innerHTML = html;
+    modal.style.display = 'block';
+    // Selection logic
+    Array.from(modalContent.querySelectorAll('.assign-artwork-thumb')).forEach(div => {
+        div.onclick = function() {
+            const selected = div.getAttribute('data-selected') === '1';
+            div.setAttribute('data-selected', selected ? '0' : '1');
+            div.style.border = selected ? '2px solid #ccc' : '2px solid #007bff';
+            div.querySelector('i').style.color = selected ? '#ccc' : '#007bff';
+        };
+    });
+    // Select All / Deselect All logic
+    const selectAllBtn = document.getElementById('assignModalSelectAllBtn');
+    const deselectAllBtn = document.getElementById('assignModalDeselectAllBtn');
+    selectAllBtn.onclick = function() {
+        Array.from(modalContent.querySelectorAll('.assign-artwork-thumb')).forEach(div => {
+            div.setAttribute('data-selected', '1');
+            div.style.border = '2px solid #007bff';
+            div.querySelector('i').style.color = '#007bff';
+        });
+    };
+    deselectAllBtn.onclick = function() {
+        Array.from(modalContent.querySelectorAll('.assign-artwork-thumb')).forEach(div => {
+            div.setAttribute('data-selected', '0');
+            div.style.border = '2px solid #ccc';
+            div.querySelector('i').style.color = '#ccc';
+        });
+    };
+    // Cancel button
+    document.getElementById('assignModalCancelBtn').onclick = function() {
+        modal.style.display = 'none';
+    };
+    // Done button
+    document.getElementById('assignModalDoneBtn').onclick = function() {
+        // For each artwork, update the corresponding checkbox in the form
+        Array.from(modalContent.querySelectorAll('.assign-artwork-thumb')).forEach(div => {
+            const awidx = parseInt(div.getAttribute('data-awidx'));
+            const shouldHave = div.getAttribute('data-selected') === '1';
+            // Find the artwork's keyword checkbox group in the form
+            const group = form.querySelector(`.artwork-card:nth-of-type(${awidx+1}) .checkbox-group`);
+            if (group) {
+                let checkbox = Array.from(group.querySelectorAll('input[type=checkbox]')).find(cb => cb.value === keyword);
+                if (shouldHave && !checkbox) {
+                    // Add the keyword checkbox if not present
+                    const i = group.querySelectorAll('input[type=checkbox]').length;
+                    const divEl = document.createElement('div');
+                    divEl.style.display = 'flex';
+                    divEl.style.alignItems = 'center';
+                    divEl.style.gap = '6px';
+                    const newCheckbox = document.createElement('input');
+                    newCheckbox.type = 'checkbox';
+                    newCheckbox.id = `artwork_${awidx}_kw_${i}`;
+                    newCheckbox.name = `artwork_${awidx}_kw_${i}`;
+                    newCheckbox.value = keyword;
+                    newCheckbox.setAttribute('data-entry-id', keywordId);
+                    newCheckbox.checked = true;
+                    const label = document.createElement('label');
+                    label.setAttribute('for', newCheckbox.id);
+                    label.textContent = keyword;
+                    label.style.fontSize = '0.9em';
+                    label.style.color = '#666';
+                    divEl.appendChild(newCheckbox);
+                    divEl.appendChild(label);
+                    group.appendChild(divEl);
+                } else if (shouldHave && checkbox) {
+                    checkbox.checked = true;
+                } else if (!shouldHave && checkbox) {
+                    checkbox.checked = false;
+                }
+            }
+        });
+        modal.style.display = 'none';
+    };
+    // X close (top right)
+    const closeBtn = modal.querySelector('.close');
+    if (closeBtn) closeBtn.onclick = function() { modal.style.display = 'none'; };
+};
+    });
+    html += '</div>';
+    return html;
+}
+
+function createArtistForm(artist, idx) {
+    const form = document.createElement('form');
+    form.className = 'artist-item';
+    form.dataset.artistSlug = artist.slug;
+
+    let html = `<div class="artist-header">
+        <div class="artist-name">
+            <input type="text" name="name" value="${artist.name || ''}" style="font-size:1.1em; font-weight:bold; width:70%;">
+            <div style="font-size:0.9em; color:#666; margin-top:4px;">
+                Entry ID: ${artist.existing_id || artist.generated_entry_id || '(will be generated)'}
+            </div>
+        </div>
+        <div class="artist-status">
+            <span class="status-badge ${artist.is_existing ? 'status-existing' : 'status-new'}">
+                ${artist.is_existing ? 'To Update (ID: ' + (artist.existing_id || '') + ')' : 'New!'}
+            </span>
+        </div>
+    </div>`;
+
+    // Helper function to safely parse keywords from various formats
+    function parseKeywords(item) {
+        let keywords = [];
+        let keywordIds = [];
+        
+        // Try the capitalized versions first (for artist)
+        if (item.RelatedKeywordStrings) {
+            try {
+                keywords = JSON.parse(item.RelatedKeywordStrings);
+            } catch (e) {
+                // If it's already an array, use it directly
+                if (Array.isArray(item.RelatedKeywordStrings)) {
+                    keywords = item.RelatedKeywordStrings;
+                } else {
+                    keywords = [];
+                }
+            }
+            
+            // Also try to parse keyword IDs
+            if (item.RelatedKeywordIds) {
+                try {
+                    keywordIds = JSON.parse(item.RelatedKeywordIds);
+                } catch (e) {
+                    if (Array.isArray(item.RelatedKeywordIds)) {
+                        keywordIds = item.RelatedKeywordIds;
+                    } else {
+                        keywordIds = [];
+                    }
+                }
+            }
+        }
+        // Try the lowercase versions (for artworks)
+        else if (item.relatedKeywordStrings) {
+            try {
+                keywords = JSON.parse(item.relatedKeywordStrings);
+            } catch (e) {
+                // If it's already an array, use it directly
+                if (Array.isArray(item.relatedKeywordStrings)) {
+                    keywords = item.relatedKeywordStrings;
+                } else {
+                    keywords = [];
+                }
+            }
+            
+            // Also try to parse keyword IDs
+            if (item.relatedKeywordIds) {
+                try {
+                    keywordIds = JSON.parse(item.relatedKeywordIds);
+                } catch (e) {
+                    if (Array.isArray(item.relatedKeywordIds)) {
+                        keywordIds = item.relatedKeywordIds;
+                    } else {
+                        keywordIds = [];
+                    }
+                }
+            }
+        }
+        
+        return { keywords, keywordIds };
+    }
+
+    let artistKeywordData = parseKeywords(artist);
+    let allKeywords = new Set(artistKeywordData.keywords);
+    (artist.artworks || []).forEach(aw => {
+        let awKeywordData = parseKeywords(aw);
+        awKeywordData.keywords.forEach(k => allKeywords.add(k));
+    });
+    allKeywords = Array.from(allKeywords);
+    function renderDescriptions(descObj, prefix, isNested = false) {
+        if (!descObj || typeof descObj !== 'object') return '';
+        let html = '';
+        
+        // Check if this is a top-level descriptions object (contains sources)
+        const isTopLevel = !isNested;
+        
+        // For field mappings, we need to use the base prefix (not the nested one)
+        const basePrefix = prefix.split('[')[0];
+        
+        for (const [key, value] of Object.entries(descObj)) {
+            if (typeof value === 'object' && value !== null && isTopLevel) {
+                // This is a source (like "artsy", "wikiart")
+                html += `<div class="description-source" style="margin-top: 10px; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <strong>Source:</strong>
+                        <input type="text" name="${basePrefix}_source_${key}" value="${key}" class="source-name-input" placeholder="Source name" style="font-weight: bold;">
+                    </div>
+                    <div class="description-container">
+                        ${renderDescriptions(value, `${prefix}[${key}]`, true)}
+                    </div>
+                </div>`;
+            } else {
+                // This is a field within a source
+                // Generate a unique field name mapping key that won't conflict with description paths
+                const fieldMappingKey = `${basePrefix}_field_${prefix.replace(/[\[\]]/g, '_')}_${key}`;
+                html += `<div class="description-field" style="margin-bottom: 4px;">
+                    <div class="field-name-value" style="display: flex; align-items: center; gap: 8px;">
+                        <input type="text" name="${fieldMappingKey}" value="${key}" class="field-name-input" placeholder="Field name" style="width: 120px; font-size: 0.9em;">
+                        <textarea name="${prefix}[${key}]" class="field-value-input" rows="1" placeholder="Field value" style="flex: 1; font-size: 0.9em;">${value || ''}</textarea>
+                    </div>
+                </div>`;
+            }
+        }
+        
+
+        
+        return html;
+    }
+    html += `<div class="artist-details">
+        <div class="detail-section">
+            <h4>Artist Info</h4>
+            <label>Slug: <input type="text" name="slug" value="${artist.slug || ''}" style="width:80%"></label><br>
+            <div style="margin-bottom:8px;">
+                <button type="button" class="btn btn-danger" disabled style="font-size:0.9em; padding:6px 12px; opacity:0.6; cursor:not-allowed;" title="Disabled — only admins can delete">
+                    <i class="fas fa-trash"></i> Delete Artist File
+                </button>
+                <span style="margin-left: 8px; font-size: 0.9em; color: #666;">Permanently remove this artist file from staging</span>
+            </div>
+            <div class="keywords-descriptions-container">
+                <div class="keywords-section">
+                    <label>Keywords:</label>
+                    ${renderKeywordCheckboxes(artistKeywordData.keywords, artistKeywordData.keywordIds, allKeywords, `artist`, new Set(artistKeywordData.keywords))}
+                    <div style="margin-top:4px;"><input type="text" name="add_artist_keyword" placeholder="Add keyword" style="width:80%"> <button type="button" onclick="addArtistKeyword(this.form, ${idx})">Add</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-section">
+            <h4>Database Info</h4>
+            <div id="dbinfo_${idx}">
+                ${artist.is_existing ?
+                    `<div>ID: <input type=\"text\" name=\"existing_id\" value=\"${artist.existing_id || ''}\" style=\"width:70%\"></div>` :
+                    `<div>Will be created as new artist<br>
+                        <label>Or assign to existing artist ID: <input type=\"text\" name=\"assign_existing_id\" placeholder=\"Paste existing artist ID\"></label>
+                    </div>`
+                }
+            </div>
+                            <div class="descriptions-section">
+                    <b>Descriptions:</b>
+                    <div class="description-container" id="artist_descriptions_${idx}">
+                        ${renderDescriptions(artist.descriptions || {}, 'artist_descriptions')}
+                    </div>
+                </div>
+        </div>
+    </div>`;
+
+    html += `<div class="detail-section" style="margin-top:15px;">
+        <h4>Artworks (${artist.artworks?.length || 0})</h4>
+        <div id="artworks_${idx}">
+    `;
+    (artist.artworks || []).forEach((aw, awidx) => {
+        const status = aw.is_existing ? 'To Update (ID: ' + (aw.existing_id || '') + ')' : 'New!';
+        const statusClass = aw.is_existing ? 'update-icon' : 'new-icon';
+        const imageUrl = aw.image_urls?.medium || aw.image_urls?.large || aw.image_urls?.small || '';
+        const imagePreview = imageUrl ? `<img src="${imageUrl}" alt="${aw.value || aw.title || ''}" style="width:140px;height:140px;object-fit:cover;border-radius:4px;margin-left:8px;vertical-align:middle;" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmOGY5ZmEiLz48L3N2Zz4='">` : '';
+        let awKeywordData = parseKeywords(aw);
+        let allArtworkKeywords = new Set([...awKeywordData.keywords, ...allKeywords]);
+        allArtworkKeywords = Array.from(allArtworkKeywords);
+        let artworkDescriptionsHtml = '';
+        if (aw.descriptions && typeof aw.descriptions === 'object') {
+            artworkDescriptionsHtml = `<b>Descriptions:</b>
+                <div class="description-container" id="artwork_descriptions_${idx}_${awidx}">
+                    ${renderDescriptions(aw.descriptions, `artwork_${awidx}_descriptions`)}
+                </div>`;
+        }
+        html += `<div class="artwork-card" style="margin-bottom:10px;">
+            <div class="artwork-info">
+                <div class="artwork-header">
+                    <span class="${statusClass}">${status}</span>
+                    <span style="font-size:0.9em;color:#888;">image_id: ${aw.image_id || ''}</span>
+                </div>
+                <div class="artwork-fields">
+                    <label>Title: <input type="text" name="artwork_title_${awidx}" value="${aw.value || aw.title || ''}" style="width:100%"></label>
+                    <label>Date: <input type="text" name="artwork_date_${awidx}" value="${aw.descriptions?.wikiart?.date ||aw.descriptions?.artsy?.date || aw.date || aw.year || ''}" style="width:100%"></label>
+                    <label>Image URL: <input type="text" name="artwork_image_${awidx}" value="${imageUrl}" style="width:100%"></label>
+                    <label>Remove: <input type="checkbox" name="remove_artwork_${awidx}"></label>
+                    <div class="keywords-descriptions-container">
+                        <div class="keywords-section">
+                            <label>Keywords:</label>
+                            ${renderKeywordCheckboxes(awKeywordData.keywords, awKeywordData.keywordIds, allArtworkKeywords, `artwork_${awidx}`, new Set(awKeywordData.keywords))}
+                            <div style="margin-top:4px;"><input type="text" name="add_artwork_keyword_${awidx}" placeholder="Add keyword" style="width:80%"> <button type="button" onclick="addArtworkKeyword(this.form, ${idx}, ${awidx})">Add</button></div>
+                        </div>
+                        <div class="descriptions-section">
+                            ${artworkDescriptionsHtml}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="artwork-image">
+                ${imagePreview}
+            </div>
+        </div>`;
+    });
+
+
+    html += `</div>
+    
+    <div class="artist-actions" style="margin-top: 20px; padding: 15px; border-top: 2px solid #ddd; background: #f8f9fa;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+            <button type="button" class="btn btn-primary" disabled style="font-size: 1.1em; padding: 10px 20px; opacity: 0.6; cursor: not-allowed;" title="Disabled — only an admin can save">
+                <i class="fas fa-save"></i> Save Changes
+            </button>
+            <button type="button" class="btn btn-danger" onclick="deleteArtistFile(event, ${idx})" style="font-size: 1.1em; padding: 10px 20px;">
+                <i class="fas fa-trash"></i> Delete Artist File
+            </button>
+            <div id="saveStatus_${idx}" style="margin-left: 10px; font-weight: bold;"></div>
+        </div>
+        <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
+            Save your edits to this artist's file, then use "Generate Final SQL JSON" above to create the database-ready output.
+        </div>
+    </div>`;
+
+    form.innerHTML = html;
+    
+    form.addEventListener('change', function(e) {
+        if (e.target.name === 'assign_existing_id') {
+            const val = e.target.value.trim();
+            const dbinfoDiv = document.getElementById(`dbinfo_${idx}`);
+            if (val) {
+                dbinfoDiv.innerHTML = `<div>ID: <input type=\"text\" name=\"existing_id\" value=\"${val}\" style=\"width:70%\"></div>`;
+            } else {
+                dbinfoDiv.innerHTML = `<div>Will be created as new artist<br><label>Or assign to existing artist ID: <input type=\"text\" name=\"assign_existing_id\" placeholder=\"Paste existing artist ID\"></label></div>`;
+            }
+        }
+    });
+    return form;
+}
+
+
+window.addArtistKeyword = async function(form, artistIdx) {
+    const input = form.querySelector('input[name="add_artist_keyword"]');
+    if (!input || !input.value.trim()) return;
+    
+    const query = input.value.trim();
+    const button = input.nextElementSibling;
+    const originalText = button.textContent;
+    
+    // Show loading state
+    button.textContent = 'Searching...';
+    button.disabled = true;
+    
+    try {
+        // Call the lookup_text API
+        const response = await fetch('/lookup_text', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: query,
+                top_k: 10,
+                search_in: 'both'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to search keywords');
+        }
+        
+        const results = await response.json();
+        
+        // Filter to only keyword entries (isArtist = 0)
+        const keywordResults = results.filter(result => 
+            result.isArtist === 0 || result.isArtist === '0'
+        );
+        
+        if (keywordResults.length === 0) {
+            alert('No relevant keywords found for: ' + query);
+            return;
+        }
+        
+        // Add new keywords to the checkbox group
+        const group = input.parentElement.parentElement.querySelector('.checkbox-group');
+        const existingKeywords = new Set(
+            Array.from(group.querySelectorAll('input[type=checkbox]')).map(cb => cb.value)
+        );
+        
+        let addedCount = 0;
+        keywordResults.forEach(result => {
+            const keyword = result.value;
+            const keywordId = result.entry_id;
+            const distance = result.distance;
+            
+            // Only add if not already present and distance indicates relevance
+            if (!existingKeywords.has(keyword) && distance < 1.3) {
+                const i = group.querySelectorAll('input[type=checkbox]').length;
+                const div = document.createElement('div');
+                div.style.display = 'flex';
+                div.style.alignItems = 'center';
+                div.style.gap = '6px';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `artist_kw_${i}`;
+                checkbox.name = `artist_kw_${i}`;
+                checkbox.value = keyword;
+                checkbox.setAttribute('data-entry-id', keywordId); // Store the entry_id
+                checkbox.checked = false; // Don't auto-check search results
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = `${keyword} (${distance.toFixed(3)})`;
+                label.style.fontSize = '0.9em';
+                label.style.color = '#666';
+                
+                // Add "Copy to All" button
+                const copyButton = document.createElement('button');
+                copyButton.type = 'button';
+                copyButton.textContent = 'Copy to All';
+                copyButton.style.cssText = 'font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;';
+                copyButton.onclick = function() { window.copyKeywordToAllArtworks(keyword, keywordId, copyButton); };
+                
+                // Add "Assign" button
+                const assignButton = document.createElement('button');
+                assignButton.type = 'button';
+                assignButton.textContent = 'Assign';
+                assignButton.style.cssText = 'font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #28a745; color: white; border: none; border-radius: 3px; cursor: pointer;';
+                assignButton.onclick = function() { window.openAssignKeywordModal(keyword, keywordId, assignButton); };
+                
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                div.appendChild(copyButton);
+                div.appendChild(assignButton);
+                group.appendChild(div);
+                
+                existingKeywords.add(keyword);
+                addedCount++;
+            }
+        });
+        
+        if (addedCount > 0) {
+            alert(`Added ${addedCount} new keyword options. Check the ones you want to include.`);
+        } else {
+            alert('No new relevant keywords found.');
+        }
+        
+    } catch (error) {
+        console.error('Error searching keywords:', error);
+        alert('Error searching for keywords: ' + error.message);
+    } finally {
+        // Restore button state
+        button.textContent = originalText;
+        button.disabled = false;
+        input.value = '';
+    }
+}
+
+window.addArtworkKeyword = async function(form, artistIdx, awidx) {
+    const input = form.querySelector(`input[name="add_artwork_keyword_${awidx}"]`);
+    if (!input || !input.value.trim()) return;
+    
+    const query = input.value.trim();
+    const button = input.nextElementSibling;
+    const originalText = button.textContent;
+    
+    // Show loading state
+    button.textContent = 'Searching...';
+    button.disabled = true;
+    
+    try {
+        // Call the lookup_text API
+        const response = await fetch('/lookup_text', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: query,
+                top_k: 10,
+                search_in: 'both'
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error('Failed to search keywords');
+        }
+        
+        const results = await response.json();
+        
+        // Filter to only keyword entries (isArtist = 0)
+        const keywordResults = results.filter(result => 
+            result.isArtist === 0 || result.isArtist === '0'
+        );
+        
+        if (keywordResults.length === 0) {
+            alert('No relevant keywords found for: ' + query);
+            return;
+        }
+        
+        // Add new keywords to the checkbox group
+        const group = input.parentElement.parentElement.querySelector('.checkbox-group');
+        const existingKeywords = new Set(
+            Array.from(group.querySelectorAll('input[type=checkbox]')).map(cb => cb.value)
+        );
+        
+        let addedCount = 0;
+        keywordResults.forEach(result => {
+            const keyword = result.value;
+            const keywordId = result.entry_id;
+            const distance = result.distance;
+            // Only add if not already present and distance indicates relevance
+            if (!existingKeywords.has(keyword) && distance < 1.35) {
+                const i = group.querySelectorAll('input[type=checkbox]').length;
+                const div = document.createElement('div');
+                div.style.display = 'flex';
+                div.style.alignItems = 'center';
+                div.style.gap = '6px';
+                // Checkbox
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `artwork_${awidx}_kw_${i}`;
+                checkbox.name = `artwork_${awidx}_kw_${i}`;
+                checkbox.value = keyword;
+                checkbox.setAttribute('data-entry-id', keywordId); // Store the entry_id
+                checkbox.checked = false; // Don't auto-check search results
+                // Label
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = `${keyword} (${distance.toFixed(3)})`;
+                label.style.fontSize = '0.9em';
+                label.style.color = '#666';
+                // Copy to All button
+                const copyBtn = document.createElement('button');
+                copyBtn.type = 'button';
+                copyBtn.textContent = 'Copy to All';
+                copyBtn.style.fontSize = '0.8em';
+                copyBtn.style.padding = '2px 6px';
+                copyBtn.style.marginLeft = '4px';
+                copyBtn.style.background = '#007bff';
+                copyBtn.style.color = 'white';
+                copyBtn.style.border = 'none';
+                copyBtn.style.borderRadius = '3px';
+                copyBtn.style.cursor = 'pointer';
+                copyBtn.onclick = function() {
+                    window.copyKeywordToAllArtworks(keyword, keywordId, copyBtn);
+                };
+                
+                // Assign button
+                const assignBtn = document.createElement('button');
+                assignBtn.type = 'button';
+                assignBtn.textContent = 'Assign';
+                assignBtn.style.fontSize = '0.8em';
+                assignBtn.style.padding = '2px 6px';
+                assignBtn.style.marginLeft = '4px';
+                assignBtn.style.background = '#28a745';
+                assignBtn.style.color = 'white';
+                assignBtn.style.border = 'none';
+                assignBtn.style.borderRadius = '3px';
+                assignBtn.style.cursor = 'pointer';
+                assignBtn.onclick = function() {
+                    window.openAssignKeywordModal(keyword, keywordId, assignBtn);
+                };
+                
+                div.appendChild(checkbox);
+                div.appendChild(label);
+                div.appendChild(copyBtn);
+                div.appendChild(assignBtn);
+                group.appendChild(div);
+                existingKeywords.add(keyword);
+                addedCount++;
+            }
+        });
+        
+        if (addedCount > 0) {
+            alert(`Added ${addedCount} new keyword options. Check the ones you want to include.`);
+        } else {
+            alert('No new relevant keywords found.');
+        }
+        
+    } catch (error) {
+        console.error('Error searching keywords:', error);
+        alert('Error searching for keywords: ' + error.message);
+    } finally {
+        // Restore button state
+        button.textContent = originalText;
+        button.disabled = false;
+        input.value = '';
+    }
+}
+
+// Copy a keyword to all artwork keyword lists
+window.copyKeywordToAllArtworks = function(keyword, keywordId, buttonElement) {
+    // Get the current form
+    const form = buttonElement.closest('form');
+    if (!form) return;
+
+    // Find the checkbox next to the button to determine checked state
+    const checkboxDiv = buttonElement.closest('div');
+    const checkbox = checkboxDiv ? checkboxDiv.querySelector('input[type=checkbox][value="' + keyword.replace(/"/g, '&quot;') + '"]') : null;
+    const shouldCheck = checkbox ? checkbox.checked : true;
+
+    // Find all artwork keyword checkbox groups
+    const artworkKeywordGroups = form.querySelectorAll('.artwork-card .keywords-section .checkbox-group');
+
+    let changedCount = 0;
+    let alreadyCount = 0;
+
+    artworkKeywordGroups.forEach(group => {
+        // Check if this keyword already exists in this artwork's list
+        let existingCheckbox = group.querySelector('input[type=checkbox][value="' + keyword.replace(/"/g, '&quot;') + '"]');
+        if (existingCheckbox) {
+            if (shouldCheck && !existingCheckbox.checked) {
+                existingCheckbox.checked = true;
+                changedCount++;
+            } else if (!shouldCheck && existingCheckbox.checked) {
+                existingCheckbox.checked = false;
+                changedCount++;
+            } else {
+                alreadyCount++;
+            }
+        } else if (shouldCheck) {
+            // Add new keyword checkbox to this group and check it
+            // Try to find a template checkbox to clone for consistent structure
+            const templateCheckbox = group.querySelector('input[type=checkbox]');
+            let newCheckbox, newLabel, newButton;
+            if (templateCheckbox) {
+                newCheckbox = templateCheckbox.cloneNode();
+                newCheckbox.value = keyword;
+                newCheckbox.checked = true;
+                if (keywordId) newCheckbox.setAttribute('data-entry-id', keywordId);
+                // Generate a unique id for the new checkbox
+                const newId = templateCheckbox.id.replace(/\d+$/, '') + Math.floor(Math.random()*100000);
+                newCheckbox.id = newId;
+                newLabel = document.createElement('label');
+                newLabel.setAttribute('for', newId);
+                newLabel.textContent = keyword;
+                // Add "Copy to All" button
+                newButton = document.createElement('button');
+                newButton.type = 'button';
+                newButton.textContent = 'Copy to All';
+                newButton.style.cssText = 'font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;';
+                newButton.onclick = function() { window.copyKeywordToAllArtworks(keyword, keywordId, newButton); };
+                
+                // Add "Assign" button
+                const newAssignButton = document.createElement('button');
+                newAssignButton.type = 'button';
+                newAssignButton.textContent = 'Assign';
+                newAssignButton.style.cssText = 'font-size: 0.8em; padding: 2px 6px; margin-left: 4px; background: #28a745; color: white; border: none; border-radius: 3px; cursor: pointer;';
+                newAssignButton.onclick = function() { window.openAssignKeywordModal(keyword, keywordId, newAssignButton); };
+                
+                // Compose the new div
+                const newDiv = document.createElement('div');
+                newDiv.style.display = 'flex';
+                newDiv.style.alignItems = 'center';
+                newDiv.style.gap = '6px';
+                newDiv.appendChild(newCheckbox);
+                newDiv.appendChild(newLabel);
+                newDiv.appendChild(newButton);
+                newDiv.appendChild(newAssignButton);
+                group.appendChild(newDiv);
+                changedCount++;
+            }
+        }
+    });
+
+    // Provide feedback
+    if (changedCount > 0) {
+        buttonElement.textContent = shouldCheck ? '✓ Copied' : '✓ Deselected';
+        buttonElement.style.background = shouldCheck ? '#28a745' : '#ffc107';
+        setTimeout(() => {
+            buttonElement.style.background = '#007bff';
+            buttonElement.textContent = 'Copy to All';
+        }, 1500);
+    } else if (alreadyCount > 0) {
+        buttonElement.textContent = '✓ Already set';
+        buttonElement.style.background = '#6c757d';
+        setTimeout(() => {
+            buttonElement.style.background = '#007bff';
+            buttonElement.textContent = 'Copy to All';
+        }, 1500);
+    } else {
+        alert('No artworks found to copy keyword to.');
+    }
+}
+
+// Collect keywords from form, pairing strings with their entry_ids
+function collectKeywords(form, keywordPrefix) {
+    const keywordStrings = [];
+    const keywordIds = [];
+    
+    // Get all keyword checkboxes with the specified prefix
+    const keywordCheckboxes = form.querySelectorAll(`input[name^="${keywordPrefix}"]`);
+    
+    keywordCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            const keywordString = checkbox.value;
+            const entryId = checkbox.getAttribute('data-entry-id');
+            
+            keywordStrings.push(keywordString);
+            keywordIds.push(entryId || ''); // Use empty string if no entry_id
+        }
+    });
+    
+    return {
+        strings: JSON.stringify(keywordStrings),
+        ids: JSON.stringify(keywordIds)
+    };
+}
+
+// Delete the current artist file entirely
+async function deleteArtistFile() {
+    if (!confirm('Are you sure you want to permanently delete this artist file? This action cannot be undone.')) return;
+    
+    const file = artistFiles[currentArtistIdx];
+    try {
+        const response = await fetch(`/staging_review/remove_artist_file/${file.filename}`, { method: 'DELETE' });
+        const result = await response.json();
+        if (result.success) {
+            artistFiles.splice(currentArtistIdx, 1);
+            allArtistData.splice(currentArtistIdx, 1);
+            computeAllArtistsStats();
+            
+            if (artistFiles.length === 0) {
+                document.getElementById('artist-list').innerHTML = '';
+                showError('No artist files left.');
+                return;
+            }
+            
+            if (currentArtistIdx >= artistFiles.length) {
+                currentArtistIdx = artistFiles.length - 1;
+            }
+            
+            renderArtistNav();
+            loadArtistData(currentArtistIdx);
+        } else {
+            showError(result.error);
+        }
+    } catch (error) {
+        showError('Failed to delete artist file: ' + error.message);
+    }
+}
+
+// Save changes to individual artist file
+async function saveArtistChanges(event, artistIdx) {
+    event.preventDefault();
+    const form = event.target.closest('form');
+    const formData = new FormData(form);
+    const statusDiv = document.getElementById(`saveStatus_${artistIdx}`);
+    
+    // Get the original filename
+    const originalFilename = artistFiles[currentArtistIdx].filename;
+    
+    // Get current artist data
+    const currentArtist = artistData.artist;
+    const currentArtworks = artistData.artist.artworks || [];
+    
+    // Collect artist data
+    const processedArtistData = {
+        name: formData.get('name'),
+        slug: formData.get('slug'),
+        is_existing: currentArtist?.is_existing || false,
+        existing_id: formData.get('assign_existing_id') || currentArtist?.existing_id,
+        artist_aliases: currentArtist?.artist_aliases || [],
+        descriptions: {},
+        timestamp: new Date().toISOString().replace(/[-:]/g, '').split('.')[0]
+    };
+    
+    // Process artist descriptions
+    processedArtistData.descriptions = processDescriptions(formData, 'artist_descriptions');
+    
+    // Process artist keywords
+    const artistKeywords = collectKeywords(form, 'artist_kw_');
+    processedArtistData.RelatedKeywordStrings = artistKeywords.strings;
+    processedArtistData.RelatedKeywordIds = artistKeywords.ids;
+    
+    // Collect artwork data
+    const artworks = [];
+    let awidx = 0;
+    
+    while (formData.has(`artwork_title_${awidx}`)) {
+        if (!formData.get(`remove_artwork_${awidx}`)) {
+            const artwork = {
+                index: awidx,
+                value: formData.get(`artwork_title_${awidx}`),
+                image_id: currentArtworks[awidx]?.image_id || '',
+                artist_names: [processedArtistData.name],
+                image_urls: {},
+                filename: currentArtworks[awidx]?.filename || '',
+                rights: currentArtworks[awidx]?.rights || '',
+                descriptions: {},
+                is_existing: currentArtworks[awidx]?.is_existing || false,
+                existing_id: currentArtworks[awidx]?.existing_id || null
+            };
+            
+            // Set image URL
+            const imageUrl = formData.get(`artwork_image_${awidx}`);
+            if (imageUrl) {
+                artwork.image_urls = { medium: imageUrl };
+            }
+            
+            // Process artwork descriptions
+            artwork.descriptions = processDescriptions(formData, `artwork_${awidx}_descriptions`);
+            
+            // Add date to descriptions.wikiart if provided
+            const dateValue = formData.get(`artwork_date_${awidx}`);
+            if (dateValue) {
+                if (!artwork.descriptions.wikiart) artwork.descriptions.wikiart = {};
+                artwork.descriptions.wikiart.date = dateValue;
+            }
+            
+            // Process artwork keywords
+            const artworkKeywords = collectKeywords(form, `artwork_${awidx}_kw_`);
+            artwork.relatedKeywordStrings = artworkKeywords.strings;
+            artwork.relatedKeywordIds = artworkKeywords.ids;
+            
+            artworks.push(artwork);
+        }
+        awidx++;
+    }
+    
+    // Create the processed data structure that matches what the backend expects
+    const processedData = {
+        artist: processedArtistData,
+        artworks: artworks,
+        timestamp: processedArtistData.timestamp
+    };
+    
+    // Add all form data entries (includes keywords) to the processed data
+    for (let [key, value] of formData.entries()) {
+        processedData[key] = value;
+    }
+    
+    try {
+        statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+        statusDiv.style.color = '#007bff';
+        
+        const response = await fetch('/staging_review/save_processed_artist', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                processed_data: processedData,
+                original_filename: originalFilename
+            })
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            statusDiv.innerHTML = '<i class="fas fa-check"></i> Saved Successfully';
+            statusDiv.style.color = '#28a745';
+            
+            // Update the artist data in memory
+            allArtistData[currentArtistIdx] = processedData;
+            computeAllArtistsStats();
+            renderArtistNav();
+        } else {
+            statusDiv.innerHTML = '<i class="fas fa-times"></i> Error: ' + result.error;
+            statusDiv.style.color = '#dc3545';
+        }
+    } catch (error) {
+        statusDiv.innerHTML = '<i class="fas fa-times"></i> Error: ' + error.message;
+        statusDiv.style.color = '#dc3545';
+    }
+}
+
+// Delete artist file entirely
+async function deleteArtistFile(event, artistIdx) {
+    event.preventDefault();
+    
+    if (!confirm('Are you sure you want to delete this artist file entirely? This action cannot be undone.')) {
+        return;
+    }
+    
+    const filename = artistFiles[currentArtistIdx].filename;
+    const statusDiv = document.getElementById(`saveStatus_${artistIdx}`);
+    
+    try {
+        statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+        statusDiv.style.color = '#dc3545';
+        
+        const response = await fetch(`/staging_review/remove_artist_file/${filename}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            statusDiv.innerHTML = '<i class="fas fa-check"></i> File Deleted';
+            statusDiv.style.color = '#28a745';
+            
+            // Remove from arrays
+            artistFiles.splice(currentArtistIdx, 1);
+            allArtistData.splice(currentArtistIdx, 1);
+            
+            // Recompute stats
+            computeAllArtistsStats();
+            
+            // Handle navigation
+            if (artistFiles.length === 0) {
+                document.getElementById('artist-list').innerHTML = '<p class="loading">No artist files remaining.</p>';
+                document.getElementById('artist-list').style.display = 'block';
+                return;
+            }
+            
+            // Adjust current index if needed
+            if (currentArtistIdx >= artistFiles.length) {
+                currentArtistIdx = artistFiles.length - 1;
+            }
+            
+            // Reload the current artist
+            renderArtistNav();
+            loadArtistData(currentArtistIdx);
+            
+        } else {
+            statusDiv.innerHTML = '<i class="fas fa-times"></i> Error: ' + result.error;
+            statusDiv.style.color = '#dc3545';
+        }
+    } catch (error) {
+        statusDiv.innerHTML = '<i class="fas fa-times"></i> Error: ' + error.message;
+        statusDiv.style.color = '#dc3545';
+    }
+}
+
+// Generate final SQL-ready JSON from all artist files
+async function generateFinalSqlJson() {
+    const button = document.getElementById('generateFinalJson');
+    const statusDiv = document.getElementById('finalJsonStatus');
+    const downloadButton = document.getElementById('downloadFinalJson');
+    
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+    statusDiv.innerHTML = 'Processing all artist files...';
+    statusDiv.style.color = '#007bff';
+    
+    try {
+        const response = await fetch('/staging_review/generate_final_sql_json', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const result = await response.json();
+        if (result.success) {
+            statusDiv.innerHTML = `<i class="fas fa-check"></i> Generated! ${result.stats.total_artists} artists, ${result.stats.total_artworks} artworks`;
+            statusDiv.style.color = '#28a745';
+            downloadButton.style.display = 'inline-block';
+            downloadButton.onclick = () => downloadFinalJson(result.filename);
+        } else {
+            statusDiv.innerHTML = `<i class="fas fa-times"></i> Error: ${result.error}`;
+            statusDiv.style.color = '#dc3545';
+        }
+    } catch (error) {
+        statusDiv.innerHTML = `<i class="fas fa-times"></i> Error: ${error.message}`;
+        statusDiv.style.color = '#dc3545';
+    } finally {
+        button.disabled = false;
+        button.innerHTML = '<i class="fas fa-cogs"></i> Generate Final SQL JSON';
+    }
+}
+
+// Download the final SQL JSON file
+async function downloadFinalJson(filename) {
+    try {
+        const response = await fetch(`/staging_review/download_final_json/${filename}`);
+        if (response.ok) {
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } else {
+            showError('Failed to download final JSON file');
+        }
+    } catch (error) {
+        showError('Error downloading file: ' + error.message);
+    }
+}
+
+function processDescriptions(formData, prefix) {
+    const descriptions = {};
+    const fieldMappings = new Map(); // Map original field names to new field names
+    const sourceMappings = new Map(); // Map original source names to new source names
+    
+    // First pass: collect all field name changes
+    for (let [k, v] of formData.entries()) {
+        if (k.startsWith(`${prefix}_field_`)) {
+            // Extract the original field path from the key
+            // Format: prefix_field_prefix_source_fieldname
+            const fieldKey = k.replace(`${prefix}_field_`, '');
+            fieldMappings.set(fieldKey, v);
+        }
+        if (k.startsWith(`${prefix}_source_`)) {
+            const originalSource = k.replace(`${prefix}_source_`, '');
+            sourceMappings.set(originalSource, v);
+        }
+    }
+    
+    // Second pass: process ONLY actual description values (not field mappings)
+    for (let [k, v] of formData.entries()) {
+        // Skip field and source mapping entries - we only want the actual description values
+        if (k.startsWith(`${prefix}_field_`) || k.startsWith(`${prefix}_source_`)) {
+            continue;
+        }
+        
+        if (k.startsWith(prefix) && k.includes('[') && k.includes(']')) {
+            // Parse the nested path - fix the parsing logic
+            // Example: "artist_descriptions[artsy][birth]" should become ["artsy", "birth"]
+            let pathStr = k.substring(prefix.length); // Remove prefix completely
+            
+            // Remove leading bracket if present
+            if (pathStr.startsWith('[')) {
+                pathStr = pathStr.substring(1);
+            }
+            
+            // Remove trailing bracket if present
+            if (pathStr.endsWith(']')) {
+                pathStr = pathStr.substring(0, pathStr.length - 1);
+            }
+            
+            // Split by '][' to get path parts
+            const pathParts = pathStr.split('][');
+            
+            // Apply source renaming (first part is source)
+            if (pathParts.length >= 1 && sourceMappings.has(pathParts[0])) {
+                pathParts[0] = sourceMappings.get(pathParts[0]);
+            }
+            
+            // Apply field renaming (second part is field)
+            if (pathParts.length >= 2) {
+                const fieldMapKey = `${prefix}_${pathParts[0]}_${pathParts[1]}`;
+                if (fieldMappings.has(fieldMapKey)) {
+                    pathParts[1] = fieldMappings.get(fieldMapKey);
+                }
+            }
+            
+            // Build the nested object
+            let current = descriptions;
+            for (let i = 0; i < pathParts.length - 1; i++) {
+                if (!current[pathParts[i]]) current[pathParts[i]] = {};
+                current = current[pathParts[i]];
+            }
+            current[pathParts[pathParts.length - 1]] = v;
+        }
+    }
+    
+    return descriptions;
+}
+
+function showError(message) {
+    const errorDiv = document.getElementById('error');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    document.getElementById('loading').style.display = 'none';
+}
+
+// Floating Save Changes button logic
+(function() {
+    const floatBtn = document.getElementById('floatingSaveBtn');
+    if (!floatBtn) return;
+    // Show/hide based on artist list
+    const observer = new MutationObserver(() => {
+        if (document.getElementById('artist-list').style.display !== 'none') {
+            floatBtn.style.display = 'block';
+        } else {
+            floatBtn.style.display = 'none';
+        }
+    });
+    observer.observe(document.getElementById('artist-list'), { attributes: true, attributeFilter: ['style'] });
+    // Click triggers the same save as the main button
+    floatBtn.onclick = function() {
+        // Provide immediate visual feedback
+        const originalText = floatBtn.innerHTML;
+        const originalBg = floatBtn.style.background;
+        
+        floatBtn.innerHTML = '✓ Saving...';
+        floatBtn.style.background = '#28a745';
+        floatBtn.style.transform = 'scale(0.95)';
+        
+        // Find the visible artist form
+        const form = document.querySelector('.artist-item');
+        if (form) {
+            // Find the save button in the form and trigger click
+            const saveBtn = form.querySelector('button.btn.btn-primary');
+            if (saveBtn) saveBtn.click();
+        }
+        
+        // Reset button appearance after a short delay
+        setTimeout(() => {
+            floatBtn.innerHTML = originalText;
+            floatBtn.style.background = originalBg;
+            floatBtn.style.transform = 'scale(1)';
+        }, 1000);
+    };
+})();
+</script>
+</body>
+</html>

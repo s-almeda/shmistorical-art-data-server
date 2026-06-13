@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final SQL Review</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/staging_review.css">
+    <style>
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-sm {
+            padding: 4px 8px;
+            font-size: 0.8em;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+        
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .artist-file-item {
+            transition: all 0.3s ease;
+        }
+        
+        .artist-file-item:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-database"></i> Final Database Commit</h1>
+            <p>Process and commit individual artist files to the database.</p>
+        </div>
+        
+        <!-- Password Modal -->
+        <div id="passwordModal" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+            <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 400px; border-radius: 8px;">
+                <h3>Enter Admin Password</h3>
+                <p>Please enter the admin password to access the database commit functionality:</p>
+                <input type="password" id="passwordInput" placeholder="Admin password" style="width: 100%; padding: 8px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px;">
+                <div style="margin-top: 15px;">
+                    <button id="passwordSubmit" class="btn btn-primary">Submit</button>
+                    <button id="passwordCancel" class="btn btn-secondary" style="margin-left: 10px;">Cancel</button>
+                </div>
+                <div id="passwordError" style="color: red; margin-top: 10px; display: none;"></div>
+            </div>
+        </div>
+
+        <div id="main-content" style="display: none;">
+            <div id="artist-files-controls" style="margin-bottom: 20px;">
+                <button id="loadArtistFilesBtn" class="btn btn-primary">Load Artist Files</button>
+                <button id="processAllBtn" class="btn btn-success" style="margin-left: 10px; display: none;">Process All Files</button>
+            </div>
+            
+            <div id="artist-files-container" style="background: #f8f9fa; border: 1px solid #ccc; padding: 16px; border-radius: 8px; min-height: 200px;">
+                <p>Click "Load Artist Files" to see available files for processing.</p>
+            </div>
+            
+            <div id="processing-status" style="margin-top: 16px; font-weight: bold;"></div>
+        </div>
+    </div>
+<script>
+let adminPassword = null;
+let artistFiles = [];
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if password is stored in localStorage
+    const storedPassword = localStorage.getItem('staging_admin_password');
+    if (storedPassword) {
+        adminPassword = storedPassword;
+        showMainContent();
+    } else {
+        showPasswordModal();
+    }
+});
+
+function showPasswordModal() {
+    document.getElementById('passwordModal').style.display = 'block';
+    document.getElementById('passwordInput').focus();
+    
+    // Handle password submission
+    document.getElementById('passwordSubmit').onclick = async function() {
+        const password = document.getElementById('passwordInput').value;
+        
+        if (!password) {
+            showPasswordError('Please enter a password');
+            return;
+        }
+        
+        const isValid = await validatePassword(password);
+        if (isValid) {
+            adminPassword = password;
+            localStorage.setItem('staging_admin_password', password);
+            document.getElementById('passwordModal').style.display = 'none';
+            showMainContent();
+        } else {
+            showPasswordError('Invalid password');
+        }
+    };
+    
+    document.getElementById('passwordCancel').onclick = function() {
+        window.location.href = '/staging_review/';
+    };
+    
+    // Handle Enter key
+    document.getElementById('passwordInput').onkeypress = function(e) {
+        if (e.key === 'Enter') {
+            document.getElementById('passwordSubmit').click();
+        }
+    };
+}
+
+function showPasswordError(message) {
+    const errorDiv = document.getElementById('passwordError');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+}
+
+async function validatePassword(password) {
+    try {
+        const response = await fetch('/validate_admin_password', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ password: password })
+        });
+        const result = await response.json();
+        return result.success === true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function showMainContent() {
+    document.getElementById('main-content').style.display = 'block';
+    setupMainEvents();
+}
+
+function setupMainEvents() {
+    document.getElementById('loadArtistFilesBtn').onclick = loadArtistFiles;
+    document.getElementById('processAllBtn').onclick = processAllFiles;
+}
+
+async function loadArtistFiles() {
+    const container = document.getElementById('artist-files-container');
+    const status = document.getElementById('processing-status');
+    
+    container.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading artist files...';
+    status.textContent = '';
+    
+    try {
+        const response = await fetch('/staging_review/list_artist_files');
+        const result = await response.json();
+        
+        if (result.success && result.files.length > 0) {
+            artistFiles = result.files;
+            renderArtistFiles();
+            document.getElementById('processAllBtn').style.display = 'inline-block';
+        } else {
+            container.innerHTML = '<p>No artist files found for processing.</p>';
+            document.getElementById('processAllBtn').style.display = 'none';
+        }
+    } catch (error) {
+        container.innerHTML = '<p style="color: red;">Error loading artist files: ' + error.message + '</p>';
+        document.getElementById('processAllBtn').style.display = 'none';
+    }
+}
+
+function renderArtistFiles() {
+    const container = document.getElementById('artist-files-container');
+    
+    let html = '<h3>Artist Files Ready for Database Commit</h3>';
+    html += '<div style="margin-bottom: 15px;"><strong>Total files:</strong> ' + artistFiles.length + '</div>';
+    
+    html += '<div class="artist-files-list" style="max-height: 400px; overflow-y: auto;">';
+    
+    artistFiles.forEach((file, index) => {
+        html += `
+            <div class="artist-file-item" id="file-${index}" style="padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; background: white;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>${escapeHtml(file.name)}</strong>
+                        <div style="font-size: 0.9em; color: #666;">${escapeHtml(file.filename)}</div>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary btn-sm" onclick="processIndividualFile('${escapeHtml(file.filename)}', ${index})" id="process-btn-${index}">
+                            <i class="fas fa-database"></i> Process
+                        </button>
+                        <span id="status-${index}" class="file-status" style="margin-left: 10px;"></span>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    
+    container.innerHTML = html;
+}
+
+async function processIndividualFile(filename, index) {
+    const button = document.getElementById(`process-btn-${index}`);
+    const status = document.getElementById(`status-${index}`);
+    const fileItem = document.getElementById(`file-${index}`);
+    
+    // Update UI
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    status.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+    status.style.color = '#007bff';
+    
+    try {
+        const response = await fetch(`/staging_review/process_individual_artist/${filename}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                password: adminPassword
+            })
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            status.innerHTML = '<i class="fas fa-check"></i> Completed';
+            status.style.color = '#28a745';
+            button.innerHTML = '<i class="fas fa-check"></i> Done';
+            button.style.background = '#28a745';
+            fileItem.style.background = '#f8fff8';
+            fileItem.style.borderColor = '#28a745';
+            
+            // Show details
+            const details = document.createElement('div');
+            details.style.marginTop = '8px';
+            details.style.fontSize = '0.9em';
+            details.style.color = '#28a745';
+            details.innerHTML = `<strong>Processed:</strong> ${result.executed_commands.length} entries`;
+            fileItem.appendChild(details);
+            
+        } else {
+            status.innerHTML = '<i class="fas fa-times"></i> Error';
+            status.style.color = '#dc3545';
+            button.innerHTML = '<i class="fas fa-times"></i> Failed';
+            button.style.background = '#dc3545';
+            button.disabled = false;
+            fileItem.style.background = '#fff8f8';
+            fileItem.style.borderColor = '#dc3545';
+            
+            // Show error details
+            const details = document.createElement('div');
+            details.style.marginTop = '8px';
+            details.style.fontSize = '0.9em';
+            details.style.color = '#dc3545';
+            details.innerHTML = `<strong>Error:</strong> ${escapeHtml(result.error)}`;
+            fileItem.appendChild(details);
+        }
+        
+    } catch (error) {
+        status.innerHTML = '<i class="fas fa-times"></i> Error';
+        status.style.color = '#dc3545';
+        button.innerHTML = '<i class="fas fa-times"></i> Failed';
+        button.style.background = '#dc3545';
+        button.disabled = false;
+        fileItem.style.background = '#fff8f8';
+        fileItem.style.borderColor = '#dc3545';
+        
+        const details = document.createElement('div');
+        details.style.marginTop = '8px';
+        details.style.fontSize = '0.9em';
+        details.style.color = '#dc3545';
+        details.innerHTML = `<strong>Network Error:</strong> ${escapeHtml(error.message)}`;
+        fileItem.appendChild(details);
+    }
+}
+
+async function processAllFiles() {
+    const button = document.getElementById('processAllBtn');
+    const status = document.getElementById('processing-status');
+    
+    if (!confirm('This will process all artist files and commit them to the database. Are you sure?')) {
+        return;
+    }
+    
+    button.disabled = true;
+    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing All...';
+    status.innerHTML = 'Processing all files...';
+    status.style.color = '#007bff';
+    
+    let processed = 0;
+    let failed = 0;
+    
+    for (let i = 0; i < artistFiles.length; i++) {
+        const fileItem = document.getElementById(`file-${i}`);
+        const fileStatus = document.getElementById(`status-${i}`);
+        
+        // Skip if already processed
+        if (fileStatus.innerHTML.includes('Completed')) {
+            continue;
+        }
+        
+        status.innerHTML = `Processing file ${i + 1} of ${artistFiles.length}: ${artistFiles[i].name}`;
+        
+        try {
+            await processIndividualFile(artistFiles[i].filename, i);
+            // Wait a moment between requests
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            if (document.getElementById(`status-${i}`).innerHTML.includes('Completed')) {
+                processed++;
+            } else {
+                failed++;
+            }
+        } catch (error) {
+            failed++;
+        }
+    }
+    
+    button.disabled = false;
+    button.innerHTML = '<i class="fas fa-database"></i> Process All Files';
+    status.innerHTML = `Batch processing complete. Processed: ${processed}, Failed: ${failed}`;
+    status.style.color = failed > 0 ? '#dc3545' : '#28a745';
+}
+
+function escapeHtml(text) {
+    var map = {
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+// Clear password function (for debugging)
+function clearPassword() {
+    localStorage.removeItem('staging_admin_password');
+    location.reload();
+}
+</script>
+</body>
+</html>
