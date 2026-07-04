@@ -116,12 +116,24 @@
         /* ── Drill-down link style ── */
         a.drill { color: #8e44ad; text-decoration: underline; cursor: pointer; }
     </style>
+    <!-- XP.css look for the public site (loaded AFTER admin_styles + inline styles) -->
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+    <link rel="stylesheet" href="../static/css/shm-xp.css" />
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <div class="header window">
+            <div class="title-bar">
+                <div class="title-bar-text">🎨 shm's historical art data — knowledgebase browser</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Help" onclick="location.href='/about'"></button>
+                </div>
+            </div>
+            <div class="window-body">
             <div class="header-top">
-                <h1 id="page-title">🗄️ Database Browser</h1>
+                <h1 id="page-title">this is a browser for shm's historical art data(s)</h1>
                 <div class="pagination-top" id="pagination-top">
                     <button class="page-btn" id="prev-btn-top" onclick="changePage(-1)">← Previous</button>
                     <span class="page-info" id="page-info-top">Page 1</span>
@@ -132,9 +144,10 @@
 
             <!-- Database selector -->
             <div class="db-tabs">
-                <button class="db-tab active"   id="db-tab-art"    onclick="switchDb('art')">🎨 Art / Knowledgebase</button>
-                <button class="db-tab comics"   id="db-tab-comics" onclick="switchDb('comics')">📚 Comics</button>
-                <button class="db-tab poetry"  id="db-tab-poetry" onclick="switchDb('poetry')">📜 Poetry</button>
+                <button class="db-tab active"   id="db-tab-art"    onclick="switchDb('art')">art </button>
+                <button class="db-tab comics"   id="db-tab-comics" onclick="switchDb('comics')">comics</button>
+                <button class="db-tab poetry"  id="db-tab-poetry" onclick="switchDb('poetry')">poetry</button>
+                <a href="/about" class="db-tab" style="margin-left:auto;text-decoration:none;line-height:normal;">about</a>
             </div>
 
             <!-- Poetry breadcrumb -->
@@ -193,10 +206,16 @@
                 </select>
                 <button class="page-btn" onclick="downloadCurrentTableAsJSON()">Download as JSON</button>
             </div>
+            </div><!-- /.window-body -->
         </div>
 
-        <div class="table-container">
-            <div id="table-content"><div class="loading">Loading data...</div></div>
+        <div class="table-container window">
+            <div class="title-bar">
+                <div class="title-bar-text">📊 records</div>
+            </div>
+            <div class="window-body" style="margin:0;padding:6px;">
+                <div id="table-content"><div class="loading">Loading data...</div></div>
+            </div>
         </div>
     </div>
 

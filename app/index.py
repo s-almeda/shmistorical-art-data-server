@@ -129,6 +129,10 @@ app.register_blueprint(map_api_v3_bp)
 def browse_database():
     return render_template('database_browser.html')
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
 @app.route("/api/browse_database")
 def api_browse_database():
     """API endpoint for database browsing with pagination, sorting, and search"""

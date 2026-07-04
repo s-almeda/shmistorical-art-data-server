@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About this Knowledgebase</title>
+    <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+    <link rel="stylesheet" href="../static/css/shm-xp.css" />
+</head>
+<body>
+    <!-- drifting clouds -->
+    <svg class="cloud cloud-1" width="260" height="120" viewBox="0 0 260 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#ffffff">
+            <ellipse cx="90" cy="80" rx="80" ry="34"/>
+            <ellipse cx="150" cy="70" rx="70" ry="42"/>
+            <ellipse cx="120" cy="55" rx="48" ry="40"/>
+            <ellipse cx="190" cy="82" rx="55" ry="30"/>
+        </g>
+    </svg>
+    <svg class="cloud cloud-2" width="220" height="100" viewBox="0 0 220 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="#ffffff">
+            <ellipse cx="70" cy="66" rx="66" ry="28"/>
+            <ellipse cx="120" cy="58" rx="58" ry="34"/>
+            <ellipse cx="100" cy="46" rx="40" ry="32"/>
+            <ellipse cx="158" cy="68" rx="46" ry="26"/>
+        </g>
+    </svg>
+
+    <div class="paper-page">
+        <div class="about-back"><a href="/">&larr; back to the database browser</a></div>
+
+        <!-- header window -->
+        <div class="window paper-window">
+            <div class="title-bar">
+                <div class="title-bar-text">🎨 About</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="location.href='/'"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h1 class="paper-title">About this knowledgebase</h1>
+                <p class="paper-subtitle">a corpus of historical art, comics &amp; poetry: assembled, embedded &amp; searchable</p>
+            </div>
+        </div>
+
+        <!-- where the data comes from -->
+        <div class="window paper-window">
+            <div class="title-bar">
+                <div class="title-bar-text">Where does the data come from?</div>
+            </div>
+            <div class="window-body">
+                <p>
+                    The historical artworks and art terms are the most substantial part of
+                    this corpus (<span class="count">[N]</span> artworks,
+                    <span class="count">[N]</span> text entries including artist names and
+                    art / aesthetic / cultural terms). We assembled it by combining
+                    public-domain art and metadata from
+                    <a href="https://www.wikiart.org/" target="_blank" rel="noopener">WikiArt</a>
+                    with labels from
+                    <a href="https://www.artsy.net/categories" target="_blank" rel="noopener">The
+                    Artsy Genome Project</a>, an art-classification system with ~1,000 terms
+                    for describing artworks. We have a text entry for every term and artist,
+                    plus links that connect related terms, artists, and artworks across the
+                    database. We also have image (ResNet50), text (MiniLM), and multimodal
+                    (CLIP) embeddings for every entry.
+                </p>
+                <p>
+                    The comics are public-domain comics from
+                    <a href="https://comicbookplus.com/" target="_blank" rel="noopener">Comic
+                    Book Plus</a>. This dataset is still being built and organized;
+                    planned work includes OCRing, describing, and embedding every comic page.
+                </p>
+                <p>
+                    The poetry dataset is Allison Parrish's
+                    <a href="https://github.com/aparrish/gutenberg-poetry-corpus" target="_blank" rel="noopener">Gutenberg
+                    Poetry Corpus</a>.
+                </p>
+            </div>
+        </div>
+
+        <!-- how it was made / what it can do -->
+        <div class="window paper-window">
+            <div class="title-bar">
+                <div class="title-bar-text">How did you make this, and what can it do?</div>
+            </div>
+            <div class="window-body">
+                <p>
+                    When there is no already-assembled dataset (or API) for a corpus of
+                    knowledge, I turn to tools like BeautifulSoup and Playwright to scrape
+                    data from open sources. I've built several tools that support the data
+                    curation / staging / organization process (ex:
+                    <a href="/data_cleaner">data cleaner</a>,
+                    <a href="/staging_review/">staging review</a>,
+                    <a href="/map-check">map check</a>, etc) as well as API routes for
+                    querying this server and using the data in applications like
+                    <a href="https://shmuh.co/artographer" target="_blank" rel="noopener">Artographer</a>.
+                </p>
+                <p>
+                    I'm working on making these tools, workflows, and APIs more available and
+                    accessible for public use, which includes more documentation and
+                    public-facing design work, plus creating policies and licenses about how
+                    this work should be used.
+                </p>
+            </div>
+        </div>
+
+        <!-- support -->
+        <div class="window paper-window">
+            <div class="title-bar">
+                <div class="title-bar-text">Support this project</div>
+            </div>
+            <div class="window-body">
+                <p>
+                    If you'd like to support this effort, please feel invited to reach out
+                    or send a tip:
+                </p>
+                <div class="paper-links">
+                    <button onclick="window.open('https://shmuh.co/', '_blank')">Get in touch</button>
+                    <button onclick="window.open('https://paypal.me/shmuh', '_blank')">Send a tip</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

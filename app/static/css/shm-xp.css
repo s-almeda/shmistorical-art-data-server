@@ -1,0 +1,236 @@
+/* shm-xp.css
+   shared XP.css-flavored styling for the PUBLIC pages of the art data server:
+     - the / database browser        (database_browser.html)
+     - the About page                (about.html)
+
+   built on top of xp.css. load order in each page's <head>:
+       <link rel="stylesheet" href="/static/css/admin_styles.css">   (browser only)
+       ... any inline <style> ...
+       <link rel="stylesheet" href="https://unpkg.com/xp.css" />       (load first)
+       <link rel="stylesheet" href="/static/css/shm-xp.css" />         (load LAST)
+
+   loading LAST lets these rules win over admin_styles.css + the pages'
+   inline <style> blocks without touching those files.
+   ------------------------------------------------------------------ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ── the drifting cloudy sky (shared background) ── */
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(180deg, #CDE9F9 0%, #FFFFFF 42%, #FFF5EF 88%);
+    background-attachment: fixed;
+    color: #1a1a1a;
+    font-family: 'Pixelated MS Sans Serif', Tahoma, Arial, sans-serif;
+    -webkit-font-smoothing: none;
+}
+body { padding: 10px; }
+
+/* ── drifting clouds behind everything ── */
+.cloud { position: fixed; z-index: 0; opacity: 0.85; pointer-events: none; }
+.cloud-1 { top: 70px;    left: -220px; animation: drift1 55s linear infinite; }
+.cloud-2 { bottom: 90px; left: -320px; animation: drift2 67s linear infinite; }
+@keyframes drift1 {
+    0%   { transform: translateX(-30vw) scale(1.6); }
+    100% { transform: translateX(160vw) scale(1.6); }
+}
+@keyframes drift2 {
+    0%   { transform: translateX(-40vw) scale(1.2); }
+    100% { transform: translateX(170vw) scale(1.2); }
+}
+
+/* =====================================================================
+   1 · ABOUT PAGE — a column of floating xp.css windows over the sky
+   (adapted / trimmed from papers.css)
+   ===================================================================== */
+
+.paper-page {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 48px 20px 60px 20px;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.paper-window {
+    width: 100%;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
+}
+.paper-window .title-bar-text { letter-spacing: 0.03em; }
+
+.paper-window .window-body {
+    margin: 0;
+    padding: 18px 22px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.paper-window .window-body p { margin: 0 0 0.75em 0; text-wrap: pretty; }
+.paper-window .window-body p:last-child { margin-bottom: 0; }
+.paper-window .window-body a { color: #1C4ECF; }
+.paper-window .window-body a:hover { color: #da8c2c; }
+.paper-window .window-body .count { font-weight: bold; color: #1C4ECF; }
+
+/* header window */
+.paper-title {
+    margin: 0;
+    font-size: 1.7em;
+    line-height: 1.2;
+    text-align: center;
+    color: #1C4ECF;
+    text-wrap: balance;
+}
+.paper-subtitle {
+    margin: 8px 0 0 0;
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+
+/* the support / tip window's buttons */
+.paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 6px;
+}
+.paper-links button { padding: 8px 16px; font-size: 1.05em; cursor: pointer; }
+
+.about-back { align-self: flex-start; margin: 0 0 -20px 4px; }
+.about-back a { color: #1C4ECF; font-size: 13px; text-decoration: none; }
+.about-back a:hover { text-decoration: underline; color: #da8c2c; }
+
+/* =====================================================================
+   2 · DATABASE BROWSER — wrap the app in classic xp windows
+   overrides admin_styles.css + the page's inline <style>
+   ===================================================================== */
+
+/* the browser lays its own reset; make the page breathe on the sky */
+body { background: linear-gradient(180deg, #CDE9F9 0%, #FFFFFF 42%, #FFF5EF 88%) fixed; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+
+/* .header and .table-container are given `.window` in the markup; make them
+   full-width and drop the old white-card look */
+.container .window { width: 100%; margin-bottom: 20px; }
+.header {
+    background: silver;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+.header .window-body { margin: 0; padding: 14px 16px; }
+.header h1 { color: #1C4ECF; font-size: 1.15em; line-height: 1.25; }
+
+.table-container {
+    background: silver;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* ── db-switcher tabs & table buttons → real xp raised buttons ── */
+.db-tab,
+.table-btn,
+.page-btn,
+.crumb-btn {
+    -webkit-font-smoothing: none;
+    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    color: #000 !important;
+    background: silver !important;
+    border: none !important;
+    border-radius: 0 !important;
+    min-height: 23px;
+    padding: 3px 12px !important;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+                inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    transition: none;
+}
+.db-tab:hover,
+.table-btn:hover,
+.page-btn:hover:not(:disabled),
+.crumb-btn:hover {
+    background: silver !important;
+    color: #000 !important;
+}
+.db-tab:active,
+.table-btn:active,
+.page-btn:active:not(:disabled),
+.crumb-btn:active,
+.db-tab.active,
+.table-btn.active {
+    box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
+                inset -2px -2px #dfdfdf, inset 2px 2px grey;
+    background: silver !important;
+    color: #000 !important;
+    border-color: transparent !important;
+}
+/* keep the poetry/comics tab color cue as a small swatch on the text */
+.db-tab.comics.active { color: #6a1b9a !important; }
+.db-tab.poetry.active { color: #1b5e20 !important; }
+.page-btn:disabled { opacity: 0.5; }
+
+/* the "about" link styled as a tab shouldn't stretch weirdly */
+a.db-tab { display: inline-flex; align-items: center; text-decoration: none; }
+
+/* ── search input / selects: let xp.css style them; just size them ── */
+#search-bar,
+.container select {
+    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+    font-size: 11px;
+}
+
+/* ── the records table → classic list-view look ── */
+.table-container table { background: #fff; }
+.table-container th {
+    background: silver;
+    color: #000;
+    font-weight: normal;
+    border-right: 1px solid #808080;
+    box-shadow: inset -1px -1px grey, inset 1px 1px #fff;
+    padding: 6px 12px;
+}
+.table-container th:hover { background: #d4d0c8; }
+.table-container td { padding: 7px 12px; border-bottom: 1px solid #e4e2dd; }
+.table-container tr:hover { background: #dff0ff; }
+
+/* badges keep a flat, low-key look */
+.type-badge { border-radius: 0; background: #1C4ECF; }
+
+/* ── modal → xp window chrome ── */
+.modal-content {
+    border-radius: 0;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
+                inset -2px -2px grey, inset 2px 2px #fff, 4px 4px 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+.modal-header {
+    background: linear-gradient(180deg, #0058ee 0%, #3993ff 8%, #288eff 40%, #127dff 88%, #036ffc 93%, #0262ee 95%, #0057e5 96%, #0054e3 100%);
+    color: #fff;
+    padding: 3px 3px 3px 6px;
+}
+.modal-header h2 { font-size: 13px; font-weight: bold; }
+.close {
+    width: 22px; height: 22px; line-height: 18px; font-size: 16px;
+    background: silver; color: #000; border-radius: 0;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff,
+                inset -2px -2px grey, inset 2px 2px #dfdfdf;
+    display: flex; align-items: center; justify-content: center;
+}
+.close:hover { opacity: 1; background: #d4d0c8; }
+
+/* ── mobile ── */
+@media (max-width: 640px) {
+    .paper-page { gap: 28px; padding: 28px 12px 60px 12px; }
+    .paper-title { font-size: 1.4em; }
+    .container { padding: 10px; }
+}

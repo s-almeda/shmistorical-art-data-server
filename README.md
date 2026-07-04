@@ -4,6 +4,41 @@ A Flask data/ML server for an art "knowledgebase" — vector similarity search p
 2D map-generation pipeline. It's the backend behind `data.snailbunny.site` and powers
 two front ends (an art canvas app and a map explorer).
 
+## About this knowledgebase
+
+### Where does the data come from?
+
+The historical artworks and art terms are the most substantial part of this corpus
+(**_[N]_ artworks**, **_[N]_ text entries** including artist names and art / aesthetic /
+cultural terms). We assembled it by combining public-domain art and metadata from
+[WikiArt](https://www.wikiart.org/) with labels from
+[The Artsy Genome Project](https://www.artsy.net/categories), an art-classification
+system with ~1,000 terms for describing artworks. We have a text entry for every term
+and artist, plus links that connect related terms, artists, and artworks across the
+database. We also have image (ResNet50), text (MiniLM), and multimodal (CLIP)
+embeddings for every entry.
+
+The comics are public-domain comics from [Comic Book Plus](https://comicbookplus.com/).
+This dataset is still being built and organized; planned work includes OCRing,
+describing, and embedding every comic page.
+
+The poetry dataset is Allison Parrish's
+[Gutenberg Poetry Corpus](https://github.com/aparrish/gutenberg-poetry-corpus).
+
+### How did you make this, and what can it do?
+
+When there is no already-assembled dataset (or API) for a corpus of knowledge, I turn
+to tools like BeautifulSoup and Playwright to scrape data from open sources. I've built
+several tools that support the data curation / staging / organization process (ex: [data cleaner](https://data.snailbunny.site/data_cleaner), [staging review](https://data.snailbunny.site/staging_review/), [map check](https://data.snailbunny.site/map-check), etc) as well as API routes for querying this server and using the data in applications like
+[Artographer](https://shmuh.co/artographer).
+
+I'm working on making these tools, workflows, and APIs more available and accessible for
+public use, which includes more documentation and public-facing design work, plus
+creating policies and licenses about how this work should be used.
+
+If you'd like to support this effort, please feel invited to
+[reach out](https://shmuh.co/) or [send a tip](https://paypal.me/shmuh).
+
 ## What it does
 
 - **Similarity search** over an art knowledgebase using precomputed embeddings stored
