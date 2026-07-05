@@ -124,7 +124,7 @@
     <div class="container">
         <div class="header window">
             <div class="title-bar">
-                <div class="title-bar-text">🎨 shm's historical art data — knowledgebase browser</div>
+                <div class="title-bar-text">shm's historical art dataset(s) browser</div>
                 <div class="title-bar-controls">
                     <button aria-label="Minimize"></button>
                     <button aria-label="Maximize"></button>
@@ -134,89 +134,89 @@
             <div class="window-body">
             <div class="header-top">
                 <h1 id="page-title">this is a browser for shm's historical art data(s)</h1>
-                <div class="pagination-top" id="pagination-top">
-                    <button class="page-btn" id="prev-btn-top" onclick="changePage(-1)">← Previous</button>
-                    <span class="page-info" id="page-info-top">Page 1</span>
-                    <button class="page-btn" id="next-btn-top" onclick="changePage(1)">Next →</button>
-                    <button class="page-btn" id="last-btn-top" onclick="goToLastPage()">Last »</button>
-                </div>
+                <a href="/about" class="db-tab about-link" style="line-height:normal;">about ↗</a>
             </div>
 
-            <!-- Database selector -->
+            <!-- Database selector (art / comics / poetry) -->
             <div class="db-tabs">
                 <button class="db-tab active"   id="db-tab-art"    onclick="switchDb('art')">art </button>
                 <button class="db-tab comics"   id="db-tab-comics" onclick="switchDb('comics')">comics</button>
                 <button class="db-tab poetry"  id="db-tab-poetry" onclick="switchDb('poetry')">poetry</button>
-                <a href="/about" class="db-tab" style="margin-left:auto;text-decoration:none;line-height:normal;">about</a>
-            </div>
-
-            <!-- Poetry breadcrumb -->
-            <div id="poetry-breadcrumb">
-                <button class="crumb-btn" onclick="poetryDrillTo('text_entries')">All Authors / Subjects</button>
-                <span class="crumb-sep" id="pcrumb-sep-1" style="display:none">›</span>
-                <button class="crumb-btn" id="pcrumb-book-btn" style="display:none" onclick="poetryDrillTo('line_entries')"></button>
-            </div>
-
-            <!-- Comics breadcrumb (hidden when browsing art DB) -->
-            <div id="comics-breadcrumb">
-                <button class="crumb-btn" onclick="comicsDrillTo('text_entries')">All Series</button>
-                <span class="crumb-sep" id="crumb-sep-1" style="display:none">›</span>
-                <button class="crumb-btn" id="crumb-series-btn" style="display:none" onclick="comicsDrillTo('book_entries')"></button>
-                <span class="crumb-sep" id="crumb-sep-2" style="display:none">›</span>
-                <button class="crumb-btn" id="crumb-book-btn"   style="display:none" onclick="comicsDrillTo('image_entries')"></button>
-            </div>
-
-            <div class="controls">
-                <!-- Art DB table switcher -->
-                <div class="table-selector" id="art-table-selector">
-                    <button class="table-btn" onclick="artSwitchTable('text_entries')">Text Entries</button>
-                    <button class="table-btn active" onclick="artSwitchTable('image_entries')">Image Entries</button>
-                </div>
-                <!-- Poetry DB table switcher -->
-                <div class="table-selector" id="poetry-table-selector" style="display:none">
-                    <button class="table-btn active" id="ptab-text" onclick="poetrySwitchTable('text_entries')">Authors / Subjects</button>
-                    <button class="table-btn"        id="ptab-book" onclick="poetrySwitchTable('book_entries')">Books</button>
-                    <button class="table-btn"        id="ptab-line" onclick="poetrySwitchTable('line_entries')">Lines</button>
-                </div>
-                <!-- Comics DB table switcher -->
-                <div class="table-selector" id="comics-table-selector" style="display:none">
-                    <button class="table-btn active" id="ctab-text"  onclick="comicsSwitchTable('text_entries')">Series / Creators</button>
-                    <button class="table-btn"        id="ctab-book"  onclick="comicsSwitchTable('book_entries')">Books / Issues</button>
-                    <button class="table-btn"        id="ctab-image" onclick="comicsSwitchTable('image_entries')">Pages</button>
-                </div>
-
-                <div class="stats" id="stats">Loading...</div>
-                <input id="search-bar" type="text" placeholder="Search..."
-                    style="margin-left:16px;padding:4px 10px;border-radius:4px;border:1px solid #ccc;width:200px;"
-                    oninput="onSearchInput()">
-                <label for="page-size" style="font-size:14px;margin-left:10px;">Show per page:</label>
-                <select id="page-size" style="margin-left:4px;padding:4px 8px;border-radius:4px;" onchange="onPageSizeChange()">
-                    <option value="25">25</option>
-                    <option value="100">100</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                    <option value="all">All</option>
-                </select>
-                <label for="download-size" style="font-size:14px;margin-left:10px;">Download:</label>
-                <select id="download-size" style="margin-left:4px;padding:4px 8px;border-radius:4px;">
-                    <option value="100">100</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                    <option value="all">All</option>
-                </select>
-                <button class="page-btn" onclick="downloadCurrentTableAsJSON()">Download as JSON</button>
             </div>
             </div><!-- /.window-body -->
         </div>
 
-        <div class="table-container window">
-            <div class="title-bar">
-                <div class="title-bar-text">📊 records</div>
-            </div>
-            <div class="window-body" style="margin:0;padding:6px;">
+        <!-- Records table in a tabbed fieldset; the tabs switch table type (image/text entries, etc.) -->
+        <section class="tabs" id="table-tabs">
+            <menu role="tablist" aria-label="Table type">
+                <!-- Art DB table switcher -->
+                <div class="table-selector" id="art-table-selector">
+                    <button class="table-btn"        role="tab" aria-controls="table-panel" aria-selected="false" onclick="artSwitchTable('text_entries')">Text Entries</button>
+                    <button class="table-btn active" role="tab" aria-controls="table-panel" aria-selected="true"  onclick="artSwitchTable('image_entries')">Image Entries</button>
+                </div>
+                <!-- Poetry DB table switcher -->
+                <div class="table-selector" id="poetry-table-selector" style="display:none">
+                    <button class="table-btn active" role="tab" aria-controls="table-panel" aria-selected="true"  id="ptab-text" onclick="poetrySwitchTable('text_entries')">Authors / Subjects</button>
+                    <button class="table-btn"        role="tab" aria-controls="table-panel" aria-selected="false" id="ptab-book" onclick="poetrySwitchTable('book_entries')">Books</button>
+                    <button class="table-btn"        role="tab" aria-controls="table-panel" aria-selected="false" id="ptab-line" onclick="poetrySwitchTable('line_entries')">Lines</button>
+                </div>
+                <!-- Comics DB table switcher -->
+                <div class="table-selector" id="comics-table-selector" style="display:none">
+                    <button class="table-btn active" role="tab" aria-controls="table-panel" aria-selected="true"  id="ctab-text"  onclick="comicsSwitchTable('text_entries')">Series / Creators</button>
+                    <button class="table-btn"        role="tab" aria-controls="table-panel" aria-selected="false" id="ctab-book"  onclick="comicsSwitchTable('book_entries')">Books / Issues</button>
+                    <button class="table-btn"        role="tab" aria-controls="table-panel" aria-selected="false" id="ctab-image" onclick="comicsSwitchTable('image_entries')">Pages</button>
+                </div>
+            </menu>
+
+            <article role="tabpanel" id="table-panel">
+                <!-- Poetry breadcrumb -->
+                <div id="poetry-breadcrumb">
+                    <button class="crumb-btn" onclick="poetryDrillTo('text_entries')">All Authors / Subjects</button>
+                    <span class="crumb-sep" id="pcrumb-sep-1" style="display:none">›</span>
+                    <button class="crumb-btn" id="pcrumb-book-btn" style="display:none" onclick="poetryDrillTo('line_entries')"></button>
+                </div>
+
+                <!-- Comics breadcrumb (hidden when browsing art DB) -->
+                <div id="comics-breadcrumb">
+                    <button class="crumb-btn" onclick="comicsDrillTo('text_entries')">All Series</button>
+                    <span class="crumb-sep" id="crumb-sep-1" style="display:none">›</span>
+                    <button class="crumb-btn" id="crumb-series-btn" style="display:none" onclick="comicsDrillTo('book_entries')"></button>
+                    <span class="crumb-sep" id="crumb-sep-2" style="display:none">›</span>
+                    <button class="crumb-btn" id="crumb-book-btn"   style="display:none" onclick="comicsDrillTo('image_entries')"></button>
+                </div>
+
+                <div class="controls">
+                    <div class="stats" id="stats">Loading...</div>
+                    <input id="search-bar" type="text" placeholder="Search..."
+                        style="margin-left:16px;padding:4px 10px;border-radius:4px;border:1px solid #ccc;width:200px;"
+                        oninput="onSearchInput()">
+                    <label for="page-size" style="font-size:14px;margin-left:10px;">Show per page:</label>
+                    <select id="page-size" style="margin-left:4px;padding:4px 8px;border-radius:4px;" onchange="onPageSizeChange()">
+                        <option value="25">25</option>
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="all">All</option>
+                    </select>
+                    <label for="download-size" style="font-size:14px;margin-left:10px;">Download:</label>
+                    <select id="download-size" style="margin-left:4px;padding:4px 8px;border-radius:4px;">
+                        <option value="100">100</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="all">All</option>
+                    </select>
+                    <button class="page-btn" onclick="downloadCurrentTableAsJSON()">Download as JSON</button>
+                    <div class="pagination-top" id="pagination-top" style="margin-left:auto;">
+                        <button class="page-btn" id="prev-btn-top" onclick="changePage(-1)">← Previous</button>
+                        <span class="page-info" id="page-info-top">Page 1</span>
+                        <button class="page-btn" id="next-btn-top" onclick="changePage(1)">Next →</button>
+                        <button class="page-btn" id="last-btn-top" onclick="goToLastPage()">Last »</button>
+                    </div>
+                </div>
+
                 <div id="table-content"><div class="loading">Loading data...</div></div>
-            </div>
-        </div>
+            </article>
+        </section>
     </div>
 
     <!-- Detail modal -->
@@ -421,6 +421,10 @@ function onSearchInput() {
 //  CORE DATA LOAD
 // ============================================================
 function loadData() {
+    // keep aria-selected in sync with the .active table-tab (for a11y + tab styling)
+    document.querySelectorAll('#table-tabs menu[role="tablist"] button').forEach(b =>
+        b.setAttribute('aria-selected', b.classList.contains('active') ? 'true' : 'false'));
+
     document.getElementById('table-content').innerHTML = '<div class="loading">Loading data...</div>';
 
     let ps = (pageSize === 'all') ? 1_000_000 : parseInt(pageSize, 10) || 25;

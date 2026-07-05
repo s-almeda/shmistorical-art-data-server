@@ -1,0 +1,3147 @@
+[
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1001",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1001",
+        "title": "Divine Comedy, Longfellow's Translation, Hell",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Longfellow, Henry Wadsworth, 1807-1882 [Translator]"
+        ],
+        "subjects": [
+          "Hell -- Poetry",
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1001"
+      }
+    },
+    "gid": "1001",
+    "line_count": 4717,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-wadsworth-1807-1882-translator-longfellow",
+      "gbp_subject_hell-poetry",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Wadsworth, 1807-1882 [Translator] Longfellow",
+      "Hell -- Poetry",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Longfellow's Translation, Hell"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1002",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1002",
+        "title": "Divine Comedy, Longfellow's Translation, Purgatory",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Longfellow, Henry Wadsworth, 1807-1882 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1002"
+      }
+    },
+    "gid": "1002",
+    "line_count": 4761,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-wadsworth-1807-1882-translator-longfellow",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Wadsworth, 1807-1882 [Translator] Longfellow",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Longfellow's Translation, Purgatory"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1003",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1003",
+        "title": "Divine Comedy, Longfellow's Translation, Paradise",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Longfellow, Henry Wadsworth, 1807-1882 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1003"
+      }
+    },
+    "gid": "1003",
+    "line_count": 4850,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-wadsworth-1807-1882-translator-longfellow",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Wadsworth, 1807-1882 [Translator] Longfellow",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Longfellow's Translation, Paradise"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1004",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1004",
+        "title": "Divine Comedy, Longfellow's Translation, Complete",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Longfellow, Henry Wadsworth, 1807-1882 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1004"
+      }
+    },
+    "gid": "1004",
+    "line_count": 14328,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-wadsworth-1807-1882-translator-longfellow",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Wadsworth, 1807-1882 [Translator] Longfellow",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Longfellow's Translation, Complete"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1005",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1005",
+        "title": "Divine Comedy, Cary's Translation, Hell",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Cary, Henry Francis, 1772-1844 [Translator]"
+        ],
+        "subjects": [
+          "Hell -- Poetry",
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1005"
+      }
+    },
+    "gid": "1005",
+    "line_count": 4628,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-francis-1772-1844-translator-cary",
+      "gbp_subject_hell-poetry",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Francis, 1772-1844 [Translator] Cary",
+      "Hell -- Poetry",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Cary's Translation, Hell"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1006",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1006",
+        "title": "Divine Comedy, Cary's Translation, Purgatory",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Cary, Henry Francis, 1772-1844 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1006"
+      }
+    },
+    "gid": "1006",
+    "line_count": 4641,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-francis-1772-1844-translator-cary",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Francis, 1772-1844 [Translator] Cary",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Cary's Translation, Purgatory"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1007",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1007",
+        "title": "Divine Comedy, Cary's Translation, Paradise",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Cary, Henry Francis, 1772-1844 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1007"
+      }
+    },
+    "gid": "1007",
+    "line_count": 4566,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-francis-1772-1844-translator-cary",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Francis, 1772-1844 [Translator] Cary",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Cary's Translation, Paradise"
+  },
+  {
+    "author_id": "gbp_author_dante-alighieri",
+    "book_id": "gbp_book_1008",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1008",
+        "title": "Divine Comedy, Cary's Translation, Complete",
+        "authors": [
+          "Dante Alighieri, 1265-1321",
+          "Cary, Henry Francis, 1772-1844 [Translator]"
+        ],
+        "subjects": [
+          "Epic poetry, Italian -- Translations into English",
+          "Italian poetry -- To 1400 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1008"
+      }
+    },
+    "gid": "1008",
+    "line_count": 17553,
+    "relatedKeywordIds": [
+      "gbp_author_dante-alighieri",
+      "gbp_author_henry-francis-1772-1844-translator-cary",
+      "gbp_subject_epic-poetry-italian-translations-into-english",
+      "gbp_subject_italian-poetry-to-1400-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Dante Alighieri",
+      "Henry Francis, 1772-1844 [Translator] Cary",
+      "Epic poetry, Italian -- Translations into English",
+      "Italian poetry -- To 1400 -- Translations into English"
+    ],
+    "value": "Divine Comedy, Cary's Translation, Complete"
+  },
+  {
+    "author_id": "gbp_author_robert-graves",
+    "book_id": "gbp_book_10122",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10122",
+        "title": "Fairies and Fusiliers",
+        "authors": [
+          "Graves, Robert, 1895-1985"
+        ],
+        "subjects": [
+          "World War, 1914-1918 -- Poetry",
+          "War poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10122"
+      }
+    },
+    "gid": "10122",
+    "line_count": 1261,
+    "relatedKeywordIds": [
+      "gbp_author_robert-graves",
+      "gbp_subject_world-war-1914-1918-poetry",
+      "gbp_subject_war-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Robert Graves",
+      "World War, 1914-1918 -- Poetry",
+      "War poetry, English"
+    ],
+    "value": "Fairies and Fusiliers"
+  },
+  {
+    "author_id": "gbp_author_donald-lemen-clark",
+    "book_id": "gbp_book_10140",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10140",
+        "title": "Rhetoric and Poetry in the Renaissance\nA Study of Rhetorical Terms in English Renaissance Literary Criticism",
+        "authors": [
+          "Clark, Donald Lemen, 1888-1966"
+        ],
+        "subjects": [
+          "Renaissance",
+          "Poetry -- History and criticism",
+          "Rhetoric -- Terminology",
+          "English language -- Early modern, 1500-1700 -- Terms and phrases",
+          "Criticism -- Great Britain -- History -- 16th century",
+          "Criticism -- Great Britain -- History -- 17th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10140"
+      }
+    },
+    "gid": "10140",
+    "line_count": 288,
+    "relatedKeywordIds": [
+      "gbp_author_donald-lemen-clark",
+      "gbp_subject_renaissance",
+      "gbp_subject_poetry-history-and-criticism",
+      "gbp_subject_rhetoric-terminology",
+      "gbp_subject_english-language-early-modern-1500-1700-terms-and-phrases",
+      "gbp_subject_criticism-great-britain-history-16th-century",
+      "gbp_subject_criticism-great-britain-history-17th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Donald Lemen Clark",
+      "Renaissance",
+      "Poetry -- History and criticism",
+      "Rhetoric -- Terminology",
+      "English language -- Early modern, 1500-1700 -- Terms and phrases",
+      "Criticism -- Great Britain -- History -- 16th century",
+      "Criticism -- Great Britain -- History -- 17th century"
+    ],
+    "value": "Rhetoric and Poetry in the Renaissance\nA Study of Rhetorical Terms in English Renaissance Literary Criticism"
+  },
+  {
+    "author_id": "gbp_author_charlotte-bront",
+    "book_id": "gbp_book_1019",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1019",
+        "title": "Poems by Currer, Ellis, and Acton Bell",
+        "authors": [
+          "Brontë, Charlotte, 1816-1855",
+          "Brontë, Anne, 1820-1849",
+          "Brontë, Emily, 1818-1848"
+        ],
+        "subjects": [
+          "English poetry -- 19th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1019"
+      }
+    },
+    "gid": "1019",
+    "line_count": 4793,
+    "relatedKeywordIds": [
+      "gbp_author_charlotte-bront",
+      "gbp_author_anne-bront",
+      "gbp_author_emily-bront",
+      "gbp_subject_english-poetry-19th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Charlotte Brontë",
+      "Anne Brontë",
+      "Emily Brontë",
+      "English poetry -- 19th century"
+    ],
+    "value": "Poems by Currer, Ellis, and Acton Bell"
+  },
+  {
+    "author_id": "gbp_author_amy-lowell",
+    "book_id": "gbp_book_1020",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1020",
+        "title": "Sword Blades and Poppy Seed",
+        "authors": [
+          "Lowell, Amy, 1874-1925"
+        ],
+        "subjects": [
+          "American poetry",
+          "Imagist poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1020"
+      }
+    },
+    "gid": "1020",
+    "line_count": 3184,
+    "relatedKeywordIds": [
+      "gbp_author_amy-lowell",
+      "gbp_subject_american-poetry",
+      "gbp_subject_imagist-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Amy Lowell",
+      "American poetry",
+      "Imagist poetry"
+    ],
+    "value": "Sword Blades and Poppy Seed"
+  },
+  {
+    "author_id": "gbp_author_vachel-lindsay",
+    "book_id": "gbp_book_1021",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1021",
+        "title": "The Congo, and Other Poems",
+        "authors": [
+          "Lindsay, Vachel, 1879-1931",
+          "Monroe, Harriet, 1860-1936 [Author of introduction, etc.]"
+        ],
+        "subjects": [
+          "American poetry",
+          "Narrative poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1021"
+      }
+    },
+    "gid": "1021",
+    "line_count": 2311,
+    "relatedKeywordIds": [
+      "gbp_author_vachel-lindsay",
+      "gbp_author_harriet-1860-1936-author-of-introduction-etc-monroe",
+      "gbp_subject_american-poetry",
+      "gbp_subject_narrative-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Vachel Lindsay",
+      "Harriet, 1860-1936 [Author of introduction, etc.] Monroe",
+      "American poetry",
+      "Narrative poetry"
+    ],
+    "value": "The Congo, and Other Poems"
+  },
+  {
+    "author_id": "gbp_author_charles-1814-1889-editor-mackay",
+    "book_id": "gbp_book_1030",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1030",
+        "title": "The Cavalier Songs and Ballads of England from 1642 to 1684",
+        "authors": [
+          "Mackay, Charles, 1814-1889 [Editor]"
+        ],
+        "subjects": [
+          "Ballads, English",
+          "English poetry -- Early modern, 1500-1700"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1030"
+      }
+    },
+    "gid": "1030",
+    "line_count": 7622,
+    "relatedKeywordIds": [
+      "gbp_author_charles-1814-1889-editor-mackay",
+      "gbp_subject_ballads-english",
+      "gbp_subject_english-poetry-early-modern-1500-1700"
+    ],
+    "relatedKeywordStrings": [
+      "Charles, 1814-1889 [Editor] Mackay",
+      "Ballads, English",
+      "English poetry -- Early modern, 1500-1700"
+    ],
+    "value": "The Cavalier Songs and Ballads of England from 1642 to 1684"
+  },
+  {
+    "author_id": "gbp_author_oscar-wilde",
+    "book_id": "gbp_book_1031",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1031",
+        "title": "Charmides, and Other Poems",
+        "authors": [
+          "Wilde, Oscar, 1854-1900"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1031"
+      }
+    },
+    "gid": "1031",
+    "line_count": 1561,
+    "relatedKeywordIds": [
+      "gbp_author_oscar-wilde",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Oscar Wilde",
+      "Poetry"
+    ],
+    "value": "Charmides, and Other Poems"
+  },
+  {
+    "author_id": "gbp_author_wilfred-owen",
+    "book_id": "gbp_book_1034",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1034",
+        "title": "Poems",
+        "authors": [
+          "Owen, Wilfred, 1893-1918",
+          "Sassoon, Siegfried, 1886-1967 [Author of introduction, etc.]"
+        ],
+        "subjects": [
+          "World War, 1914-1918 -- Poetry",
+          "English poetry -- 20th century",
+          "War poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1034"
+      }
+    },
+    "gid": "1034",
+    "line_count": 764,
+    "relatedKeywordIds": [
+      "gbp_author_wilfred-owen",
+      "gbp_author_siegfried-1886-1967-author-of-introduction-etc-sassoon",
+      "gbp_subject_world-war-1914-1918-poetry",
+      "gbp_subject_english-poetry-20th-century",
+      "gbp_subject_war-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Wilfred Owen",
+      "Siegfried, 1886-1967 [Author of introduction, etc.] Sassoon",
+      "World War, 1914-1918 -- Poetry",
+      "English poetry -- 20th century",
+      "War poetry"
+    ],
+    "value": "Poems"
+  },
+  {
+    "author_id": "gbp_author_edwin-arlington-robinson",
+    "book_id": "gbp_book_1035",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1035",
+        "title": "The Man Against the Sky: A Book of Poems",
+        "authors": [
+          "Robinson, Edwin Arlington, 1869-1935"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1035"
+      }
+    },
+    "gid": "1035",
+    "line_count": 1996,
+    "relatedKeywordIds": [
+      "gbp_author_edwin-arlington-robinson",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Edwin Arlington Robinson",
+      "American poetry"
+    ],
+    "value": "The Man Against the Sky: A Book of Poems"
+  },
+  {
+    "author_id": "gbp_author_edwin-arlington-robinson",
+    "book_id": "gbp_book_1040",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1040",
+        "title": "The Three Taverns: A Book of Poems",
+        "authors": [
+          "Robinson, Edwin Arlington, 1869-1935"
+        ],
+        "subjects": [
+          "American poetry",
+          "Lyric poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1040"
+      }
+    },
+    "gid": "1040",
+    "line_count": 2443,
+    "relatedKeywordIds": [
+      "gbp_author_edwin-arlington-robinson",
+      "gbp_subject_american-poetry",
+      "gbp_subject_lyric-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Edwin Arlington Robinson",
+      "American poetry",
+      "Lyric poetry"
+    ],
+    "value": "The Three Taverns: A Book of Poems"
+  },
+  {
+    "author_id": "gbp_author_william-shakespeare",
+    "book_id": "gbp_book_1041",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1041",
+        "title": "Shakespeare's Sonnets",
+        "authors": [
+          "Shakespeare, William, 1564-1616"
+        ],
+        "subjects": [
+          "English poetry",
+          "Sonnets, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1041"
+      }
+    },
+    "gid": "1041",
+    "line_count": 2136,
+    "relatedKeywordIds": [
+      "gbp_author_william-shakespeare",
+      "gbp_subject_english-poetry",
+      "gbp_subject_sonnets-english"
+    ],
+    "relatedKeywordStrings": [
+      "William Shakespeare",
+      "English poetry",
+      "Sonnets, English"
+    ],
+    "value": "Shakespeare's Sonnets"
+  },
+  {
+    "author_id": "gbp_author_george-meredith",
+    "book_id": "gbp_book_1042",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1042",
+        "title": "A Reading of Life, with Other Poems",
+        "authors": [
+          "Meredith, George, 1828-1909"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1042"
+      }
+    },
+    "gid": "1042",
+    "line_count": 1549,
+    "relatedKeywordIds": [
+      "gbp_author_george-meredith",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "George Meredith",
+      "English poetry"
+    ],
+    "value": "A Reading of Life, with Other Poems"
+  },
+  {
+    "author_id": "gbp_author_william-shakespeare",
+    "book_id": "gbp_book_1045",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1045",
+        "title": "Venus and Adonis",
+        "authors": [
+          "Shakespeare, William, 1564-1616"
+        ],
+        "subjects": [
+          "Venus (Roman deity) -- Poetry",
+          "Adonis (Greek deity) -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1045"
+      }
+    },
+    "gid": "1045",
+    "line_count": 1184,
+    "relatedKeywordIds": [
+      "gbp_author_william-shakespeare",
+      "gbp_subject_venus-roman-deity-poetry",
+      "gbp_subject_adonis-greek-deity-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "William Shakespeare",
+      "Venus (Roman deity) -- Poetry",
+      "Adonis (Greek deity) -- Poetry"
+    ],
+    "value": "Venus and Adonis"
+  },
+  {
+    "author_id": "gbp_author_l-leslie-leonard-leslie-brooke",
+    "book_id": "gbp_book_10469",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10469",
+        "title": "Johnny Crow's Garden",
+        "authors": [
+          "Brooke, L. Leslie (Leonard Leslie), 1862-1940"
+        ],
+        "subjects": [
+          "Nursery rhymes",
+          "Animals -- Juvenile poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10469"
+      }
+    },
+    "gid": "10469",
+    "line_count": 40,
+    "relatedKeywordIds": [
+      "gbp_author_l-leslie-leonard-leslie-brooke",
+      "gbp_subject_nursery-rhymes",
+      "gbp_subject_animals-juvenile-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "L. Leslie (Leonard Leslie) Brooke",
+      "Nursery rhymes",
+      "Animals -- Juvenile poetry"
+    ],
+    "value": "Johnny Crow's Garden"
+  },
+  {
+    "author_id": "gbp_author_a-b-andrew-barton-1864-1941-compiler-paterson",
+    "book_id": "gbp_book_10493",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10493",
+        "title": "The Old Bush Songs",
+        "authors": [
+          "Paterson, A. B. (Andrew Barton), 1864-1941 [Compiler]"
+        ],
+        "subjects": [
+          "Australian poetry",
+          "Songs, English -- Australia"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10493"
+      }
+    },
+    "gid": "10493",
+    "line_count": 2546,
+    "relatedKeywordIds": [
+      "gbp_author_a-b-andrew-barton-1864-1941-compiler-paterson",
+      "gbp_subject_australian-poetry",
+      "gbp_subject_songs-english-australia"
+    ],
+    "relatedKeywordStrings": [
+      "A. B. (Andrew Barton), 1864-1941 [Compiler] Paterson",
+      "Australian poetry",
+      "Songs, English -- Australia"
+    ],
+    "value": "The Old Bush Songs"
+  },
+  {
+    "author_id": "gbp_author_andrew-lang",
+    "book_id": "gbp_book_1054",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1054",
+        "title": "A Collection of Ballads",
+        "authors": [
+          "Lang, Andrew, 1844-1912"
+        ],
+        "subjects": [
+          "Ballads, Scots -- Scotland -- Texts"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1054"
+      }
+    },
+    "gid": "1054",
+    "line_count": 6185,
+    "relatedKeywordIds": [
+      "gbp_author_andrew-lang",
+      "gbp_subject_ballads-scots-scotland-texts"
+    ],
+    "relatedKeywordStrings": [
+      "Andrew Lang",
+      "Ballads, Scots -- Scotland -- Texts"
+    ],
+    "value": "A Collection of Ballads"
+  },
+  {
+    "author_id": "gbp_author_l-leslie-leonard-leslie-brooke",
+    "book_id": "gbp_book_10557",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10557",
+        "title": "Johnny Crow's Party",
+        "authors": [
+          "Brooke, L. Leslie (Leonard Leslie), 1862-1940"
+        ],
+        "subjects": [
+          "Nursery rhymes",
+          "Animals -- Juvenile poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10557"
+      }
+    },
+    "gid": "10557",
+    "line_count": 33,
+    "relatedKeywordIds": [
+      "gbp_author_l-leslie-leonard-leslie-brooke",
+      "gbp_subject_nursery-rhymes",
+      "gbp_subject_animals-juvenile-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "L. Leslie (Leonard Leslie) Brooke",
+      "Nursery rhymes",
+      "Animals -- Juvenile poetry"
+    ],
+    "value": "Johnny Crow's Party"
+  },
+  {
+    "author_id": "gbp_author_oscar-wilde",
+    "book_id": "gbp_book_1057",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1057",
+        "title": "Poems, with The Ballad of Reading Gaol",
+        "authors": [
+          "Wilde, Oscar, 1854-1900"
+        ],
+        "subjects": [
+          "Poetry",
+          "Prisons -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1057"
+      }
+    },
+    "gid": "1057",
+    "line_count": 4965,
+    "relatedKeywordIds": [
+      "gbp_author_oscar-wilde",
+      "gbp_subject_poetry",
+      "gbp_subject_prisons-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Oscar Wilde",
+      "Poetry",
+      "Prisons -- Poetry"
+    ],
+    "value": "Poems, with The Ballad of Reading Gaol"
+  },
+  {
+    "author_id": "gbp_author_edmund-1552-spenser",
+    "book_id": "gbp_book_10602",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10602",
+        "title": "The Poetical Works of Edmund Spenser, Volume 5",
+        "authors": [
+          "Spenser, Edmund, 1552?-1599",
+          "Child, Francis James, 1825-1896 [Editor]"
+        ],
+        "subjects": [
+          "English poetry -- Early modern, 1500-1700"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10602"
+      }
+    },
+    "gid": "10602",
+    "line_count": 9113,
+    "relatedKeywordIds": [
+      "gbp_author_edmund-1552-spenser",
+      "gbp_author_francis-james-1825-1896-editor-child",
+      "gbp_subject_english-poetry-early-modern-1500-1700"
+    ],
+    "relatedKeywordStrings": [
+      "Edmund, 1552?- Spenser",
+      "Francis James, 1825-1896 [Editor] Child",
+      "English poetry -- Early modern, 1500-1700"
+    ],
+    "value": "The Poetical Works of Edmund Spenser, Volume 5"
+  },
+  {
+    "author_id": "gbp_author_edgar-allan-poe",
+    "book_id": "gbp_book_1062",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1062",
+        "title": "First Project Gutenberg Collection of Edgar Allan Poe",
+        "authors": [
+          "Poe, Edgar Allan, 1809-1849"
+        ],
+        "subjects": [
+          "Horror tales, American",
+          "Fantasy poetry, American"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1062"
+      }
+    },
+    "gid": "1062",
+    "line_count": 391,
+    "relatedKeywordIds": [
+      "gbp_author_edgar-allan-poe",
+      "gbp_subject_horror-tales-american",
+      "gbp_subject_fantasy-poetry-american"
+    ],
+    "relatedKeywordStrings": [
+      "Edgar Allan Poe",
+      "Horror tales, American",
+      "Fantasy poetry, American"
+    ],
+    "value": "First Project Gutenberg Collection of Edgar Allan Poe"
+  },
+  {
+    "author_id": "gbp_author_erasmus-darwin",
+    "book_id": "gbp_book_10671",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "10671",
+        "title": "The Botanic Garden. Part 2, Containing the Loves of the Plants. A Poem.\nWith Philosophical Notes.",
+        "authors": [
+          "Darwin, Erasmus, 1731-1802"
+        ],
+        "subjects": [
+          "Natural history",
+          "Plants -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/10671"
+      }
+    },
+    "gid": "10671",
+    "line_count": 1706,
+    "relatedKeywordIds": [
+      "gbp_author_erasmus-darwin",
+      "gbp_subject_natural-history",
+      "gbp_subject_plants-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Erasmus Darwin",
+      "Natural history",
+      "Plants -- Poetry"
+    ],
+    "value": "The Botanic Garden. Part 2, Containing the Loves of the Plants. A Poem.\nWith Philosophical Notes."
+  },
+  {
+    "author_id": "gbp_author_edna-st-vincent-millay",
+    "book_id": "gbp_book_109",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "109",
+        "title": "Renascence, and Other Poems",
+        "authors": [
+          "Millay, Edna St. Vincent, 1892-1950"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/109"
+      }
+    },
+    "gid": "109",
+    "line_count": 913,
+    "relatedKeywordIds": [
+      "gbp_author_edna-st-vincent-millay",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Edna St. Vincent Millay",
+      "American poetry"
+    ],
+    "value": "Renascence, and Other Poems"
+  },
+  {
+    "author_id": "gbp_author_elva-sophronia-smith",
+    "book_id": "gbp_book_11014",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11014",
+        "title": "Christmas in Legend and Story: A Book for Boys and Girls",
+        "authors": [
+          "Smith, Elva Sophronia, 1871-1965"
+        ],
+        "subjects": [
+          "Christmas stories",
+          "Christmas",
+          "Children's stories",
+          "Christmas -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11014"
+      }
+    },
+    "gid": "11014",
+    "line_count": 1474,
+    "relatedKeywordIds": [
+      "gbp_author_elva-sophronia-smith",
+      "gbp_subject_christmas-stories",
+      "gbp_subject_christmas",
+      "gbp_subject_childrens-stories",
+      "gbp_subject_christmas-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Elva Sophronia Smith",
+      "Christmas stories",
+      "Christmas",
+      "Children's stories",
+      "Christmas -- Poetry"
+    ],
+    "value": "Christmas in Legend and Story: A Book for Boys and Girls"
+  },
+  {
+    "author_id": "gbp_author_unknown",
+    "book_id": "gbp_book_11073",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11073",
+        "title": "The Illustrated Alphabet of Birds",
+        "authors": [
+          "Unknown"
+        ],
+        "subjects": [
+          "Children's poetry",
+          "Birds -- Juvenile poetry",
+          "Alphabet books"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11073"
+      }
+    },
+    "gid": "11073",
+    "line_count": 78,
+    "relatedKeywordIds": [
+      "gbp_author_unknown",
+      "gbp_subject_childrens-poetry",
+      "gbp_subject_birds-juvenile-poetry",
+      "gbp_subject_alphabet-books"
+    ],
+    "relatedKeywordStrings": [
+      "Unknown",
+      "Children's poetry",
+      "Birds -- Juvenile poetry",
+      "Alphabet books"
+    ],
+    "value": "The Illustrated Alphabet of Birds"
+  },
+  {
+    "author_id": "gbp_author_samuel-taylor-coleridge",
+    "book_id": "gbp_book_11101",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11101",
+        "title": "Coleridge's Ancient Mariner and Select Poems",
+        "authors": [
+          "Coleridge, Samuel Taylor, 1772-1834"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11101"
+      }
+    },
+    "gid": "11101",
+    "line_count": 1875,
+    "relatedKeywordIds": [
+      "gbp_author_samuel-taylor-coleridge",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Samuel Taylor Coleridge",
+      "English poetry"
+    ],
+    "value": "Coleridge's Ancient Mariner and Select Poems"
+  },
+  {
+    "author_id": "gbp_author_anonymous",
+    "book_id": "gbp_book_11150",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11150",
+        "title": "Gems Gathered in Haste\nA New Year's Gift for Sunday Schools",
+        "authors": [
+          "Anonymous"
+        ],
+        "subjects": [
+          "Children's poetry",
+          "Children's stories"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11150"
+      }
+    },
+    "gid": "11150",
+    "line_count": 351,
+    "relatedKeywordIds": [
+      "gbp_author_anonymous",
+      "gbp_subject_childrens-poetry",
+      "gbp_subject_childrens-stories"
+    ],
+    "relatedKeywordStrings": [
+      "Anonymous",
+      "Children's poetry",
+      "Children's stories"
+    ],
+    "value": "Gems Gathered in Haste\nA New Year's Gift for Sunday Schools"
+  },
+  {
+    "author_id": "gbp_author_mrs-pamela-chandler-colman",
+    "book_id": "gbp_book_11333",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11333",
+        "title": "The Pearl Story Book\nA Collection of Tales, Original and Selected",
+        "authors": [
+          "Colman, Mrs. (Pamela Chandler), 1799-1865"
+        ],
+        "subjects": [
+          "Children's poetry",
+          "Children's stories"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11333"
+      }
+    },
+    "gid": "11333",
+    "line_count": 210,
+    "relatedKeywordIds": [
+      "gbp_author_mrs-pamela-chandler-colman",
+      "gbp_subject_childrens-poetry",
+      "gbp_subject_childrens-stories"
+    ],
+    "relatedKeywordStrings": [
+      "Mrs. (Pamela Chandler) Colman",
+      "Children's poetry",
+      "Children's stories"
+    ],
+    "value": "The Pearl Story Book\nA Collection of Tales, Original and Selected"
+  },
+  {
+    "author_id": "gbp_author_joseph-crosby-lincoln",
+    "book_id": "gbp_book_11351",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11351",
+        "title": "Cape Cod Ballads, and Other Verse",
+        "authors": [
+          "Lincoln, Joseph Crosby, 1870-1944"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11351"
+      }
+    },
+    "gid": "11351",
+    "line_count": 2174,
+    "relatedKeywordIds": [
+      "gbp_author_joseph-crosby-lincoln",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Joseph Crosby Lincoln",
+      "Poetry"
+    ],
+    "value": "Cape Cod Ballads, and Other Verse"
+  },
+  {
+    "author_id": "gbp_author_oscar-wilde",
+    "book_id": "gbp_book_1141",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1141",
+        "title": "Selected Poems of Oscar Wilde",
+        "authors": [
+          "Wilde, Oscar, 1854-1900"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1141"
+      }
+    },
+    "gid": "1141",
+    "line_count": 1675,
+    "relatedKeywordIds": [
+      "gbp_author_oscar-wilde",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Oscar Wilde",
+      "Poetry"
+    ],
+    "value": "Selected Poems of Oscar Wilde"
+  },
+  {
+    "author_id": "gbp_author_m-h-mary-hall-1816-1860-editor-adams",
+    "book_id": "gbp_book_11435",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11435",
+        "title": "Small Means and Great Ends",
+        "authors": [
+          "Adams, M. H. (Mary Hall), 1816-1860 [Editor]"
+        ],
+        "subjects": [
+          "Christian life -- Juvenile fiction",
+          "Children's poetry",
+          "Conduct of life -- Juvenile fiction",
+          "Children's stories",
+          "Children -- Conduct of life -- Juvenile fiction"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11435"
+      }
+    },
+    "gid": "11435",
+    "line_count": 407,
+    "relatedKeywordIds": [
+      "gbp_author_m-h-mary-hall-1816-1860-editor-adams",
+      "gbp_subject_christian-life-juvenile-fiction",
+      "gbp_subject_childrens-poetry",
+      "gbp_subject_conduct-of-life-juvenile-fiction",
+      "gbp_subject_childrens-stories",
+      "gbp_subject_children-conduct-of-life-juvenile-fiction"
+    ],
+    "relatedKeywordStrings": [
+      "M. H. (Mary Hall), 1816-1860 [Editor] Adams",
+      "Christian life -- Juvenile fiction",
+      "Children's poetry",
+      "Conduct of life -- Juvenile fiction",
+      "Children's stories",
+      "Children -- Conduct of life -- Juvenile fiction"
+    ],
+    "value": "Small Means and Great Ends"
+  },
+  {
+    "author_id": "gbp_author_sarah-s-mower",
+    "book_id": "gbp_book_11439",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11439",
+        "title": "The Snow-Drop\nA Holiday Gift",
+        "authors": [
+          "Mower, Sarah S."
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11439"
+      }
+    },
+    "gid": "11439",
+    "line_count": 2418,
+    "relatedKeywordIds": [
+      "gbp_author_sarah-s-mower",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Sarah S. Mower",
+      "Poetry"
+    ],
+    "value": "The Snow-Drop\nA Holiday Gift"
+  },
+  {
+    "author_id": "gbp_author_daniel-bussier-1868-translator-shumway",
+    "book_id": "gbp_book_1151",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1151",
+        "title": "The Nibelungenlied",
+        "authors": [
+          "Shumway, Daniel Bussier, 1868- [Translator]"
+        ],
+        "subjects": [
+          "Folklore -- Germany",
+          "Siegfried (Legendary character)",
+          "Mythology, Germanic",
+          "Epic poetry, Germanic",
+          "Nibelungen",
+          "Kriemhild (Legendary character)"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1151"
+      }
+    },
+    "gid": "1151",
+    "line_count": 843,
+    "relatedKeywordIds": [
+      "gbp_author_daniel-bussier-1868-translator-shumway",
+      "gbp_subject_folklore-germany",
+      "gbp_subject_siegfried-legendary-character",
+      "gbp_subject_mythology-germanic",
+      "gbp_subject_epic-poetry-germanic",
+      "gbp_subject_nibelungen",
+      "gbp_subject_kriemhild-legendary-character"
+    ],
+    "relatedKeywordStrings": [
+      "Daniel Bussier, 1868- [Translator] Shumway",
+      "Folklore -- Germany",
+      "Siegfried (Legendary character)",
+      "Mythology, Germanic",
+      "Epic poetry, Germanic",
+      "Nibelungen",
+      "Kriemhild (Legendary character)"
+    ],
+    "value": "The Nibelungenlied"
+  },
+  {
+    "author_id": "gbp_author_jessie-belle-1869-1948-editor-rittenhouse",
+    "book_id": "gbp_book_1165",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1165",
+        "title": "The Little Book of Modern Verse\nA Selection from the Work of Contemporaneous American Poets",
+        "authors": [
+          "Rittenhouse, Jessie Belle, 1869-1948 [Editor]"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1165"
+      }
+    },
+    "gid": "1165",
+    "line_count": 5260,
+    "relatedKeywordIds": [
+      "gbp_author_jessie-belle-1869-1948-editor-rittenhouse",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Jessie Belle, 1869-1948 [Editor] Rittenhouse",
+      "American poetry"
+    ],
+    "value": "The Little Book of Modern Verse\nA Selection from the Work of Contemporaneous American Poets"
+  },
+  {
+    "author_id": "gbp_author_jessie-belle-1869-1948-editor-rittenhouse",
+    "book_id": "gbp_book_1166",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1166",
+        "title": "The Second Book of Modern Verse\nA Selection from the Work of Contemporaneous American Poets",
+        "authors": [
+          "Rittenhouse, Jessie Belle, 1869-1948 [Editor]"
+        ],
+        "subjects": [
+          "American poetry -- 20th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1166"
+      }
+    },
+    "gid": "1166",
+    "line_count": 5281,
+    "relatedKeywordIds": [
+      "gbp_author_jessie-belle-1869-1948-editor-rittenhouse",
+      "gbp_subject_american-poetry-20th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Jessie Belle, 1869-1948 [Editor] Rittenhouse",
+      "American poetry -- 20th century"
+    ],
+    "value": "The Second Book of Modern Verse\nA Selection from the Work of Contemporaneous American Poets"
+  },
+  {
+    "author_id": "gbp_author_alice-duer-miller",
+    "book_id": "gbp_book_11689",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11689",
+        "title": "Are Women People? A Book of Rhymes for Suffrage Times",
+        "authors": [
+          "Miller, Alice Duer, 1874-1942"
+        ],
+        "subjects": [
+          "Women -- Suffrage -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11689"
+      }
+    },
+    "gid": "11689",
+    "line_count": 739,
+    "relatedKeywordIds": [
+      "gbp_author_alice-duer-miller",
+      "gbp_subject_women-suffrage-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Alice Duer Miller",
+      "Women -- Suffrage -- Poetry"
+    ],
+    "value": "Are Women People? A Book of Rhymes for Suffrage Times"
+  },
+  {
+    "author_id": "gbp_author_alice-meynell",
+    "book_id": "gbp_book_1186",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1186",
+        "title": "Poems",
+        "authors": [
+          "Meynell, Alice, 1847-1922"
+        ],
+        "subjects": [
+          "English poetry -- 19th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1186"
+      }
+    },
+    "gid": "1186",
+    "line_count": 1008,
+    "relatedKeywordIds": [
+      "gbp_author_alice-meynell",
+      "gbp_subject_english-poetry-19th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Alice Meynell",
+      "English poetry -- 19th century"
+    ],
+    "value": "Poems"
+  },
+  {
+    "author_id": "gbp_author_martha-dickinson-1866-1943-translator-bianchi",
+    "book_id": "gbp_book_11985",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "11985",
+        "title": "Russian Lyrics",
+        "authors": [
+          "Bianchi, Martha Dickinson, 1866-1943 [Translator]"
+        ],
+        "subjects": [
+          "Russian poetry -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/11985"
+      }
+    },
+    "gid": "11985",
+    "line_count": 1898,
+    "relatedKeywordIds": [
+      "gbp_author_martha-dickinson-1866-1943-translator-bianchi",
+      "gbp_subject_russian-poetry-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Martha Dickinson, 1866-1943 [Translator] Bianchi",
+      "Russian poetry -- Translations into English"
+    ],
+    "value": "Russian Lyrics"
+  },
+  {
+    "author_id": "gbp_author_bertram-1872-1922-editor-stevens",
+    "book_id": "gbp_book_1199",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1199",
+        "title": "An Anthology of Australian Verse",
+        "authors": [
+          "Stevens, Bertram, 1872-1922 [Editor]"
+        ],
+        "subjects": [
+          "Australian poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1199"
+      }
+    },
+    "gid": "1199",
+    "line_count": 5604,
+    "relatedKeywordIds": [
+      "gbp_author_bertram-1872-1922-editor-stevens",
+      "gbp_subject_australian-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Bertram, 1872-1922 [Editor] Stevens",
+      "Australian poetry"
+    ],
+    "value": "An Anthology of Australian Verse"
+  },
+  {
+    "author_id": "gbp_author_randolph-caldecott",
+    "book_id": "gbp_book_12109",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12109",
+        "title": "The House That Jack Built\nOne of R. Caldecott's Picture Books",
+        "authors": [
+          "Caldecott, Randolph, 1846-1886"
+        ],
+        "subjects": [
+          "Children's poetry, English",
+          "Nursery rhymes",
+          "Picture books for children"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12109"
+      }
+    },
+    "gid": "12109",
+    "line_count": 73,
+    "relatedKeywordIds": [
+      "gbp_author_randolph-caldecott",
+      "gbp_subject_childrens-poetry-english",
+      "gbp_subject_nursery-rhymes",
+      "gbp_subject_picture-books-for-children"
+    ],
+    "relatedKeywordStrings": [
+      "Randolph Caldecott",
+      "Children's poetry, English",
+      "Nursery rhymes",
+      "Picture books for children"
+    ],
+    "value": "The House That Jack Built\nOne of R. Caldecott's Picture Books"
+  },
+  {
+    "author_id": "gbp_author_robert-herrick",
+    "book_id": "gbp_book_1211",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1211",
+        "title": "A Selection from the Lyrical Poems of Robert Herrick",
+        "authors": [
+          "Herrick, Robert, 1591-1674",
+          "Palgrave, Francis Turner, 1824-1897 [Editor]"
+        ],
+        "subjects": [
+          "English poetry -- Early modern, 1500-1700"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1211"
+      }
+    },
+    "gid": "1211",
+    "line_count": 4194,
+    "relatedKeywordIds": [
+      "gbp_author_robert-herrick",
+      "gbp_author_francis-turner-1824-1897-editor-palgrave",
+      "gbp_subject_english-poetry-early-modern-1500-1700"
+    ],
+    "relatedKeywordStrings": [
+      "Robert Herrick",
+      "Francis Turner, 1824-1897 [Editor] Palgrave",
+      "English poetry -- Early modern, 1500-1700"
+    ],
+    "value": "A Selection from the Lyrical Poems of Robert Herrick"
+  },
+  {
+    "author_id": "gbp_author_heinrich-hoffmann",
+    "book_id": "gbp_book_12116",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12116",
+        "title": "Struwwelpeter: Merry Stories and Funny Pictures",
+        "authors": [
+          "Hoffmann, Heinrich, 1809-1894"
+        ],
+        "subjects": [
+          "Children -- Conduct of life -- Juvenile fiction",
+          "Stories in rhyme",
+          "Behavior -- Fiction",
+          "Children's stories, German -- Translations into English",
+          "Picture books for children",
+          "Children's poetry, German -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12116"
+      }
+    },
+    "gid": "12116",
+    "line_count": 358,
+    "relatedKeywordIds": [
+      "gbp_author_heinrich-hoffmann",
+      "gbp_subject_children-conduct-of-life-juvenile-fiction",
+      "gbp_subject_stories-in-rhyme",
+      "gbp_subject_behavior-fiction",
+      "gbp_subject_childrens-stories-german-translations-into-english",
+      "gbp_subject_picture-books-for-children",
+      "gbp_subject_childrens-poetry-german-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Heinrich Hoffmann",
+      "Children -- Conduct of life -- Juvenile fiction",
+      "Stories in rhyme",
+      "Behavior -- Fiction",
+      "Children's stories, German -- Translations into English",
+      "Picture books for children",
+      "Children's poetry, German -- Translations into English"
+    ],
+    "value": "Struwwelpeter: Merry Stories and Funny Pictures"
+  },
+  {
+    "author_id": "gbp_author_emily-dickinson",
+    "book_id": "gbp_book_12241",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12241",
+        "title": "Poems by Emily Dickinson, Third Series",
+        "authors": [
+          "Dickinson, Emily, 1830-1886",
+          "Todd, Mabel Loomis, 1856-1932 [Editor]"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12241"
+      }
+    },
+    "gid": "12241",
+    "line_count": 1741,
+    "relatedKeywordIds": [
+      "gbp_author_emily-dickinson",
+      "gbp_author_mabel-loomis-1856-1932-editor-todd",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Emily Dickinson",
+      "Mabel Loomis, 1856-1932 [Editor] Todd",
+      "American poetry"
+    ],
+    "value": "Poems by Emily Dickinson, Third Series"
+  },
+  {
+    "author_id": "gbp_author_emily-dickinson",
+    "book_id": "gbp_book_12242",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12242",
+        "title": "Poems by Emily Dickinson, Three Series, Complete",
+        "authors": [
+          "Dickinson, Emily, 1830-1886"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12242"
+      }
+    },
+    "gid": "12242",
+    "line_count": 5461,
+    "relatedKeywordIds": [
+      "gbp_author_emily-dickinson",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Emily Dickinson",
+      "American poetry"
+    ],
+    "value": "Poems by Emily Dickinson, Three Series, Complete"
+  },
+  {
+    "author_id": "gbp_author_david-lester-richardson",
+    "book_id": "gbp_book_12286",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12286",
+        "title": "Flowers and Flower-Gardens\nWith an Appendix of Practical Instructions and Useful Information Respecting the Anglo-Indian Flower-Garden",
+        "authors": [
+          "Richardson, David Lester, 1801-1865"
+        ],
+        "subjects": [
+          "Gardening",
+          "Flowers -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12286"
+      }
+    },
+    "gid": "12286",
+    "line_count": 3158,
+    "relatedKeywordIds": [
+      "gbp_author_david-lester-richardson",
+      "gbp_subject_gardening",
+      "gbp_subject_flowers-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "David Lester Richardson",
+      "Gardening",
+      "Flowers -- Poetry"
+    ],
+    "value": "Flowers and Flower-Gardens\nWith an Appendix of Practical Instructions and Useful Information Respecting the Anglo-Indian Flower-Garden"
+  },
+  {
+    "author_id": "gbp_author_sidney-lanier",
+    "book_id": "gbp_book_1229",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1229",
+        "title": "Select Poems of Sidney Lanier",
+        "authors": [
+          "Lanier, Sidney, 1842-1881",
+          "Callaway, Morgan, 1862-1936 [Editor]"
+        ],
+        "subjects": [
+          "American poetry -- 19th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1229"
+      }
+    },
+    "gid": "1229",
+    "line_count": 2015,
+    "relatedKeywordIds": [
+      "gbp_author_sidney-lanier",
+      "gbp_author_morgan-1862-1936-editor-callaway",
+      "gbp_subject_american-poetry-19th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Sidney Lanier",
+      "Morgan, 1862-1936 [Editor] Callaway",
+      "American poetry -- 19th century"
+    ],
+    "value": "Select Poems of Sidney Lanier"
+  },
+  {
+    "author_id": "gbp_author_james-thomson",
+    "book_id": "gbp_book_1238",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1238",
+        "title": "The City of Dreadful Night",
+        "authors": [
+          "Thomson, James, 1834-1882"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1238"
+      }
+    },
+    "gid": "1238",
+    "line_count": 1136,
+    "relatedKeywordIds": [
+      "gbp_author_james-thomson",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "James Thomson",
+      "English poetry"
+    ],
+    "value": "The City of Dreadful Night"
+  },
+  {
+    "author_id": "gbp_author_archibald-lampman",
+    "book_id": "gbp_book_12413",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12413",
+        "title": "Among the Millet and Other Poems",
+        "authors": [
+          "Lampman, Archibald, 1861-1899"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12413"
+      }
+    },
+    "gid": "12413",
+    "line_count": 3142,
+    "relatedKeywordIds": [
+      "gbp_author_archibald-lampman",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Archibald Lampman",
+      "Poetry"
+    ],
+    "value": "Among the Millet and Other Poems"
+  },
+  {
+    "author_id": "gbp_author_conrad-aiken",
+    "book_id": "gbp_book_1246",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1246",
+        "title": "The House of Dust: A Symphony",
+        "authors": [
+          "Aiken, Conrad, 1889-1973"
+        ],
+        "subjects": [
+          "American poetry",
+          "Pastoral poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1246"
+      }
+    },
+    "gid": "1246",
+    "line_count": 2662,
+    "relatedKeywordIds": [
+      "gbp_author_conrad-aiken",
+      "gbp_subject_american-poetry",
+      "gbp_subject_pastoral-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Conrad Aiken",
+      "American poetry",
+      "Pastoral poetry"
+    ],
+    "value": "The House of Dust: A Symphony"
+  },
+  {
+    "author_id": "gbp_author_edna-st-vincent-millay",
+    "book_id": "gbp_book_1247",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1247",
+        "title": "Second April",
+        "authors": [
+          "Millay, Edna St. Vincent, 1892-1950"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1247"
+      }
+    },
+    "gid": "1247",
+    "line_count": 1237,
+    "relatedKeywordIds": [
+      "gbp_author_edna-st-vincent-millay",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Edna St. Vincent Millay",
+      "American poetry"
+    ],
+    "value": "Second April"
+  },
+  {
+    "author_id": "gbp_author_isabel-ecclestone-mackay",
+    "book_id": "gbp_book_12475",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12475",
+        "title": "Fires of Driftwood",
+        "authors": [
+          "Mackay, Isabel Ecclestone, 1875-1928"
+        ],
+        "subjects": [
+          "Canadian poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12475"
+      }
+    },
+    "gid": "12475",
+    "line_count": 1945,
+    "relatedKeywordIds": [
+      "gbp_author_isabel-ecclestone-mackay",
+      "gbp_subject_canadian-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Isabel Ecclestone Mackay",
+      "Canadian poetry"
+    ],
+    "value": "Fires of Driftwood"
+  },
+  {
+    "author_id": "gbp_author_archibald-lampman",
+    "book_id": "gbp_book_12664",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "12664",
+        "title": "Lyrics of Earth",
+        "authors": [
+          "Lampman, Archibald, 1861-1899"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/12664"
+      }
+    },
+    "gid": "12664",
+    "line_count": 1302,
+    "relatedKeywordIds": [
+      "gbp_author_archibald-lampman",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Archibald Lampman",
+      "Poetry"
+    ],
+    "value": "Lyrics of Earth"
+  },
+  {
+    "author_id": "gbp_author_robert-burns",
+    "book_id": "gbp_book_1279",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1279",
+        "title": "Poems and Songs of Robert Burns",
+        "authors": [
+          "Burns, Robert, 1759-1796"
+        ],
+        "subjects": [
+          "Songs, Scots -- Scotland -- Texts",
+          "Scotland -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1279"
+      }
+    },
+    "gid": "1279",
+    "line_count": 19275,
+    "relatedKeywordIds": [
+      "gbp_author_robert-burns",
+      "gbp_subject_songs-scots-scotland-texts",
+      "gbp_subject_scotland-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Robert Burns",
+      "Songs, Scots -- Scotland -- Texts",
+      "Scotland -- Poetry"
+    ],
+    "value": "Poems and Songs of Robert Burns"
+  },
+  {
+    "author_id": "gbp_author_edgar-lee-masters",
+    "book_id": "gbp_book_1280",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1280",
+        "title": "Spoon River Anthology",
+        "authors": [
+          "Masters, Edgar Lee, 1868-1950"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1280"
+      }
+    },
+    "gid": "1280",
+    "line_count": 4083,
+    "relatedKeywordIds": [
+      "gbp_author_edgar-lee-masters",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Edgar Lee Masters",
+      "American poetry"
+    ],
+    "value": "Spoon River Anthology"
+  },
+  {
+    "author_id": "gbp_author_johann-wolfgang-von-goethe",
+    "book_id": "gbp_book_1287",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1287",
+        "title": "The Poems of Goethe, Translated in the Original Metres",
+        "authors": [
+          "Goethe, Johann Wolfgang von, 1749-1832",
+          "Bowring, Edgar Alfred, 1826-1911 [Translator]"
+        ],
+        "subjects": [
+          "German poetry -- Translations into English",
+          "Goethe, Johann Wolfgang von, 1749-1832 -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1287"
+      }
+    },
+    "gid": "1287",
+    "line_count": 12019,
+    "relatedKeywordIds": [
+      "gbp_author_johann-wolfgang-von-goethe",
+      "gbp_author_edgar-alfred-1826-1911-translator-bowring",
+      "gbp_subject_german-poetry-translations-into-english",
+      "gbp_subject_goethe-johann-wolfgang-von-1749-1832-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "Johann Wolfgang von Goethe",
+      "Edgar Alfred, 1826-1911 [Translator] Bowring",
+      "German poetry -- Translations into English",
+      "Goethe, Johann Wolfgang von, 1749-1832 -- Translations into English"
+    ],
+    "value": "The Poems of Goethe, Translated in the Original Metres"
+  },
+  {
+    "author_id": "gbp_author_arthur-1863-1944-editor-quiller-couch",
+    "book_id": "gbp_book_1304",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1304",
+        "title": "Bulchevy's Book of English Verse",
+        "authors": [
+          "Quiller-Couch, Arthur, 1863-1944 [Editor]"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1304"
+      }
+    },
+    "gid": "1304",
+    "line_count": 28558,
+    "relatedKeywordIds": [
+      "gbp_author_arthur-1863-1944-editor-quiller-couch",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Arthur, 1863-1944 [Editor] Quiller-Couch",
+      "English poetry"
+    ],
+    "value": "Bulchevy's Book of English Verse"
+  },
+  {
+    "author_id": "gbp_author_973-abu-al-ala-al-maarri",
+    "book_id": "gbp_book_13086",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13086",
+        "title": "The Diwan of Abu'l-Ala",
+        "authors": [
+          "Abu al-Ala al-Maarri, 973-1057",
+          "Baerlein, Henry, 1875-1960 [Editor]"
+        ],
+        "subjects": [
+          "Arabic poetry -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13086"
+      }
+    },
+    "gid": "13086",
+    "line_count": 975,
+    "relatedKeywordIds": [
+      "gbp_author_973-abu-al-ala-al-maarri",
+      "gbp_author_henry-1875-1960-editor-baerlein",
+      "gbp_subject_arabic-poetry-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "973- Abu al-Ala al-Maarri",
+      "Henry, 1875-1960 [Editor] Baerlein",
+      "Arabic poetry -- Translations into English"
+    ],
+    "value": "The Diwan of Abu'l-Ala"
+  },
+  {
+    "author_id": "gbp_author_eunice-tietjens",
+    "book_id": "gbp_book_13118",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13118",
+        "title": "Profiles from China\nSketches in Free Verse of People and Things Seen in the Interior",
+        "authors": [
+          "Tietjens, Eunice, 1884-1944"
+        ],
+        "subjects": [
+          "China -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13118"
+      }
+    },
+    "gid": "13118",
+    "line_count": 864,
+    "relatedKeywordIds": [
+      "gbp_author_eunice-tietjens",
+      "gbp_subject_china-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Eunice Tietjens",
+      "China -- Poetry"
+    ],
+    "value": "Profiles from China\nSketches in Free Verse of People and Things Seen in the Interior"
+  },
+  {
+    "author_id": "gbp_author_norman-gale",
+    "book_id": "gbp_book_13167",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13167",
+        "title": "More Cricket Songs",
+        "authors": [
+          "Gale, Norman, 1862-1942"
+        ],
+        "subjects": [
+          "Cricket -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13167"
+      }
+    },
+    "gid": "13167",
+    "line_count": 976,
+    "relatedKeywordIds": [
+      "gbp_author_norman-gale",
+      "gbp_subject_cricket-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Norman Gale",
+      "Cricket -- Poetry"
+    ],
+    "value": "More Cricket Songs"
+  },
+  {
+    "author_id": "gbp_author_a-b-andrew-barton-paterson",
+    "book_id": "gbp_book_1317",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1317",
+        "title": "Saltbush Bill, J. P.",
+        "authors": [
+          "Paterson, A. B. (Andrew Barton), 1864-1941"
+        ],
+        "subjects": [
+          "Frontier and pioneer life -- Australia -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1317"
+      }
+    },
+    "gid": "1317",
+    "line_count": 2038,
+    "relatedKeywordIds": [
+      "gbp_author_a-b-andrew-barton-paterson",
+      "gbp_subject_frontier-and-pioneer-life-australia-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "A. B. (Andrew Barton) Paterson",
+      "Frontier and pioneer life -- Australia -- Poetry"
+    ],
+    "value": "Saltbush Bill, J. P."
+  },
+  {
+    "author_id": "gbp_author_t-s-thomas-stearns-eliot",
+    "book_id": "gbp_book_1321",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1321",
+        "title": "The Waste Land",
+        "authors": [
+          "Eliot, T. S. (Thomas Stearns), 1888-1965"
+        ],
+        "subjects": [
+          "Poetry",
+          "Prose poems"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1321"
+      }
+    },
+    "gid": "1321",
+    "line_count": 481,
+    "relatedKeywordIds": [
+      "gbp_author_t-s-thomas-stearns-eliot",
+      "gbp_subject_poetry",
+      "gbp_subject_prose-poems"
+    ],
+    "relatedKeywordStrings": [
+      "T. S. (Thomas Stearns) Eliot",
+      "Poetry",
+      "Prose poems"
+    ],
+    "value": "The Waste Land"
+  },
+  {
+    "author_id": "gbp_author_various",
+    "book_id": "gbp_book_13213",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13213",
+        "title": "The Night Before Christmas and Other Popular Stories For Children",
+        "authors": [
+          "Various"
+        ],
+        "subjects": [
+          "Christmas stories",
+          "Christmas -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13213"
+      }
+    },
+    "gid": "13213",
+    "line_count": 178,
+    "relatedKeywordIds": [
+      "gbp_author_various",
+      "gbp_subject_christmas-stories",
+      "gbp_subject_christmas-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Various",
+      "Christmas stories",
+      "Christmas -- Poetry"
+    ],
+    "value": "The Night Before Christmas and Other Popular Stories For Children"
+  },
+  {
+    "author_id": "gbp_author_walt-whitman",
+    "book_id": "gbp_book_1322",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1322",
+        "title": "Leaves of Grass",
+        "authors": [
+          "Whitman, Walt, 1819-1892"
+        ],
+        "subjects": [
+          "American poetry -- 19th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1322"
+      }
+    },
+    "gid": "1322",
+    "line_count": 7704,
+    "relatedKeywordIds": [
+      "gbp_author_walt-whitman",
+      "gbp_subject_american-poetry-19th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Walt Whitman",
+      "American poetry -- 19th century"
+    ],
+    "value": "Leaves of Grass"
+  },
+  {
+    "author_id": "gbp_author_r-f-robert-fuller-murray",
+    "book_id": "gbp_book_1333",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1333",
+        "title": "Robert F. Murray (Author of the Scarlet Gown): His Poems; with a Memoir",
+        "authors": [
+          "Murray, R. F. (Robert Fuller), 1863-1894",
+          "Lang, Andrew, 1844-1912 [Editor]"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1333"
+      }
+    },
+    "gid": "1333",
+    "line_count": 1945,
+    "relatedKeywordIds": [
+      "gbp_author_r-f-robert-fuller-murray",
+      "gbp_author_andrew-1844-1912-editor-lang",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "R. F. (Robert Fuller) Murray",
+      "Andrew, 1844-1912 [Editor] Lang",
+      "Poetry"
+    ],
+    "value": "Robert F. Murray (Author of the Scarlet Gown): His Poems; with a Memoir"
+  },
+  {
+    "author_id": "gbp_author_alfred-tennyson-baron-tennyson",
+    "book_id": "gbp_book_1358",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1358",
+        "title": "Enoch Arden, &c.",
+        "authors": [
+          "Tennyson, Alfred Tennyson, Baron, 1809-1892"
+        ],
+        "subjects": [
+          "English poetry -- 19th century"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1358"
+      }
+    },
+    "gid": "1358",
+    "line_count": 2914,
+    "relatedKeywordIds": [
+      "gbp_author_alfred-tennyson-baron-tennyson",
+      "gbp_subject_english-poetry-19th-century"
+    ],
+    "relatedKeywordStrings": [
+      "Alfred Tennyson, Baron Tennyson",
+      "English poetry -- 19th century"
+    ],
+    "value": "Enoch Arden, &c."
+  },
+  {
+    "author_id": "gbp_author_robert-louis-stevenson",
+    "book_id": "gbp_book_136",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "136",
+        "title": "A Child's Garden of Verses",
+        "authors": [
+          "Stevenson, Robert Louis, 1850-1894"
+        ],
+        "subjects": [
+          "Children's poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/136"
+      }
+    },
+    "gid": "136",
+    "line_count": 1162,
+    "relatedKeywordIds": [
+      "gbp_author_robert-louis-stevenson",
+      "gbp_subject_childrens-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Robert Louis Stevenson",
+      "Children's poetry, English"
+    ],
+    "value": "A Child's Garden of Verses"
+  },
+  {
+    "author_id": "gbp_author_edward-lear",
+    "book_id": "gbp_book_13646",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13646",
+        "title": "A Book of Nonsense",
+        "authors": [
+          "Lear, Edward, 1812-1888"
+        ],
+        "subjects": [
+          "Limericks, Juvenile",
+          "Children's poetry, English",
+          "Nonsense verses, English",
+          "Humorous poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13646"
+      }
+    },
+    "gid": "13646",
+    "line_count": 364,
+    "relatedKeywordIds": [
+      "gbp_author_edward-lear",
+      "gbp_subject_limericks-juvenile",
+      "gbp_subject_childrens-poetry-english",
+      "gbp_subject_nonsense-verses-english",
+      "gbp_subject_humorous-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Edward Lear",
+      "Limericks, Juvenile",
+      "Children's poetry, English",
+      "Nonsense verses, English",
+      "Humorous poetry, English"
+    ],
+    "value": "A Book of Nonsense"
+  },
+  {
+    "author_id": "gbp_author_edward-lear",
+    "book_id": "gbp_book_13647",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13647",
+        "title": "Nonsense Songs",
+        "authors": [
+          "Lear, Edward, 1812-1888"
+        ],
+        "subjects": [
+          "English poetry",
+          "Children's poetry, English",
+          "English wit and humor",
+          "Nonsense verses, English",
+          "Humorous poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13647"
+      }
+    },
+    "gid": "13647",
+    "line_count": 853,
+    "relatedKeywordIds": [
+      "gbp_author_edward-lear",
+      "gbp_subject_english-poetry",
+      "gbp_subject_childrens-poetry-english",
+      "gbp_subject_english-wit-and-humor",
+      "gbp_subject_nonsense-verses-english",
+      "gbp_subject_humorous-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Edward Lear",
+      "English poetry",
+      "Children's poetry, English",
+      "English wit and humor",
+      "Nonsense verses, English",
+      "Humorous poetry, English"
+    ],
+    "value": "Nonsense Songs"
+  },
+  {
+    "author_id": "gbp_author_edward-lear",
+    "book_id": "gbp_book_13648",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13648",
+        "title": "More Nonsense",
+        "authors": [
+          "Lear, Edward, 1812-1888"
+        ],
+        "subjects": [
+          "Limericks, Juvenile",
+          "Nonsense verses, English",
+          "Humorous poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13648"
+      }
+    },
+    "gid": "13648",
+    "line_count": 428,
+    "relatedKeywordIds": [
+      "gbp_author_edward-lear",
+      "gbp_subject_limericks-juvenile",
+      "gbp_subject_nonsense-verses-english",
+      "gbp_subject_humorous-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Edward Lear",
+      "Limericks, Juvenile",
+      "Nonsense verses, English",
+      "Humorous poetry, English"
+    ],
+    "value": "More Nonsense"
+  },
+  {
+    "author_id": "gbp_author_edward-lear",
+    "book_id": "gbp_book_13649",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13649",
+        "title": "Laughable Lyrics",
+        "authors": [
+          "Lear, Edward, 1812-1888"
+        ],
+        "subjects": [
+          "Nonsense verses, English",
+          "Humorous poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13649"
+      }
+    },
+    "gid": "13649",
+    "line_count": 673,
+    "relatedKeywordIds": [
+      "gbp_author_edward-lear",
+      "gbp_subject_nonsense-verses-english",
+      "gbp_subject_humorous-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Edward Lear",
+      "Nonsense verses, English",
+      "Humorous poetry, English"
+    ],
+    "value": "Laughable Lyrics"
+  },
+  {
+    "author_id": "gbp_author_henry-wadsworth-longfellow",
+    "book_id": "gbp_book_1365",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1365",
+        "title": "The Complete Poetical Works of Henry Wadsworth Longfellow",
+        "authors": [
+          "Longfellow, Henry Wadsworth, 1807-1882"
+        ],
+        "subjects": [
+          "American poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1365"
+      }
+    },
+    "gid": "1365",
+    "line_count": 43313,
+    "relatedKeywordIds": [
+      "gbp_author_henry-wadsworth-longfellow",
+      "gbp_subject_american-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Henry Wadsworth Longfellow",
+      "American poetry"
+    ],
+    "value": "The Complete Poetical Works of Henry Wadsworth Longfellow"
+  },
+  {
+    "author_id": "gbp_author_edward-lear",
+    "book_id": "gbp_book_13650",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13650",
+        "title": "Nonsense Books",
+        "authors": [
+          "Lear, Edward, 1812-1888"
+        ],
+        "subjects": [
+          "Limericks, Juvenile",
+          "English wit and humor",
+          "Nonsense verses, English",
+          "Humorous poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13650"
+      }
+    },
+    "gid": "13650",
+    "line_count": 2447,
+    "relatedKeywordIds": [
+      "gbp_author_edward-lear",
+      "gbp_subject_limericks-juvenile",
+      "gbp_subject_english-wit-and-humor",
+      "gbp_subject_nonsense-verses-english",
+      "gbp_subject_humorous-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Edward Lear",
+      "Limericks, Juvenile",
+      "English wit and humor",
+      "Nonsense verses, English",
+      "Humorous poetry, English"
+    ],
+    "value": "Nonsense Books"
+  },
+  {
+    "author_id": "gbp_author_george-meredith",
+    "book_id": "gbp_book_1381",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1381",
+        "title": "Poems — Volume 1",
+        "authors": [
+          "Meredith, George, 1828-1909"
+        ],
+        "subjects": [
+          "English poetry",
+          "Pastoral poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1381"
+      }
+    },
+    "gid": "1381",
+    "line_count": 5616,
+    "relatedKeywordIds": [
+      "gbp_author_george-meredith",
+      "gbp_subject_english-poetry",
+      "gbp_subject_pastoral-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "George Meredith",
+      "English poetry",
+      "Pastoral poetry"
+    ],
+    "value": "Poems — Volume 1"
+  },
+  {
+    "author_id": "gbp_author_george-meredith",
+    "book_id": "gbp_book_1382",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1382",
+        "title": "Poems — Volume 2",
+        "authors": [
+          "Meredith, George, 1828-1909"
+        ],
+        "subjects": [
+          "English poetry",
+          "Didactic poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1382"
+      }
+    },
+    "gid": "1382",
+    "line_count": 6417,
+    "relatedKeywordIds": [
+      "gbp_author_george-meredith",
+      "gbp_subject_english-poetry",
+      "gbp_subject_didactic-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "George Meredith",
+      "English poetry",
+      "Didactic poetry"
+    ],
+    "value": "Poems — Volume 2"
+  },
+  {
+    "author_id": "gbp_author_george-meredith",
+    "book_id": "gbp_book_1383",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1383",
+        "title": "Poems — Volume 3",
+        "authors": [
+          "Meredith, George, 1828-1909"
+        ],
+        "subjects": [
+          "English poetry",
+          "Didactic poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1383"
+      }
+    },
+    "gid": "1383",
+    "line_count": 6553,
+    "relatedKeywordIds": [
+      "gbp_author_george-meredith",
+      "gbp_subject_english-poetry",
+      "gbp_subject_didactic-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "George Meredith",
+      "English poetry",
+      "Didactic poetry"
+    ],
+    "value": "Poems — Volume 3"
+  },
+  {
+    "author_id": "gbp_author_arthur-hugh-clough",
+    "book_id": "gbp_book_1393",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1393",
+        "title": "Amours De Voyage",
+        "authors": [
+          "Clough, Arthur Hugh, 1819-1861"
+        ],
+        "subjects": [
+          "Voyages and travels -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1393"
+      }
+    },
+    "gid": "1393",
+    "line_count": 714,
+    "relatedKeywordIds": [
+      "gbp_author_arthur-hugh-clough",
+      "gbp_subject_voyages-and-travels-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Arthur Hugh Clough",
+      "Voyages and travels -- Poetry"
+    ],
+    "value": "Amours De Voyage"
+  },
+  {
+    "author_id": "gbp_author_h-a-hlne-adeline-guerber",
+    "book_id": "gbp_book_13983",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "13983",
+        "title": "The Book of the Epic: The World's Great Epics Told in Story",
+        "authors": [
+          "Guerber, H. A. (Hélène Adeline), 1859-1929",
+          "Esenwein, J. Berg (Joseph Berg), 1867-1946 [Author of introduction, etc.]"
+        ],
+        "subjects": [
+          "Epic poetry -- Adaptations"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/13983"
+      }
+    },
+    "gid": "13983",
+    "line_count": 2784,
+    "relatedKeywordIds": [
+      "gbp_author_h-a-hlne-adeline-guerber",
+      "gbp_author_j-berg-joseph-berg-1867-1946-author-of-introduction-etc-esenwein",
+      "gbp_subject_epic-poetry-adaptations"
+    ],
+    "relatedKeywordStrings": [
+      "H. A. (Hélène Adeline) Guerber",
+      "J. Berg (Joseph Berg), 1867-1946 [Author of introduction, etc.] Esenwein",
+      "Epic poetry -- Adaptations"
+    ],
+    "value": "The Book of the Epic: The World's Great Epics Told in Story"
+  },
+  {
+    "author_id": "gbp_author_anonymous",
+    "book_id": "gbp_book_14005",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14005",
+        "title": "The Ladies Delight",
+        "authors": [
+          "Anonymous"
+        ],
+        "subjects": [
+          "Penis -- Poetry",
+          "Erotic literature",
+          "Heidegger, John James, 1659?-1748"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14005"
+      }
+    },
+    "gid": "14005",
+    "line_count": 395,
+    "relatedKeywordIds": [
+      "gbp_author_anonymous",
+      "gbp_subject_penis-poetry",
+      "gbp_subject_erotic-literature",
+      "gbp_subject_heidegger-john-james-1659-1748"
+    ],
+    "relatedKeywordStrings": [
+      "Anonymous",
+      "Penis -- Poetry",
+      "Erotic literature",
+      "Heidegger, John James, 1659?-1748"
+    ],
+    "value": "The Ladies Delight"
+  },
+  {
+    "author_id": "gbp_author_charles-william-1834-1926-editor-eliot",
+    "book_id": "gbp_book_14019",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14019",
+        "title": "The Harvard Classics, Volume 49, Epic and Saga\nWith Introductions And Notes",
+        "authors": [
+          "Eliot, Charles William, 1834-1926 [Editor]"
+        ],
+        "subjects": [
+          "Epic poetry",
+          "Sagas"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14019"
+      }
+    },
+    "gid": "14019",
+    "line_count": 3558,
+    "relatedKeywordIds": [
+      "gbp_author_charles-william-1834-1926-editor-eliot",
+      "gbp_subject_epic-poetry",
+      "gbp_subject_sagas"
+    ],
+    "relatedKeywordStrings": [
+      "Charles William, 1834-1926 [Editor] Eliot",
+      "Epic poetry",
+      "Sagas"
+    ],
+    "value": "The Harvard Classics, Volume 49, Epic and Saga\nWith Introductions And Notes"
+  },
+  {
+    "author_id": "gbp_author_66-bce-9-bce-horace",
+    "book_id": "gbp_book_14020",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14020",
+        "title": "The Works of Horace",
+        "authors": [
+          "Horace, 66 BCE-9 BCE"
+        ],
+        "subjects": [
+          "Latin poetry -- Translations into English",
+          "Horace -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14020"
+      }
+    },
+    "gid": "14020",
+    "line_count": 103,
+    "relatedKeywordIds": [
+      "gbp_author_66-bce-9-bce-horace",
+      "gbp_subject_latin-poetry-translations-into-english",
+      "gbp_subject_horace-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "66 BCE-9 BCE Horace",
+      "Latin poetry -- Translations into English",
+      "Horace -- Translations into English"
+    ],
+    "value": "The Works of Horace"
+  },
+  {
+    "author_id": "gbp_author_robert-graves",
+    "book_id": "gbp_book_1418",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1418",
+        "title": "Country Sentiment",
+        "authors": [
+          "Graves, Robert, 1895-1985"
+        ],
+        "subjects": [
+          "Pastoral poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1418"
+      }
+    },
+    "gid": "1418",
+    "line_count": 1278,
+    "relatedKeywordIds": [
+      "gbp_author_robert-graves",
+      "gbp_subject_pastoral-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Robert Graves",
+      "Pastoral poetry"
+    ],
+    "value": "Country Sentiment"
+  },
+  {
+    "author_id": "gbp_author_charlton-m-charlton-miner-lewis",
+    "book_id": "gbp_book_14410",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14410",
+        "title": "Gawayne and the Green Knight: A Fairy Tale",
+        "authors": [
+          "Lewis, Charlton M. (Charlton Miner), 1866-1923"
+        ],
+        "subjects": [
+          "Gawain (Legendary character) -- Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14410"
+      }
+    },
+    "gid": "14410",
+    "line_count": 1379,
+    "relatedKeywordIds": [
+      "gbp_author_charlton-m-charlton-miner-lewis",
+      "gbp_subject_gawain-legendary-character-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Charlton M. (Charlton Miner) Lewis",
+      "Gawain (Legendary character) -- Poetry"
+    ],
+    "value": "Gawayne and the Green Knight: A Fairy Tale"
+  },
+  {
+    "author_id": "gbp_author_johann-wolfgang-von-goethe",
+    "book_id": "gbp_book_14460",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14460",
+        "title": "Faust: a Tragedy [part 1], Translated from the German of Goethe",
+        "authors": [
+          "Goethe, Johann Wolfgang von, 1749-1832",
+          "Brooks, Charles Timothy, 1813-1883 [Translator]"
+        ],
+        "subjects": [
+          "German poetry -- Translations into English",
+          "Legends -- Germany -- Drama",
+          "Faust, -approximately 1540 -- Drama",
+          "Magicians -- Drama"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14460"
+      }
+    },
+    "gid": "14460",
+    "line_count": 4643,
+    "relatedKeywordIds": [
+      "gbp_author_johann-wolfgang-von-goethe",
+      "gbp_author_charles-timothy-1813-1883-translator-brooks",
+      "gbp_subject_german-poetry-translations-into-english",
+      "gbp_subject_legends-germany-drama",
+      "gbp_subject_faust-approximately-1540-drama",
+      "gbp_subject_magicians-drama"
+    ],
+    "relatedKeywordStrings": [
+      "Johann Wolfgang von Goethe",
+      "Charles Timothy, 1813-1883 [Translator] Brooks",
+      "German poetry -- Translations into English",
+      "Legends -- Germany -- Drama",
+      "Faust, -approximately 1540 -- Drama",
+      "Magicians -- Drama"
+    ],
+    "value": "Faust: a Tragedy [part 1], Translated from the German of Goethe"
+  },
+  {
+    "author_id": "gbp_author_ren-rapin",
+    "book_id": "gbp_book_14495",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14495",
+        "title": "De Carmine Pastorali\nPrefixed to Thomas Creech's translation of the Idylliums of Theocritus (1684)",
+        "authors": [
+          "Rapin, René, 1621-1687",
+          "Congleton, J. E. (James Edmund), 1901-1993 [Author of introduction, etc.]",
+          "Creech, Thomas, 1659-1700 [Translator]"
+        ],
+        "subjects": [
+          "Pastoral poetry -- History and criticism",
+          "Theocritus. Idylls"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14495"
+      }
+    },
+    "gid": "14495",
+    "line_count": 346,
+    "relatedKeywordIds": [
+      "gbp_author_ren-rapin",
+      "gbp_author_j-e-james-edmund-1901-1993-author-of-introduction-etc-congleton",
+      "gbp_author_thomas-1659-1700-translator-creech",
+      "gbp_subject_pastoral-poetry-history-and-criticism",
+      "gbp_subject_theocritus-idylls"
+    ],
+    "relatedKeywordStrings": [
+      "René Rapin",
+      "J. E. (James Edmund), 1901-1993 [Author of introduction, etc.] Congleton",
+      "Thomas, 1659-1700 [Translator] Creech",
+      "Pastoral poetry -- History and criticism",
+      "Theocritus. Idylls"
+    ],
+    "value": "De Carmine Pastorali\nPrefixed to Thomas Creech's translation of the Idylliums of Theocritus (1684)"
+  },
+  {
+    "author_id": "gbp_author_josephine-preston-peabody",
+    "book_id": "gbp_book_14531",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14531",
+        "title": "The Singing Man: A Book of Songs and Shadows",
+        "authors": [
+          "Peabody, Josephine Preston, 1874-1922"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14531"
+      }
+    },
+    "gid": "14531",
+    "line_count": 1291,
+    "relatedKeywordIds": [
+      "gbp_author_josephine-preston-peabody",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Josephine Preston Peabody",
+      "Poetry"
+    ],
+    "value": "The Singing Man: A Book of Songs and Shadows"
+  },
+  {
+    "author_id": "gbp_author_t-s-thomas-stearns-eliot",
+    "book_id": "gbp_book_1459",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1459",
+        "title": "Prufrock and Other Observations",
+        "authors": [
+          "Eliot, T. S. (Thomas Stearns), 1888-1965"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1459"
+      }
+    },
+    "gid": "1459",
+    "line_count": 493,
+    "relatedKeywordIds": [
+      "gbp_author_t-s-thomas-stearns-eliot",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "T. S. (Thomas Stearns) Eliot",
+      "Poetry"
+    ],
+    "value": "Prufrock and Other Observations"
+  },
+  {
+    "author_id": "gbp_author_johann-wolfgang-von-goethe",
+    "book_id": "gbp_book_14591",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14591",
+        "title": "Faust [part 1]. Translated Into English in the Original Metres",
+        "authors": [
+          "Goethe, Johann Wolfgang von, 1749-1832",
+          "Clarke, Harry, 1889-1931 [Illustrator]",
+          "Taylor, Bayard, 1825-1878 [Translator]"
+        ],
+        "subjects": [
+          "German poetry -- Translations into English",
+          "Legends -- Germany -- Drama",
+          "Faust, -approximately 1540 -- Drama",
+          "Magicians -- Drama"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14591"
+      }
+    },
+    "gid": "14591",
+    "line_count": 4751,
+    "relatedKeywordIds": [
+      "gbp_author_johann-wolfgang-von-goethe",
+      "gbp_author_harry-1889-1931-illustrator-clarke",
+      "gbp_author_bayard-1825-1878-translator-taylor",
+      "gbp_subject_german-poetry-translations-into-english",
+      "gbp_subject_legends-germany-drama",
+      "gbp_subject_faust-approximately-1540-drama",
+      "gbp_subject_magicians-drama"
+    ],
+    "relatedKeywordStrings": [
+      "Johann Wolfgang von Goethe",
+      "Harry, 1889-1931 [Illustrator] Clarke",
+      "Bayard, 1825-1878 [Translator] Taylor",
+      "German poetry -- Translations into English",
+      "Legends -- Germany -- Drama",
+      "Faust, -approximately 1540 -- Drama",
+      "Magicians -- Drama"
+    ],
+    "value": "Faust [part 1]. Translated Into English in the Original Metres"
+  },
+  {
+    "author_id": "gbp_author_francis-thompson",
+    "book_id": "gbp_book_1469",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1469",
+        "title": "Poems",
+        "authors": [
+          "Thompson, Francis, 1859-1907"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1469"
+      }
+    },
+    "gid": "1469",
+    "line_count": 1615,
+    "relatedKeywordIds": [
+      "gbp_author_francis-thompson",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Francis Thompson",
+      "English poetry"
+    ],
+    "value": "Poems"
+  },
+  {
+    "author_id": "gbp_author_francis-thompson",
+    "book_id": "gbp_book_1471",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1471",
+        "title": "New Poems",
+        "authors": [
+          "Thompson, Francis, 1859-1907"
+        ],
+        "subjects": [
+          "English poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/1471"
+      }
+    },
+    "gid": "1471",
+    "line_count": 3676,
+    "relatedKeywordIds": [
+      "gbp_author_francis-thompson",
+      "gbp_subject_english-poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Francis Thompson",
+      "English poetry"
+    ],
+    "value": "New Poems"
+  },
+  {
+    "author_id": "gbp_author_siegfried-sassoon",
+    "book_id": "gbp_book_14757",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14757",
+        "title": "The War Poems of Siegfried Sassoon",
+        "authors": [
+          "Sassoon, Siegfried, 1886-1967"
+        ],
+        "subjects": [
+          "World War, 1914-1918 -- Poetry",
+          "War poetry, English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14757"
+      }
+    },
+    "gid": "14757",
+    "line_count": 1162,
+    "relatedKeywordIds": [
+      "gbp_author_siegfried-sassoon",
+      "gbp_subject_world-war-1914-1918-poetry",
+      "gbp_subject_war-poetry-english"
+    ],
+    "relatedKeywordStrings": [
+      "Siegfried Sassoon",
+      "World War, 1914-1918 -- Poetry",
+      "War poetry, English"
+    ],
+    "value": "The War Poems of Siegfried Sassoon"
+  },
+  {
+    "author_id": "gbp_author_a-h-alexander-hamilton-laidlaw",
+    "book_id": "gbp_book_14869",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14869",
+        "title": "Soldier Songs and Love Songs",
+        "authors": [
+          "Laidlaw, A. H. (Alexander Hamilton), 1869-1908"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14869"
+      }
+    },
+    "gid": "14869",
+    "line_count": 1181,
+    "relatedKeywordIds": [
+      "gbp_author_a-h-alexander-hamilton-laidlaw",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "A. H. (Alexander Hamilton) Laidlaw",
+      "Poetry"
+    ],
+    "value": "Soldier Songs and Love Songs"
+  },
+  {
+    "author_id": "gbp_author_thomas-runciman",
+    "book_id": "gbp_book_14906",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14906",
+        "title": "Songs, Sonnets & Miscellaneous Poems",
+        "authors": [
+          "Runciman, Thomas, 1841-1909"
+        ],
+        "subjects": [
+          "Poetry"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14906"
+      }
+    },
+    "gid": "14906",
+    "line_count": 469,
+    "relatedKeywordIds": [
+      "gbp_author_thomas-runciman",
+      "gbp_subject_poetry"
+    ],
+    "relatedKeywordStrings": [
+      "Thomas Runciman",
+      "Poetry"
+    ],
+    "value": "Songs, Sonnets & Miscellaneous Poems"
+  },
+  {
+    "author_id": "gbp_author_348-prudentius",
+    "book_id": "gbp_book_14959",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "14959",
+        "title": "The Hymns of Prudentius",
+        "authors": [
+          "Prudentius, 348-",
+          "Pope, R. Martin (Robert Martin), 1865-1944 [Translator]"
+        ],
+        "subjects": [
+          "Prudentius, 348- -- Translations into English",
+          "Christian poetry, Latin -- Translations into English",
+          "Hymns, Latin -- Translations into English"
+        ],
+        "source_url": "https://www.gutenberg.org/ebooks/14959"
+      }
+    },
+    "gid": "14959",
+    "line_count": 3825,
+    "relatedKeywordIds": [
+      "gbp_author_348-prudentius",
+      "gbp_author_r-martin-robert-martin-1865-1944-translator-pope",
+      "gbp_subject_prudentius-348-translations-into-english",
+      "gbp_subject_christian-poetry-latin-translations-into-english",
+      "gbp_subject_hymns-latin-translations-into-english"
+    ],
+    "relatedKeywordStrings": [
+      "348- Prudentius",
+      "R. Martin (Robert Martin), 1865-1944 [Translator] Pope",
+      "Prudentius, 348- -- Translations into English",
+      "Christian poetry, Latin -- Translations into English",
+      "Hymns, Latin -- Translations into English"
+    ],
+    "value": "The Hymns of Prudentius"
+  }
+]

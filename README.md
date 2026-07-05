@@ -1,8 +1,8 @@
 # shmistorical-art-data-server
 
-A Flask data/ML server for an art "knowledgebase" — vector similarity search plus a
-2D map-generation pipeline. It's the backend behind `data.snailbunny.site` and powers
-two front ends (an art canvas app and a map explorer).
+This repo contains the code for the bacend Flask program(s) that shm used / continues to use to build up their art history "knowledgebase" and serve it to the frontend browser hosted on [data.snailbunny.site](https://data.snailbunny.site) and applications like [Artographer](https://shmuh.co/artographer) and [ArtiFactor](https://arti-factor.vercel.app/)--- this repo runs as a cloud server (via Akamai Linode)and supports similarity-searching and other fun functionalities (e.g. voronoi similarity map stuff for artographer) via a growing list of Flask templates and API routes...
+
+This github repo doesn't contain the data itself, but you can download chunks of it in JSON form on [data.snailbunny.site](https://data.snailbunny.site) and 
 
 ## About this knowledgebase
 
@@ -39,7 +39,29 @@ creating policies and licenses about how this work should be used.
 If you'd like to support this effort, please feel invited to
 [reach out](https://shmuh.co/) or [send a tip](https://paypal.me/shmuh).
 
-## What it does
+# How to rebuild the database(s) on your end if you wanted to do that
+
+The live databases and images aren't in this repo (they're large + licensing-sensitive,
+and mounted at runtime). But you can rebuild a small, browsable local copy from public
+JSON exports:
+
+1. Visit [data.snailbunny.site](https://data.snailbunny.site/) and, for each dataset
+   (art / comics / poetry) and table, click **Download as JSON**.
+2. Drop the files into [`app/LOCALDB/JSONs/`](app/LOCALDB/JSONs) — a sample set (50–100
+   rows per table) is already included, so you can skip straight to step 3.
+3. Run the converter (stdlib only, nothing to install):
+   ```bash
+   cd app/LOCALDB && python convert_json_to_db.py
+   ```
+
+This writes `knowledgebase.db` / `comics.db` / `poetry.db` and downloads images into
+`app/LOCALDB/`, exactly where [`app/config.py`](app/config.py) looks when running
+locally. It rebuilds the **browsable row tables only** — similarity search and maps also
+need embeddings, which means running the models in
+[`app/LOCALDB/build_scripts/`](app/LOCALDB/build_scripts). Full details in
+[`app/LOCALDB/README.md`](app/LOCALDB/README.md).
+
+## list of stuff it currently supports
 
 - **Similarity search** over an art knowledgebase using precomputed embeddings stored
   in SQLite via [`sqlite-vec`](https://github.com/asg017/sqlite-vec):
@@ -52,7 +74,7 @@ If you'd like to support this effort, please feel invited to
   (including a hierarchical variant), served synchronously or via an async job queue.
 - **Comics** browse API.
 
-## Endpoints (overview)
+## api endpoints (overview)
 
 - **Similarity:** `POST /keyword_check`, `POST /lookup_text`, `POST /image`, `POST /lookup_entry`
 - **Direct reads:** `GET /text/<id>`, `GET /artwork/<id>`, `POST /database_request`
@@ -63,14 +85,12 @@ If you'd like to support this effort, please feel invited to
 
 See [docs/MAP_API.md](docs/MAP_API.md) for map request/response shapes.
 
-## Architecture
+## more nitty gritty details that claude thought u should know
 
 Gunicorn serves the Flask app (`app/index.py` + blueprints under `app/templates/`,
 helpers under `app/helper_functions/`). A background worker (`app/jobs/worker.py`) runs
 long-running map jobs, with the queue and results in a local SQLite (`jobs/jobs.db`).
 Both processes start from `app/bootstrap.sh`.
-
-## Data is not in this repo
 
 The databases and images are large and licensing-sensitive, so they are **mounted at
 runtime**, never committed:

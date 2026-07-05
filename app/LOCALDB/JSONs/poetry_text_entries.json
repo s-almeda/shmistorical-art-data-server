@@ -1,0 +1,2002 @@
+[
+  {
+    "artist_aliases": [
+      {
+        "name": "1352?- Vidyāpati Thākura",
+        "slug": "1352-vidypati-thkura",
+        "gutenberg_string": "Vidyāpati Thākura, 1352?-1448"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Vidyāpati Thākura, 1352?-1448"
+      }
+    },
+    "entry_id": "gbp_author_1352-vidypati-thkura",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "1352?- Vidyāpati Thākura"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "1870-1917 [Illustrator] B. T. B. (Basil Temple Blackwood)",
+        "slug": "1870-1917-illustrator-b-t-b-basil-temple-blackwood",
+        "gutenberg_string": "B. T. B. (Basil Temple Blackwood), 1870-1917 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "B. T. B. (Basil Temple Blackwood), 1870-1917 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_1870-1917-illustrator-b-t-b-basil-temple-blackwood",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "1870-1917 [Illustrator] B. T. B. (Basil Temple Blackwood)"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "348- Prudentius",
+        "slug": "348-prudentius",
+        "gutenberg_string": "Prudentius, 348-"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Prudentius, 348-"
+      }
+    },
+    "entry_id": "gbp_author_348-prudentius",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "348- Prudentius"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "385 BCE-323 BCE Aristotle",
+        "slug": "385-bce-323-bce-aristotle",
+        "gutenberg_string": "Aristotle, 385 BCE-323 BCE"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Aristotle, 385 BCE-323 BCE"
+      }
+    },
+    "entry_id": "gbp_author_385-bce-323-bce-aristotle",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "385 BCE-323 BCE Aristotle"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "39-65 Lucan",
+        "slug": "39-65-lucan",
+        "gutenberg_string": "Lucan, 39-65"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lucan, 39-65"
+      }
+    },
+    "entry_id": "gbp_author_39-65-lucan",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "39-65 Lucan"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "44 BCE-18? Ovid",
+        "slug": "44-bce-18-ovid",
+        "gutenberg_string": "Ovid, 44 BCE-18?"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Ovid, 44 BCE-18?"
+      }
+    },
+    "entry_id": "gbp_author_44-bce-18-ovid",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "44 BCE-18? Ovid"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "66 BCE-9 BCE Horace",
+        "slug": "66-bce-9-bce-horace",
+        "gutenberg_string": "Horace, 66 BCE-9 BCE"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Horace, 66 BCE-9 BCE"
+      }
+    },
+    "entry_id": "gbp_author_66-bce-9-bce-horace",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "66 BCE-9 BCE Horace"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "71 BCE-20 BCE Virgil",
+        "slug": "71-bce-20-bce-virgil",
+        "gutenberg_string": "Virgil, 71 BCE-20 BCE"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Virgil, 71 BCE-20 BCE"
+      }
+    },
+    "entry_id": "gbp_author_71-bce-20-bce-virgil",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "71 BCE-20 BCE Virgil"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "751? BCE-651? BCE Homer",
+        "slug": "751-bce-651-bce-homer",
+        "gutenberg_string": "Homer, 751? BCE-651? BCE"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Homer, 751? BCE-651? BCE"
+      }
+    },
+    "entry_id": "gbp_author_751-bce-651-bce-homer",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "751? BCE-651? BCE Homer"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "973- Abu al-Ala al-Maarri",
+        "slug": "973-abu-al-ala-al-maarri",
+        "gutenberg_string": "Abu al-Ala al-Maarri, 973-1057"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Abu al-Ala al-Maarri, 973-1057"
+      }
+    },
+    "entry_id": "gbp_author_973-abu-al-ala-al-maarri",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "973- Abu al-Ala al-Maarri"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. B. (Andrew Barton), 1864-1941 [Compiler] Paterson",
+        "slug": "a-b-andrew-barton-1864-1941-compiler-paterson",
+        "gutenberg_string": "Paterson, A. B. (Andrew Barton), 1864-1941 [Compiler]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Paterson, A. B. (Andrew Barton), 1864-1941 [Compiler]"
+      }
+    },
+    "entry_id": "gbp_author_a-b-andrew-barton-1864-1941-compiler-paterson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. B. (Andrew Barton), 1864-1941 [Compiler] Paterson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. B. (Andrew Barton) Paterson",
+        "slug": "a-b-andrew-barton-paterson",
+        "gutenberg_string": "Paterson, A. B. (Andrew Barton), 1864-1941"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Paterson, A. B. (Andrew Barton), 1864-1941"
+      }
+    },
+    "entry_id": "gbp_author_a-b-andrew-barton-paterson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. B. (Andrew Barton) Paterson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. B. (Arthur Burdett), 1851-1928 [Illustrator] Frost",
+        "slug": "a-b-arthur-burdett-1851-1928-illustrator-frost",
+        "gutenberg_string": "Frost, A. B. (Arthur Burdett), 1851-1928 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Frost, A. B. (Arthur Burdett), 1851-1928 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_a-b-arthur-burdett-1851-1928-illustrator-frost",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. B. (Arthur Burdett), 1851-1928 [Illustrator] Frost"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. C. (Andrew Cecil) Bradley",
+        "slug": "a-c-andrew-cecil-bradley",
+        "gutenberg_string": "Bradley, A. C. (Andrew Cecil), 1851-1935"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Bradley, A. C. (Andrew Cecil), 1851-1935"
+      }
+    },
+    "entry_id": "gbp_author_a-c-andrew-cecil-bradley",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. C. (Andrew Cecil) Bradley"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. D. (Alfred Denis), 1856-1925 [Editor] Godley",
+        "slug": "a-d-alfred-denis-1856-1925-editor-godley",
+        "gutenberg_string": "Godley, A. D. (Alfred Denis), 1856-1925 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Godley, A. D. (Alfred Denis), 1856-1925 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_a-d-alfred-denis-1856-1925-editor-godley",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. D. (Alfred Denis), 1856-1925 [Editor] Godley"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. D. (Alfred Denis) Godley",
+        "slug": "a-d-alfred-denis-godley",
+        "gutenberg_string": "Godley, A. D. (Alfred Denis), 1856-1925"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Godley, A. D. (Alfred Denis), 1856-1925"
+      }
+    },
+    "entry_id": "gbp_author_a-d-alfred-denis-godley",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. D. (Alfred Denis) Godley"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. E. (Alfred Edward) Housman",
+        "slug": "a-e-alfred-edward-housman",
+        "gutenberg_string": "Housman, A. E. (Alfred Edward), 1859-1936"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Housman, A. E. (Alfred Edward), 1859-1936"
+      }
+    },
+    "entry_id": "gbp_author_a-e-alfred-edward-housman",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. E. (Alfred Edward) Housman"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. H. (Alexander Hamilton) Laidlaw",
+        "slug": "a-h-alexander-hamilton-laidlaw",
+        "gutenberg_string": "Laidlaw, A. H. (Alexander Hamilton), 1869-1908"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Laidlaw, A. H. (Alexander Hamilton), 1869-1908"
+      }
+    },
+    "entry_id": "gbp_author_a-h-alexander-hamilton-laidlaw",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. H. (Alexander Hamilton) Laidlaw"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. H. (Arthur Henry), 1857-1920 [Editor] Bullen",
+        "slug": "a-h-arthur-henry-1857-1920-editor-bullen",
+        "gutenberg_string": "Bullen, A. H. (Arthur Henry), 1857-1920 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Bullen, A. H. (Arthur Henry), 1857-1920 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_a-h-arthur-henry-1857-1920-editor-bullen",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. H. (Arthur Henry), 1857-1920 [Editor] Bullen"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. Hoatson",
+        "slug": "a-hoatson",
+        "gutenberg_string": "Hoatson, A."
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Hoatson, A."
+      }
+    },
+    "entry_id": "gbp_author_a-hoatson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. Hoatson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. Islay [Illustrator] Bannerman",
+        "slug": "a-islay-illustrator-bannerman",
+        "gutenberg_string": "Bannerman, A. Islay [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Bannerman, A. Islay [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_a-islay-illustrator-bannerman",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. Islay [Illustrator] Bannerman"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. M. [Illustrator] Lockyer",
+        "slug": "a-m-illustrator-lockyer",
+        "gutenberg_string": "Lockyer, A. M. [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lockyer, A. M. [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_a-m-illustrator-lockyer",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. M. [Illustrator] Lockyer"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. Phillips",
+        "slug": "a-phillips",
+        "gutenberg_string": "Phillips, A."
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Phillips, A."
+      }
+    },
+    "entry_id": "gbp_author_a-phillips",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. Phillips"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "A. S. (Alexander Stuart), 1854-1930 [Illustrator] Boyd",
+        "slug": "a-s-alexander-stuart-1854-1930-illustrator-boyd",
+        "gutenberg_string": "Boyd, A. S. (Alexander Stuart), 1854-1930 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Boyd, A. S. (Alexander Stuart), 1854-1930 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_a-s-alexander-stuart-1854-1930-illustrator-boyd",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "A. S. (Alexander Stuart), 1854-1930 [Illustrator] Boyd"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Abram Joseph Ryan",
+        "slug": "abram-joseph-ryan",
+        "gutenberg_string": "Ryan, Abram Joseph, 1839-1886"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Ryan, Abram Joseph, 1839-1886"
+      }
+    },
+    "entry_id": "gbp_author_abram-joseph-ryan",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Abram Joseph Ryan"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "active 19th century Novice",
+        "slug": "active-19th-century-novice",
+        "gutenberg_string": "Novice, active 19th century"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Novice, active 19th century"
+      }
+    },
+    "entry_id": "gbp_author_active-19th-century-novice",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "active 19th century Novice"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Ada Langworthy Collier",
+        "slug": "ada-langworthy-collier",
+        "gutenberg_string": "Collier, Ada Langworthy, 1843-1919"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Collier, Ada Langworthy, 1843-1919"
+      }
+    },
+    "entry_id": "gbp_author_ada-langworthy-collier",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Ada Langworthy Collier"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Adam Lindsay Gordon",
+        "slug": "adam-lindsay-gordon",
+        "gutenberg_string": "Gordon, Adam Lindsay, 1833-1870"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Gordon, Adam Lindsay, 1833-1870"
+      }
+    },
+    "entry_id": "gbp_author_adam-lindsay-gordon",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Adam Lindsay Gordon"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Adam Mickiewicz",
+        "slug": "adam-mickiewicz",
+        "gutenberg_string": "Mickiewicz, Adam, 1798-1855"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Mickiewicz, Adam, 1798-1855"
+      }
+    },
+    "entry_id": "gbp_author_adam-mickiewicz",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Adam Mickiewicz"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Adelaide Anne Procter",
+        "slug": "adelaide-anne-procter",
+        "gutenberg_string": "Procter, Adelaide Anne, 1825-1864"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Procter, Adelaide Anne, 1825-1864"
+      }
+    },
+    "entry_id": "gbp_author_adelaide-anne-procter",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Adelaide Anne Procter"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Adelbert Farrington Caldwell",
+        "slug": "adelbert-farrington-caldwell",
+        "gutenberg_string": "Caldwell, Adelbert Farrington, 1867-1931"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Caldwell, Adelbert Farrington, 1867-1931"
+      }
+    },
+    "entry_id": "gbp_author_adelbert-farrington-caldwell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Adelbert Farrington Caldwell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Agnes, 1868-1939 [Translator] Lee",
+        "slug": "agnes-1868-1939-translator-lee",
+        "gutenberg_string": "Lee, Agnes, 1868-1939 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lee, Agnes, 1868-1939 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_agnes-1868-1939-translator-lee",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Agnes, 1868-1939 [Translator] Lee"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Aileen Cleveland Higgins",
+        "slug": "aileen-cleveland-higgins",
+        "gutenberg_string": "Higgins, Aileen Cleveland, 1882-"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Higgins, Aileen Cleveland, 1882-"
+      }
+    },
+    "entry_id": "gbp_author_aileen-cleveland-higgins",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Aileen Cleveland Higgins"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alan L. Strang",
+        "slug": "alan-l-strang",
+        "gutenberg_string": "Strang, Alan L., 1908-1919"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Strang, Alan L., 1908-1919"
+      }
+    },
+    "entry_id": "gbp_author_alan-l-strang",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alan L. Strang"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alan Seeger",
+        "slug": "alan-seeger",
+        "gutenberg_string": "Seeger, Alan, 1888-1916"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Seeger, Alan, 1888-1916"
+      }
+    },
+    "entry_id": "gbp_author_alan-seeger",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alan Seeger"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alan Sullivan",
+        "slug": "alan-sullivan",
+        "gutenberg_string": "Sullivan, Alan, 1868-1947"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Sullivan, Alan, 1868-1947"
+      }
+    },
+    "entry_id": "gbp_author_alan-sullivan",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alan Sullivan"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Albert Bigelow Paine",
+        "slug": "albert-bigelow-paine",
+        "gutenberg_string": "Paine, Albert Bigelow, 1861-1937"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Paine, Albert Bigelow, 1861-1937"
+      }
+    },
+    "entry_id": "gbp_author_albert-bigelow-paine",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Albert Bigelow Paine"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Albert Mordell",
+        "slug": "albert-mordell",
+        "gutenberg_string": "Mordell, Albert, 1885-1965"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Mordell, Albert, 1885-1965"
+      }
+    },
+    "entry_id": "gbp_author_albert-mordell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Albert Mordell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Albert S. (Albert Stanburrough), 1853-1927 [Editor] Cook",
+        "slug": "albert-s-albert-stanburrough-1853-1927-editor-cook",
+        "gutenberg_string": "Cook, Albert S. (Albert Stanburrough), 1853-1927 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Cook, Albert S. (Albert Stanburrough), 1853-1927 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_albert-s-albert-stanburrough-1853-1927-editor-cook",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Albert S. (Albert Stanburrough), 1853-1927 [Editor] Cook"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Albion Fellows Bacon",
+        "slug": "albion-fellows-bacon",
+        "gutenberg_string": "Bacon, Albion Fellows, 1865-1933"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Bacon, Albion Fellows, 1865-1933"
+      }
+    },
+    "entry_id": "gbp_author_albion-fellows-bacon",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Albion Fellows Bacon"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Aldous Huxley",
+        "slug": "aldous-huxley",
+        "gutenberg_string": "Huxley, Aldous, 1894-1963"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Huxley, Aldous, 1894-1963"
+      }
+    },
+    "entry_id": "gbp_author_aldous-huxley",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Aldous Huxley"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander, 1475?-1552 [Translator] Barclay",
+        "slug": "alexander-1475-1552-translator-barclay",
+        "gutenberg_string": "Barclay, Alexander, 1475?-1552 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Barclay, Alexander, 1475?-1552 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_alexander-1475-1552-translator-barclay",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander, 1475?-1552 [Translator] Barclay"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander, 1688-1744 [Translator] Pope",
+        "slug": "alexander-1688-1744-translator-pope",
+        "gutenberg_string": "Pope, Alexander, 1688-1744 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Pope, Alexander, 1688-1744 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_alexander-1688-1744-translator-pope",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander, 1688-1744 [Translator] Pope"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander, 1798-1869 [Contributor] Dyce",
+        "slug": "alexander-1798-1869-contributor-dyce",
+        "gutenberg_string": "Dyce, Alexander, 1798-1869 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Dyce, Alexander, 1798-1869 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_alexander-1798-1869-contributor-dyce",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander, 1798-1869 [Contributor] Dyce"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander, 1830?- Smith",
+        "slug": "alexander-1830-smith",
+        "gutenberg_string": "Smith, Alexander, 1830?-1867"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Smith, Alexander, 1830?-1867"
+      }
+    },
+    "entry_id": "gbp_author_alexander-1830-smith",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander, 1830?- Smith"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander Balloch, 1827-1899 [Editor] Grosart",
+        "slug": "alexander-balloch-1827-1899-editor-grosart",
+        "gutenberg_string": "Grosart, Alexander Balloch, 1827-1899 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Grosart, Alexander Balloch, 1827-1899 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_alexander-balloch-1827-1899-editor-grosart",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander Balloch, 1827-1899 [Editor] Grosart"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander Dick",
+        "slug": "alexander-dick",
+        "gutenberg_string": "Dick, Alexander"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Dick, Alexander"
+      }
+    },
+    "entry_id": "gbp_author_alexander-dick",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander Dick"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander [Illustrator] Sharp",
+        "slug": "alexander-illustrator-sharp",
+        "gutenberg_string": "Sharp, Alexander [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Sharp, Alexander [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_alexander-illustrator-sharp",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander [Illustrator] Sharp"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alexander Pope",
+        "slug": "alexander-pope",
+        "gutenberg_string": "Pope, Alexander, 1688-1744"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Pope, Alexander, 1688-1744"
+      }
+    },
+    "entry_id": "gbp_author_alexander-pope",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alexander Pope"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred, 1855-1933 [Illustrator] Pearse",
+        "slug": "alfred-1855-1933-illustrator-pearse",
+        "gutenberg_string": "Pearse, Alfred, 1855-1933 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Pearse, Alfred, 1855-1933 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_alfred-1855-1933-illustrator-pearse",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred, 1855-1933 [Illustrator] Pearse"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Austin",
+        "slug": "alfred-austin",
+        "gutenberg_string": "Austin, Alfred, 1835-1913"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Austin, Alfred, 1835-1913"
+      }
+    },
+    "entry_id": "gbp_author_alfred-austin",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Austin"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Bruce Douglas",
+        "slug": "alfred-bruce-douglas",
+        "gutenberg_string": "Douglas, Alfred Bruce, 1870-1945"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Douglas, Alfred Bruce, 1870-1945"
+      }
+    },
+    "entry_id": "gbp_author_alfred-bruce-douglas",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Bruce Douglas"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Castner King",
+        "slug": "alfred-castner-king",
+        "gutenberg_string": "King, Alfred Castner, 1873-1941"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "King, Alfred Castner, 1873-1941"
+      }
+    },
+    "entry_id": "gbp_author_alfred-castner-king",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Castner King"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Gatty",
+        "slug": "alfred-gatty",
+        "gutenberg_string": "Gatty, Alfred, 1813-1903"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Gatty, Alfred, 1813-1903"
+      }
+    },
+    "entry_id": "gbp_author_alfred-gatty",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Gatty"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Gurney",
+        "slug": "alfred-gurney",
+        "gutenberg_string": "Gurney, Alfred, 1845-1898"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Gurney, Alfred, 1845-1898"
+      }
+    },
+    "entry_id": "gbp_author_alfred-gurney",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Gurney"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred John Church",
+        "slug": "alfred-john-church",
+        "gutenberg_string": "Church, Alfred John, 1829-1912"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Church, Alfred John, 1829-1912"
+      }
+    },
+    "entry_id": "gbp_author_alfred-john-church",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred John Church"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Lichtenstein",
+        "slug": "alfred-lichtenstein",
+        "gutenberg_string": "Lichtenstein, Alfred, 1889-1914"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lichtenstein, Alfred, 1889-1914"
+      }
+    },
+    "entry_id": "gbp_author_alfred-lichtenstein",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Lichtenstein"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Noyes",
+        "slug": "alfred-noyes",
+        "gutenberg_string": "Noyes, Alfred, 1880-1958"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Noyes, Alfred, 1880-1958"
+      }
+    },
+    "entry_id": "gbp_author_alfred-noyes",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Noyes"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Tennyson, Baron, 1809-1892 [Contributor] Tennyson",
+        "slug": "alfred-tennyson-baron-1809-1892-contributor-tennyson",
+        "gutenberg_string": "Tennyson, Alfred Tennyson, Baron, 1809-1892 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Tennyson, Alfred Tennyson, Baron, 1809-1892 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_alfred-tennyson-baron-1809-1892-contributor-tennyson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Tennyson, Baron, 1809-1892 [Contributor] Tennyson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred Tennyson, Baron Tennyson",
+        "slug": "alfred-tennyson-baron-tennyson",
+        "gutenberg_string": "Tennyson, Alfred Tennyson, Baron, 1809-1892"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Tennyson, Alfred Tennyson, Baron, 1809-1892"
+      }
+    },
+    "entry_id": "gbp_author_alfred-tennyson-baron-tennyson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred Tennyson, Baron Tennyson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alfred W. (Alfred William), 1859-1944 [Editor] Pollard",
+        "slug": "alfred-w-alfred-william-1859-1944-editor-pollard",
+        "gutenberg_string": "Pollard, Alfred W. (Alfred William), 1859-1944 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Pollard, Alfred W. (Alfred William), 1859-1944 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_alfred-w-alfred-william-1859-1944-editor-pollard",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alfred W. (Alfred William), 1859-1944 [Editor] Pollard"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Algernon Charles, 1837-1909 [Commentator] Swinburne",
+        "slug": "algernon-charles-1837-1909-commentator-swinburne",
+        "gutenberg_string": "Swinburne, Algernon Charles, 1837-1909 [Commentator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Swinburne, Algernon Charles, 1837-1909 [Commentator]"
+      }
+    },
+    "entry_id": "gbp_author_algernon-charles-1837-1909-commentator-swinburne",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Algernon Charles, 1837-1909 [Commentator] Swinburne"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Algernon Charles Swinburne",
+        "slug": "algernon-charles-swinburne",
+        "gutenberg_string": "Swinburne, Algernon Charles, 1837-1909"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Swinburne, Algernon Charles, 1837-1909"
+      }
+    },
+    "entry_id": "gbp_author_algernon-charles-swinburne",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Algernon Charles Swinburne"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alice Duer Miller",
+        "slug": "alice-duer-miller",
+        "gutenberg_string": "Miller, Alice Duer, 1874-1942"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Miller, Alice Duer, 1874-1942"
+      }
+    },
+    "entry_id": "gbp_author_alice-duer-miller",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alice Duer Miller"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alice [Editor] Kemp-Welch",
+        "slug": "alice-editor-kemp-welch",
+        "gutenberg_string": "Kemp-Welch, Alice [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Kemp-Welch, Alice [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_alice-editor-kemp-welch",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alice [Editor] Kemp-Welch"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alice Meynell",
+        "slug": "alice-meynell",
+        "gutenberg_string": "Meynell, Alice, 1847-1922"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Meynell, Alice, 1847-1922"
+      }
+    },
+    "entry_id": "gbp_author_alice-meynell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alice Meynell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Allan Cunningham",
+        "slug": "allan-cunningham",
+        "gutenberg_string": "Cunningham, Allan, 1784-1842"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Cunningham, Allan, 1784-1842"
+      }
+    },
+    "entry_id": "gbp_author_allan-cunningham",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Allan Cunningham"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alma, 1856?-1939 [Translator] Strettell",
+        "slug": "alma-1856-1939-translator-strettell",
+        "gutenberg_string": "Strettell, Alma, 1856?-1939 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Strettell, Alma, 1856?-1939 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_alma-1856-1939-translator-strettell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alma, 1856?-1939 [Translator] Strettell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Alonzo, 1805-1873 [Illustrator] Hartwell",
+        "slug": "alonzo-1805-1873-illustrator-hartwell",
+        "gutenberg_string": "Hartwell, Alonzo, 1805-1873 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Hartwell, Alonzo, 1805-1873 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_alonzo-1805-1873-illustrator-hartwell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Alonzo, 1805-1873 [Illustrator] Hartwell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Amy, 1874-1925 [Author of introduction, etc.] Lowell",
+        "slug": "amy-1874-1925-author-of-introduction-etc-lowell",
+        "gutenberg_string": "Lowell, Amy, 1874-1925 [Author of introduction, etc.]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lowell, Amy, 1874-1925 [Author of introduction, etc.]"
+      }
+    },
+    "entry_id": "gbp_author_amy-1874-1925-author-of-introduction-etc-lowell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Amy, 1874-1925 [Author of introduction, etc.] Lowell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Amy Lowell",
+        "slug": "amy-lowell",
+        "gutenberg_string": "Lowell, Amy, 1874-1925"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lowell, Amy, 1874-1925"
+      }
+    },
+    "entry_id": "gbp_author_amy-lowell",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Amy Lowell"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "An, active 17th century Collins",
+        "slug": "an-active-17th-century-collins",
+        "gutenberg_string": "Collins, An, active 17th century"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Collins, An, active 17th century"
+      }
+    },
+    "entry_id": "gbp_author_an-active-17th-century-collins",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "An, active 17th century Collins"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Ananda K. (Ananda Kentish), 1877-1947 [Translator] Coomaraswamy",
+        "slug": "ananda-k-ananda-kentish-1877-1947-translator-coomaraswamy",
+        "gutenberg_string": "Coomaraswamy, Ananda K. (Ananda Kentish), 1877-1947 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Coomaraswamy, Ananda K. (Ananda Kentish), 1877-1947 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_ananda-k-ananda-kentish-1877-1947-translator-coomaraswamy",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Ananda K. (Ananda Kentish), 1877-1947 [Translator] Coomaraswamy"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Andrew, 1844-1912 [Editor] Lang",
+        "slug": "andrew-1844-1912-editor-lang",
+        "gutenberg_string": "Lang, Andrew, 1844-1912 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lang, Andrew, 1844-1912 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_andrew-1844-1912-editor-lang",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Andrew, 1844-1912 [Editor] Lang"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Andrew, 1844-1912 [Other] Lang",
+        "slug": "andrew-1844-1912-other-lang",
+        "gutenberg_string": "Lang, Andrew, 1844-1912 [Other]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lang, Andrew, 1844-1912 [Other]"
+      }
+    },
+    "entry_id": "gbp_author_andrew-1844-1912-other-lang",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Andrew, 1844-1912 [Other] Lang"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Andrew, 1844-1912 [Translator] Lang",
+        "slug": "andrew-1844-1912-translator-lang",
+        "gutenberg_string": "Lang, Andrew, 1844-1912 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lang, Andrew, 1844-1912 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_andrew-1844-1912-translator-lang",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Andrew, 1844-1912 [Translator] Lang"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Andrew, 1864-1938 [Contributor] Macphail",
+        "slug": "andrew-1864-1938-contributor-macphail",
+        "gutenberg_string": "Macphail, Andrew, 1864-1938 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Macphail, Andrew, 1864-1938 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_andrew-1864-1938-contributor-macphail",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Andrew, 1864-1938 [Contributor] Macphail"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Andrew Lang",
+        "slug": "andrew-lang",
+        "gutenberg_string": "Lang, Andrew, 1844-1912"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lang, Andrew, 1844-1912"
+      }
+    },
+    "entry_id": "gbp_author_andrew-lang",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Andrew Lang"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Aneirin",
+        "slug": "aneirin",
+        "gutenberg_string": "Aneirin"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Aneirin"
+      }
+    },
+    "entry_id": "gbp_author_aneirin",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Aneirin"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Angus Mackay",
+        "slug": "angus-mackay",
+        "gutenberg_string": "Mackay, Angus, 1864-1923"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Mackay, Angus, 1864-1923"
+      }
+    },
+    "entry_id": "gbp_author_angus-mackay",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Angus Mackay"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anna Seward",
+        "slug": "anna-seward",
+        "gutenberg_string": "Seward, Anna, 1742-1809"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Seward, Anna, 1742-1809"
+      }
+    },
+    "entry_id": "gbp_author_anna-seward",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anna Seward"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anne Brontë",
+        "slug": "anne-bront",
+        "gutenberg_string": "Brontë, Anne, 1820-1849"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Brontë, Anne, 1820-1849"
+      }
+    },
+    "entry_id": "gbp_author_anne-bront",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anne Brontë"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anne Killigrew",
+        "slug": "anne-killigrew",
+        "gutenberg_string": "Killigrew, Anne, 1660-1685"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Killigrew, Anne, 1660-1685"
+      }
+    },
+    "entry_id": "gbp_author_anne-killigrew",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anne Killigrew"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anne-Louis, 1767-1824 [Illustrator] Girodet-Trioson",
+        "slug": "anne-louis-1767-1824-illustrator-girodet-trioson",
+        "gutenberg_string": "Girodet-Trioson, Anne-Louis, 1767-1824 [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Girodet-Trioson, Anne-Louis, 1767-1824 [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_anne-louis-1767-1824-illustrator-girodet-trioson",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anne-Louis, 1767-1824 [Illustrator] Girodet-Trioson"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Annie F. (Annie Fellows) Johnston",
+        "slug": "annie-f-annie-fellows-johnston",
+        "gutenberg_string": "Johnston, Annie F. (Annie Fellows), 1863-1931"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Johnston, Annie F. (Annie Fellows), 1863-1931"
+      }
+    },
+    "entry_id": "gbp_author_annie-f-annie-fellows-johnston",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Annie F. (Annie Fellows) Johnston"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Annie Rebekah, 1828-1855 [Contributor] Smith",
+        "slug": "annie-rebekah-1828-1855-contributor-smith",
+        "gutenberg_string": "Smith, Annie Rebekah, 1828-1855 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Smith, Annie Rebekah, 1828-1855 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_annie-rebekah-1828-1855-contributor-smith",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Annie Rebekah, 1828-1855 [Contributor] Smith"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anonymous",
+        "slug": "anonymous",
+        "gutenberg_string": "Anonymous"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Anonymous"
+      }
+    },
+    "entry_id": "gbp_author_anonymous",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anonymous"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Anthony, 1923-2004 [Commentator] Hecht",
+        "slug": "anthony-1923-2004-commentator-hecht",
+        "gutenberg_string": "Hecht, Anthony, 1923-2004 [Commentator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Hecht, Anthony, 1923-2004 [Commentator]"
+      }
+    },
+    "entry_id": "gbp_author_anthony-1923-2004-commentator-hecht",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Anthony, 1923-2004 [Commentator] Hecht"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Antoinette, 1880- [Illustrator] Inglis",
+        "slug": "antoinette-1880-illustrator-inglis",
+        "gutenberg_string": "Inglis, Antoinette, 1880- [Illustrator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Inglis, Antoinette, 1880- [Illustrator]"
+      }
+    },
+    "entry_id": "gbp_author_antoinette-1880-illustrator-inglis",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Antoinette, 1880- [Illustrator] Inglis"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Archibald Lampman",
+        "slug": "archibald-lampman",
+        "gutenberg_string": "Lampman, Archibald, 1861-1899"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Lampman, Archibald, 1861-1899"
+      }
+    },
+    "entry_id": "gbp_author_archibald-lampman",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Archibald Lampman"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Aristides E. (Aristides Evangelus), 1887-1923 [Translator] Phoutrides",
+        "slug": "aristides-e-aristides-evangelus-1887-1923-translator-phoutrides",
+        "gutenberg_string": "Phoutrides, Aristides E. (Aristides Evangelus), 1887-1923 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Phoutrides, Aristides E. (Aristides Evangelus), 1887-1923 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_aristides-e-aristides-evangelus-1887-1923-translator-phoutrides",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Aristides E. (Aristides Evangelus), 1887-1923 [Translator] Phoutrides"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur, 1863-1944 [Author of introduction, etc.] Quiller-Couch",
+        "slug": "arthur-1863-1944-author-of-introduction-etc-quiller-couch",
+        "gutenberg_string": "Quiller-Couch, Arthur, 1863-1944 [Author of introduction, etc.]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Quiller-Couch, Arthur, 1863-1944 [Author of introduction, etc.]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-1863-1944-author-of-introduction-etc-quiller-couch",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur, 1863-1944 [Author of introduction, etc.] Quiller-Couch"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur, 1863-1944 [Editor] Quiller-Couch",
+        "slug": "arthur-1863-1944-editor-quiller-couch",
+        "gutenberg_string": "Quiller-Couch, Arthur, 1863-1944 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Quiller-Couch, Arthur, 1863-1944 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-1863-1944-editor-quiller-couch",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur, 1863-1944 [Editor] Quiller-Couch"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur, 1863-1947 [Contributor] Machen",
+        "slug": "arthur-1863-1947-contributor-machen",
+        "gutenberg_string": "Machen, Arthur, 1863-1947 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Machen, Arthur, 1863-1947 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-1863-1947-contributor-machen",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur, 1863-1947 [Contributor] Machen"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur, 1865-1945 [Contributor] Symons",
+        "slug": "arthur-1865-1945-contributor-symons",
+        "gutenberg_string": "Symons, Arthur, 1865-1945 [Contributor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Symons, Arthur, 1865-1945 [Contributor]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-1865-1945-contributor-symons",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur, 1865-1945 [Contributor] Symons"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur, 1889-1966 [Translator] Waley",
+        "slug": "arthur-1889-1966-translator-waley",
+        "gutenberg_string": "Waley, Arthur, 1889-1966 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Waley, Arthur, 1889-1966 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-1889-1966-translator-waley",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur, 1889-1966 [Translator] Waley"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur B. (Arthur Buckminster), 1822-1862 [Editor] Fuller",
+        "slug": "arthur-b-arthur-buckminster-1822-1862-editor-fuller",
+        "gutenberg_string": "Fuller, Arthur B. (Arthur Buckminster), 1822-1862 [Editor]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Fuller, Arthur B. (Arthur Buckminster), 1822-1862 [Editor]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-b-arthur-buckminster-1822-1862-editor-fuller",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur B. (Arthur Buckminster), 1822-1862 [Editor] Fuller"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur Conan Doyle",
+        "slug": "arthur-conan-doyle",
+        "gutenberg_string": "Doyle, Arthur Conan, 1859-1930"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Doyle, Arthur Conan, 1859-1930"
+      }
+    },
+    "entry_id": "gbp_author_arthur-conan-doyle",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur Conan Doyle"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur Davison Ficke",
+        "slug": "arthur-davison-ficke",
+        "gutenberg_string": "Ficke, Arthur Davison, 1883-1945"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Ficke, Arthur Davison, 1883-1945"
+      }
+    },
+    "entry_id": "gbp_author_arthur-davison-ficke",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur Davison Ficke"
+  },
+  {
+    "artist_aliases": [
+      {
+        "name": "Arthur H. (Arthur Hubbell), 1859-1918 [Translator] Palmer",
+        "slug": "arthur-h-arthur-hubbell-1859-1918-translator-palmer",
+        "gutenberg_string": "Palmer, Arthur H. (Arthur Hubbell), 1859-1918 [Translator]"
+      }
+    ],
+    "descriptions": {
+      "gutenberg": {
+        "original_string": "Palmer, Arthur H. (Arthur Hubbell), 1859-1918 [Translator]"
+      }
+    },
+    "entry_id": "gbp_author_arthur-h-arthur-hubbell-1859-1918-translator-palmer",
+    "isArtist": 1,
+    "relatedKeywordIds": [],
+    "relatedKeywordStrings": [],
+    "type": "author",
+    "value": "Arthur H. (Arthur Hubbell), 1859-1918 [Translator] Palmer"
+  }
+]

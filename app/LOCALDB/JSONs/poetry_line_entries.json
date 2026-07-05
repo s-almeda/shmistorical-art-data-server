@@ -1,0 +1,2202 @@
+[
+  {
+    "book_id": "gbp_book_19",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "19",
+        "book_title": "The Song of Hiawatha",
+        "author": "Henry Wadsworth Longfellow",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_19_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_19",
+      "gbp_author_henry-wadsworth-longfellow"
+    ],
+    "relatedKeywordStrings": [
+      "The Song of Hiawatha",
+      "Henry Wadsworth Longfellow"
+    ],
+    "value": "The Song of Hiawatha is based on the legends and stories of"
+  },
+  {
+    "book_id": "gbp_book_20",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "20",
+        "book_title": "Paradise Lost",
+        "author": "John Milton",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_20_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_20",
+      "gbp_author_john-milton"
+    ],
+    "relatedKeywordStrings": [
+      "Paradise Lost",
+      "John Milton"
+    ],
+    "value": "Of that Forbidden Tree, whose mortal tast"
+  },
+  {
+    "book_id": "gbp_book_26",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "26",
+        "book_title": "Paradise Lost",
+        "author": "John Milton",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_26_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_26",
+      "gbp_author_john-milton"
+    ],
+    "relatedKeywordStrings": [
+      "Paradise Lost",
+      "John Milton"
+    ],
+    "value": "Of Man's first disobedience, and the fruit"
+  },
+  {
+    "book_id": "gbp_book_58",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "58",
+        "book_title": "Paradise Regained",
+        "author": "John Milton",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_58_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_58",
+      "gbp_author_john-milton"
+    ],
+    "relatedKeywordStrings": [
+      "Paradise Regained",
+      "John Milton"
+    ],
+    "value": "I, WHO erewhile the happy Garden sung"
+  },
+  {
+    "book_id": "gbp_book_109",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "109",
+        "book_title": "Renascence, and Other Poems",
+        "author": "Edna St. Vincent Millay",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_109_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_109",
+      "gbp_author_edna-st-vincent-millay"
+    ],
+    "relatedKeywordStrings": [
+      "Renascence, and Other Poems",
+      "Edna St. Vincent Millay"
+    ],
+    "value": "All I could see from where I stood"
+  },
+  {
+    "book_id": "gbp_book_136",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "136",
+        "book_title": "A Child's Garden of Verses",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_136_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_136",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "A Child's Garden of Verses",
+      "Robert Louis Stevenson"
+    ],
+    "value": "A Child's Garden of Verses"
+  },
+  {
+    "book_id": "gbp_book_151",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "151",
+        "book_title": "The Rime of the Ancient Mariner",
+        "author": "Samuel Taylor Coleridge",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_151_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_151",
+      "gbp_author_samuel-taylor-coleridge"
+    ],
+    "relatedKeywordStrings": [
+      "The Rime of the Ancient Mariner",
+      "Samuel Taylor Coleridge"
+    ],
+    "value": "It is an ancient Mariner,"
+  },
+  {
+    "book_id": "gbp_book_163",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "163",
+        "book_title": "Flower Fables",
+        "author": "Louisa May Alcott",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_163_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_163",
+      "gbp_author_louisa-may-alcott"
+    ],
+    "relatedKeywordStrings": [
+      "Flower Fables",
+      "Louisa May Alcott"
+    ],
+    "value": "\"Pondering shadows, colors, clouds"
+  },
+  {
+    "book_id": "gbp_book_207",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "207",
+        "book_title": "The Spell of the Yukon and Other Verses",
+        "author": "Robert W. (Robert William) Service",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_207_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_207",
+      "gbp_author_robert-w-robert-william-service"
+    ],
+    "relatedKeywordStrings": [
+      "The Spell of the Yukon and Other Verses",
+      "Robert W. (Robert William) Service"
+    ],
+    "value": "The lonely sunsets flare forlorn"
+  },
+  {
+    "book_id": "gbp_book_213",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "213",
+        "book_title": "The Man from Snowy River",
+        "author": "A. B. (Andrew Barton) Paterson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_213_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_213",
+      "gbp_author_a-b-andrew-barton-paterson"
+    ],
+    "relatedKeywordStrings": [
+      "The Man from Snowy River",
+      "A. B. (Andrew Barton) Paterson"
+    ],
+    "value": "with preface by Rolf Boldrewood"
+  },
+  {
+    "book_id": "gbp_book_214",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "214",
+        "book_title": "In the Days When the World Was Wide, and Other Verses",
+        "author": "Henry Lawson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_214_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_214",
+      "gbp_author_henry-lawson"
+    ],
+    "relatedKeywordStrings": [
+      "In the Days When the World Was Wide, and Other Verses",
+      "Henry Lawson"
+    ],
+    "value": "and 'The City Bushman', included in this selection,"
+  },
+  {
+    "book_id": "gbp_book_228",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "228",
+        "book_title": "The Aeneid",
+        "author": "71 BCE-20 BCE Virgil",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_228_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_228",
+      "gbp_author_71-bce-20-bce-virgil"
+    ],
+    "relatedKeywordStrings": [
+      "The Aeneid",
+      "71 BCE-20 BCE Virgil"
+    ],
+    "value": "Arms, and the man I sing, who, forc'd by fate,"
+  },
+  {
+    "book_id": "gbp_book_230",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "230",
+        "book_title": "The Bucolics and Eclogues",
+        "author": "71 BCE-20 BCE Virgil",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_230_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_230",
+      "gbp_author_71-bce-20-bce-virgil"
+    ],
+    "relatedKeywordStrings": [
+      "The Bucolics and Eclogues",
+      "71 BCE-20 BCE Virgil"
+    ],
+    "value": "You, Tityrus, 'neath a broad beech-canopy"
+  },
+  {
+    "book_id": "gbp_book_232",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "232",
+        "book_title": "The Georgics",
+        "author": "71 BCE-20 BCE Virgil",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_232_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_232",
+      "gbp_author_71-bce-20-bce-virgil"
+    ],
+    "relatedKeywordStrings": [
+      "The Georgics",
+      "71 BCE-20 BCE Virgil"
+    ],
+    "value": "What makes the cornfield smile; beneath what star"
+  },
+  {
+    "book_id": "gbp_book_246",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "246",
+        "book_title": "The Rubaiyat of Omar Khayyam",
+        "author": "Omar Khayyam",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_246_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_246",
+      "gbp_author_omar-khayyam"
+    ],
+    "relatedKeywordStrings": [
+      "The Rubaiyat of Omar Khayyam",
+      "Omar Khayyam"
+    ],
+    "value": "Rendered into English Verse by Edward Fitzgerald"
+  },
+  {
+    "book_id": "gbp_book_257",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "257",
+        "book_title": "Troilus and Criseyde",
+        "author": "Geoffrey, 1343?- Chaucer",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_257_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_257",
+      "gbp_author_geoffrey-1343-chaucer"
+    ],
+    "relatedKeywordStrings": [
+      "Troilus and Criseyde",
+      "Geoffrey, 1343?- Chaucer"
+    ],
+    "value": "BOOK I. Incipit Liber Primus"
+  },
+  {
+    "book_id": "gbp_book_258",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "258",
+        "book_title": "Poems by Adam Lindsay Gordon",
+        "author": "Adam Lindsay Gordon",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_258_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_258",
+      "gbp_author_adam-lindsay-gordon"
+    ],
+    "relatedKeywordStrings": [
+      "Poems by Adam Lindsay Gordon",
+      "Adam Lindsay Gordon"
+    ],
+    "value": "At rest! Hard by the margin of that sea"
+  },
+  {
+    "book_id": "gbp_book_259",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "259",
+        "book_title": "Ballads of a Cheechako",
+        "author": "Robert W. (Robert William) Service",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_259_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_259",
+      "gbp_author_robert-w-robert-william-service"
+    ],
+    "relatedKeywordStrings": [
+      "Ballads of a Cheechako",
+      "Robert W. (Robert William) Service"
+    ],
+    "value": "My rhymes are rough, and often in my rhyming"
+  },
+  {
+    "book_id": "gbp_book_261",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "261",
+        "book_title": "A Dome of Many-Coloured Glass",
+        "author": "Amy Lowell",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_261_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_261",
+      "gbp_author_amy-lowell"
+    ],
+    "relatedKeywordStrings": [
+      "A Dome of Many-Coloured Glass",
+      "Amy Lowell"
+    ],
+    "value": "Suggested by the Cover of a Volume of Keats's Poems"
+  },
+  {
+    "book_id": "gbp_book_262",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "262",
+        "book_title": "The Collected Poems of Rupert Brooke",
+        "author": "Rupert Brooke",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_262_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_262",
+      "gbp_author_rupert-brooke"
+    ],
+    "relatedKeywordStrings": [
+      "The Collected Poems of Rupert Brooke",
+      "Rupert Brooke"
+    ],
+    "value": "This vitality, though manifold in expression, is felt primarily"
+  },
+  {
+    "book_id": "gbp_book_263",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "263",
+        "book_title": "Trees, and Other Poems",
+        "author": "Joyce Kilmer",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_263_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_263",
+      "gbp_author_joyce-kilmer"
+    ],
+    "relatedKeywordStrings": [
+      "Trees, and Other Poems",
+      "Joyce Kilmer"
+    ],
+    "value": "\"Mine is no horse with wings, to gain"
+  },
+  {
+    "book_id": "gbp_book_264",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "264",
+        "book_title": "Main Street, and Other Poems",
+        "author": "Joyce Kilmer",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_264_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_264",
+      "gbp_author_joyce-kilmer"
+    ],
+    "relatedKeywordStrings": [
+      "Main Street, and Other Poems",
+      "Joyce Kilmer"
+    ],
+    "value": "Mid-ocean in War-time"
+  },
+  {
+    "book_id": "gbp_book_266",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "266",
+        "book_title": "Confessio Amantis; Or, Tales of the Seven Deadly Sins",
+        "author": "John, 1325?- Gower",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_266_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_266",
+      "gbp_author_john-1325-gower"
+    ],
+    "relatedKeywordStrings": [
+      "Confessio Amantis; Or, Tales of the Seven Deadly Sins",
+      "John, 1325?- Gower"
+    ],
+    "value": "The following electronic text is based on that edition published"
+  },
+  {
+    "book_id": "gbp_book_301",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "301",
+        "book_title": "The Ballad of Reading Gaol",
+        "author": "Oscar Wilde",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_301_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_301",
+      "gbp_author_oscar-wilde"
+    ],
+    "relatedKeywordStrings": [
+      "The Ballad of Reading Gaol",
+      "Oscar Wilde"
+    ],
+    "value": "He did not wear his scarlet coat,"
+  },
+  {
+    "book_id": "gbp_book_304",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "304",
+        "book_title": "Rio Grande's Last Race, and Other Verses",
+        "author": "A. B. (Andrew Barton) Paterson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_304_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_304",
+      "gbp_author_a-b-andrew-barton-paterson"
+    ],
+    "relatedKeywordStrings": [
+      "Rio Grande's Last Race, and Other Verses",
+      "A. B. (Andrew Barton) Paterson"
+    ],
+    "value": "Original 1902 Sydney edition"
+  },
+  {
+    "book_id": "gbp_book_309",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "309",
+        "book_title": "Rhymes of a Rolling Stone",
+        "author": "Robert W. (Robert William) Service",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_309_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_309",
+      "gbp_author_robert-w-robert-william-service"
+    ],
+    "relatedKeywordStrings": [
+      "Rhymes of a Rolling Stone",
+      "Robert W. (Robert William) Service"
+    ],
+    "value": "I have no doubt at all the Devil grins,"
+  },
+  {
+    "book_id": "gbp_book_312",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "312",
+        "book_title": "Young Adventure: A Book of Poems",
+        "author": "Stephen Vincent Benét",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_312_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_312",
+      "gbp_author_stephen-vincent-bent"
+    ],
+    "relatedKeywordStrings": [
+      "Young Adventure: A Book of Poems",
+      "Stephen Vincent Benét"
+    ],
+    "value": "And so, to you, who always were"
+  },
+  {
+    "book_id": "gbp_book_313",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "313",
+        "book_title": "Children of the Night",
+        "author": "Edwin Arlington Robinson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_313_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_313",
+      "gbp_author_edwin-arlington-robinson"
+    ],
+    "relatedKeywordStrings": [
+      "Children of the Night",
+      "Edwin Arlington Robinson"
+    ],
+    "value": "Italicized words or phrases have been capitalized."
+  },
+  {
+    "book_id": "gbp_book_315",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "315",
+        "book_title": "Rhymes of a Red Cross Man",
+        "author": "Robert W. (Robert William) Service",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_315_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_315",
+      "gbp_author_robert-w-robert-william-service"
+    ],
+    "relatedKeywordStrings": [
+      "Rhymes of a Red Cross Man",
+      "Robert W. (Robert William) Service"
+    ],
+    "value": "|                           |"
+  },
+  {
+    "book_id": "gbp_book_317",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "317",
+        "book_title": "The Culprit Fay, and Other Poems",
+        "author": "Joseph Rodman Drake",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_317_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_317",
+      "gbp_author_joseph-rodman-drake"
+    ],
+    "relatedKeywordStrings": [
+      "The Culprit Fay, and Other Poems",
+      "Joseph Rodman Drake"
+    ],
+    "value": "{Cro' Nest, from above West Point, on the Hudson River: p0.jpg}"
+  },
+  {
+    "book_id": "gbp_book_323",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "323",
+        "book_title": "Verses 1889-1896",
+        "author": "Rudyard Kipling",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_323_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_323",
+      "gbp_author_rudyard-kipling"
+    ],
+    "relatedKeywordStrings": [
+      "Verses 1889-1896",
+      "Rudyard Kipling"
+    ],
+    "value": "Followed by first lines"
+  },
+  {
+    "book_id": "gbp_book_328",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "328",
+        "book_title": "A Heap o' Livin'",
+        "author": "Edgar A. (Edgar Albert) Guest",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_328_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_328",
+      "gbp_author_edgar-a-edgar-albert-guest"
+    ],
+    "relatedKeywordStrings": [
+      "A Heap o' Livin'",
+      "Edgar A. (Edgar Albert) Guest"
+    ],
+    "value": "this little book of verse"
+  },
+  {
+    "book_id": "gbp_book_348",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "348",
+        "book_title": "Hesiod, the Homeric Hymns, and Homerica",
+        "author": "Hesiod",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_348_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_348",
+      "gbp_author_hesiod"
+    ],
+    "relatedKeywordStrings": [
+      "Hesiod, the Homeric Hymns, and Homerica",
+      "Hesiod"
+    ],
+    "value": "This file contains translations of the following works:"
+  },
+  {
+    "book_id": "gbp_book_353",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "353",
+        "book_title": "In Flanders Fields, and Other Poems",
+        "author": "John McCrae",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_353_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_353",
+      "gbp_author_john-mccrae"
+    ],
+    "relatedKeywordStrings": [
+      "In Flanders Fields, and Other Poems",
+      "John McCrae"
+    ],
+    "value": "by John McCrae"
+  },
+  {
+    "book_id": "gbp_book_390",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "390",
+        "book_title": "A Lute of Jade : Selections from the Classical Poets of China",
+        "author": "L. (Launcelot) Cranmer-Byng",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_390_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_390",
+      "gbp_author_l-launcelot-cranmer-byng"
+    ],
+    "relatedKeywordStrings": [
+      "A Lute of Jade : Selections from the Classical Poets of China",
+      "L. (Launcelot) Cranmer-Byng"
+    ],
+    "value": "Being Selections from the Classical Poets of China"
+  },
+  {
+    "book_id": "gbp_book_391",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "391",
+        "book_title": "The Song of Roland",
+        "author": "C. K. (Charles Kenneth), 1889-1930 [Translator] Scott-Moncrieff",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_391_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_391",
+      "gbp_author_c-k-charles-kenneth-1889-1930-translator-scott-moncrieff"
+    ],
+    "relatedKeywordStrings": [
+      "The Song of Roland",
+      "C. K. (Charles Kenneth), 1889-1930 [Translator] Scott-Moncrieff"
+    ],
+    "value": "Anonymous Old French epic, dating perhaps as early as the middle"
+  },
+  {
+    "book_id": "gbp_book_392",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "392",
+        "book_title": "Jerusalem Delivered",
+        "author": "Torquato Tasso",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_392_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_392",
+      "gbp_author_torquato-tasso"
+    ],
+    "relatedKeywordStrings": [
+      "Jerusalem Delivered",
+      "Torquato Tasso"
+    ],
+    "value": "translation first published in London, 1600."
+  },
+  {
+    "book_id": "gbp_book_397",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "397",
+        "book_title": "L'Allegro, Il Penseroso, Comus, and Lycidas",
+        "author": "John Milton",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_397_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_397",
+      "gbp_author_john-milton"
+    ],
+    "relatedKeywordStrings": [
+      "L'Allegro, Il Penseroso, Comus, and Lycidas",
+      "John Milton"
+    ],
+    "value": "HENCE, loathed Melancholy,"
+  },
+  {
+    "book_id": "gbp_book_400",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "400",
+        "book_title": "Helen of Troy, and Other Poems",
+        "author": "Sara Teasdale",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_400_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_400",
+      "gbp_author_sara-teasdale"
+    ],
+    "relatedKeywordStrings": [
+      "Helen of Troy, and Other Poems",
+      "Sara Teasdale"
+    ],
+    "value": "But Not to Me"
+  },
+  {
+    "book_id": "gbp_book_409",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "409",
+        "book_title": "Poems on various subjects, religious and moral",
+        "author": "Phillis Wheatley",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_409_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_409",
+      "gbp_author_phillis-wheatley"
+    ],
+    "relatedKeywordStrings": [
+      "Poems on various subjects, religious and moral",
+      "Phillis Wheatley"
+    ],
+    "value": "To the King's Most Excellent Majesty"
+  },
+  {
+    "book_id": "gbp_book_413",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "413",
+        "book_title": "Ballads",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_413_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_413",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "Ballads",
+      "Robert Louis Stevenson"
+    ],
+    "value": "The Priest's Vigil"
+  },
+  {
+    "book_id": "gbp_book_424",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "424",
+        "book_title": "General William Booth Enters into Heaven, and Other Poems",
+        "author": "Vachel Lindsay",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_424_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_424",
+      "gbp_author_vachel-lindsay"
+    ],
+    "relatedKeywordStrings": [
+      "General William Booth Enters into Heaven, and Other Poems",
+      "Vachel Lindsay"
+    ],
+    "value": "This book is dedicated to"
+  },
+  {
+    "book_id": "gbp_book_438",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "438",
+        "book_title": "Underwoods",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_438_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_438",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "Underwoods",
+      "Robert Louis Stevenson"
+    ],
+    "value": "Of all my verse, like not a single line;"
+  },
+  {
+    "book_id": "gbp_book_441",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "441",
+        "book_title": "New Poems, and Variant Readings",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_441_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_441",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "New Poems, and Variant Readings",
+      "Robert Louis Stevenson"
+    ],
+    "value": "I ASK good things that I detest,"
+  },
+  {
+    "book_id": "gbp_book_442",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "442",
+        "book_title": "Love Songs",
+        "author": "Sara Teasdale",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_442_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_442",
+      "gbp_author_sara-teasdale"
+    ],
+    "relatedKeywordStrings": [
+      "Love Songs",
+      "Sara Teasdale"
+    ],
+    "value": "I have remembered beauty in the night,"
+  },
+  {
+    "book_id": "gbp_book_454",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "454",
+        "book_title": "The Breitmann Ballads",
+        "author": "Charles Godfrey Leland",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_454_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_454",
+      "gbp_author_charles-godfrey-leland"
+    ],
+    "relatedKeywordStrings": [
+      "The Breitmann Ballads",
+      "Charles Godfrey Leland"
+    ],
+    "value": "\"Vhen he found dat a blace was ploonder-fool, he"
+  },
+  {
+    "book_id": "gbp_book_458",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "458",
+        "book_title": "Dreams and Dust",
+        "author": "Don Marquis",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_458_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_458",
+      "gbp_author_don-marquis"
+    ],
+    "relatedKeywordStrings": [
+      "Dreams and Dust",
+      "Don Marquis"
+    ],
+    "value": "So let them pass, these songs of mine,"
+  },
+  {
+    "book_id": "gbp_book_487",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "487",
+        "book_title": "Songs of Travel, and Other Verses",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_487_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_487",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "Songs of Travel, and Other Verses",
+      "Robert Louis Stevenson"
+    ],
+    "value": "a highwayside"
+  },
+  {
+    "book_id": "gbp_book_574",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "574",
+        "book_title": "Poems of William Blake",
+        "author": "William Blake",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_574_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_574",
+      "gbp_author_william-blake"
+    ],
+    "relatedKeywordStrings": [
+      "Poems of William Blake",
+      "William Blake"
+    ],
+    "value": "Piping down the valleys wild,"
+  },
+  {
+    "book_id": "gbp_book_579",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "579",
+        "book_title": "The Poems of Sidney Lanier",
+        "author": "Sidney Lanier",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_579_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_579",
+      "gbp_author_sidney-lanier"
+    ],
+    "relatedKeywordStrings": [
+      "The Poems of Sidney Lanier",
+      "Sidney Lanier"
+    ],
+    "value": "if the italics were used for emphasis, or put in quotation marks,"
+  },
+  {
+    "book_id": "gbp_book_591",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "591",
+        "book_title": "Flame and Shadow",
+        "author": "Sara Teasdale",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_591_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_591",
+      "gbp_author_sara-teasdale"
+    ],
+    "relatedKeywordStrings": [
+      "Flame and Shadow",
+      "Sara Teasdale"
+    ],
+    "value": "Italicized words or phrases are marked by tildes (~)."
+  },
+  {
+    "book_id": "gbp_book_592",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "592",
+        "book_title": "The Chinese Nightingale, and Other Poems",
+        "author": "Vachel Lindsay",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_592_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_592",
+      "gbp_author_vachel-lindsay"
+    ],
+    "relatedKeywordStrings": [
+      "The Chinese Nightingale, and Other Poems",
+      "Vachel Lindsay"
+    ],
+    "value": "Italicized stanzas are indented 5 spaces.  Some errors have been"
+  },
+  {
+    "book_id": "gbp_book_594",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "594",
+        "book_title": "Twilight Stories",
+        "author": "Margaret, 1844-1924 [Contributor] Sidney",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_594_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_594",
+      "gbp_author_margaret-1844-1924-contributor-sidney"
+    ],
+    "relatedKeywordStrings": [
+      "Twilight Stories",
+      "Margaret, 1844-1924 [Contributor] Sidney"
+    ],
+    "value": "We went to the show one night,"
+  },
+  {
+    "book_id": "gbp_book_595",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "595",
+        "book_title": "The Sisters' Tragedy, with Other Poems, Lyrical and Dramatic",
+        "author": "Thomas Bailey Aldrich",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_595_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_595",
+      "gbp_author_thomas-bailey-aldrich"
+    ],
+    "relatedKeywordStrings": [
+      "The Sisters' Tragedy, with Other Poems, Lyrical and Dramatic",
+      "Thomas Bailey Aldrich"
+    ],
+    "value": "AGLAE, a widow"
+  },
+  {
+    "book_id": "gbp_book_596",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "596",
+        "book_title": "Rivers to the Sea",
+        "author": "Sara Teasdale",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_596_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_596",
+      "gbp_author_sara-teasdale"
+    ],
+    "relatedKeywordStrings": [
+      "Rivers to the Sea",
+      "Sara Teasdale"
+    ],
+    "value": "THE park is filled with night and fog,"
+  },
+  {
+    "book_id": "gbp_book_602",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "602",
+        "book_title": "Pharsalia; Dramatic Episodes of the Civil Wars",
+        "author": "39-65 Lucan",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_602_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_602",
+      "gbp_author_39-65-lucan"
+    ],
+    "relatedKeywordStrings": [
+      "Pharsalia; Dramatic Episodes of the Civil Wars",
+      "39-65 Lucan"
+    ],
+    "value": "Wars worse than civil on Emathian (1) plains,"
+  },
+  {
+    "book_id": "gbp_book_610",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "610",
+        "book_title": "Idylls of the King",
+        "author": "Alfred Tennyson, Baron Tennyson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_610_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_610",
+      "gbp_author_alfred-tennyson-baron-tennyson"
+    ],
+    "relatedKeywordStrings": [
+      "Idylls of the King",
+      "Alfred Tennyson, Baron Tennyson"
+    ],
+    "value": "These to His Memory--since he held them dear,"
+  },
+  {
+    "book_id": "gbp_book_615",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "615",
+        "book_title": "Orlando Furioso",
+        "author": "Lodovico Ariosto",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_615_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_615",
+      "gbp_author_lodovico-ariosto"
+    ],
+    "relatedKeywordStrings": [
+      "Orlando Furioso",
+      "Lodovico Ariosto"
+    ],
+    "value": "This work is a continuation of the \"Orlando Innamorato\" of Matteo"
+  },
+  {
+    "book_id": "gbp_book_617",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "617",
+        "book_title": "Poems",
+        "author": "Alan Seeger",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_617_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_617",
+      "gbp_author_alan-seeger"
+    ],
+    "relatedKeywordStrings": [
+      "Poems",
+      "Alan Seeger"
+    ],
+    "value": "placed in single quotes, or otherwise marked as needed."
+  },
+  {
+    "book_id": "gbp_book_618",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "618",
+        "book_title": "Codex Junius 11",
+        "author": "Unknown",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_618_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_618",
+      "gbp_author_unknown"
+    ],
+    "relatedKeywordStrings": [
+      "Codex Junius 11",
+      "Unknown"
+    ],
+    "value": "(Author unknown)"
+  },
+  {
+    "book_id": "gbp_book_651",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "651",
+        "book_title": "Phantasmagoria and Other Poems",
+        "author": "Lewis Carroll",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_651_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_651",
+      "gbp_author_lewis-carroll"
+    ],
+    "relatedKeywordStrings": [
+      "Phantasmagoria and Other Poems",
+      "Lewis Carroll"
+    ],
+    "value": "CANTO I--The Trystyng"
+  },
+  {
+    "book_id": "gbp_book_658",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "658",
+        "book_title": "The Fall of Troy",
+        "author": "Smyrnaeus, active 4th century Quintus",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_658_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_658",
+      "gbp_author_smyrnaeus-active-4th-century-quintus"
+    ],
+    "relatedKeywordStrings": [
+      "The Fall of Troy",
+      "Smyrnaeus, active 4th century Quintus"
+    ],
+    "value": "Originally written in Greek, sometime about the middle of the 4th"
+  },
+  {
+    "book_id": "gbp_book_679",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "679",
+        "book_title": "Poems",
+        "author": "Frances Ellen Watkins Harper",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_679_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_679",
+      "gbp_author_frances-ellen-watkins-harper"
+    ],
+    "relatedKeywordStrings": [
+      "Poems",
+      "Frances Ellen Watkins Harper"
+    ],
+    "value": "Whereas thou hast been forsaken and hated, so"
+  },
+  {
+    "book_id": "gbp_book_680",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "680",
+        "book_title": "The Golden Threshold",
+        "author": "Sarojini Naidu",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_680_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_680",
+      "gbp_author_sarojini-naidu"
+    ],
+    "relatedKeywordStrings": [
+      "The Golden Threshold",
+      "Sarojini Naidu"
+    ],
+    "value": "The Poet's Love-Song"
+  },
+  {
+    "book_id": "gbp_book_691",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "691",
+        "book_title": "The Complete Works of James Whitcomb Riley — Volume 1",
+        "author": "James Whitcomb Riley",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_691_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_691",
+      "gbp_author_james-whitcomb-riley"
+    ],
+    "relatedKeywordStrings": [
+      "The Complete Works of James Whitcomb Riley — Volume 1",
+      "James Whitcomb Riley"
+    ],
+    "value": "On Sunday morning, October seventh, 1849, Reuben A. Riley and his"
+  },
+  {
+    "book_id": "gbp_book_692",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "692",
+        "book_title": "The Complete Works of James Whitcomb Riley — Volume 10",
+        "author": "James Whitcomb Riley",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_692_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_692",
+      "gbp_author_james-whitcomb-riley"
+    ],
+    "relatedKeywordStrings": [
+      "The Complete Works of James Whitcomb Riley — Volume 10",
+      "James Whitcomb Riley"
+    ],
+    "value": "Including Poems and Prose Sketches, many"
+  },
+  {
+    "book_id": "gbp_book_703",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "703",
+        "book_title": "Lucasta",
+        "author": "Richard Lovelace",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_703_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_703",
+      "gbp_author_richard-lovelace"
+    ],
+    "relatedKeywordStrings": [
+      "Lucasta",
+      "Richard Lovelace"
+    ],
+    "value": "Verses addressed to the Author"
+  },
+  {
+    "book_id": "gbp_book_715",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "715",
+        "book_title": "The Moon Endureth: Tales and Fancies",
+        "author": "John Buchan",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_715_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_715",
+      "gbp_author_john-buchan"
+    ],
+    "relatedKeywordStrings": [
+      "The Moon Endureth: Tales and Fancies",
+      "John Buchan"
+    ],
+    "value": "Around my feet the clouds are drawn"
+  },
+  {
+    "book_id": "gbp_book_772",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "772",
+        "book_title": "Moral Emblems",
+        "author": "Robert Louis Stevenson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_772_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_772",
+      "gbp_author_robert-louis-stevenson"
+    ],
+    "relatedKeywordStrings": [
+      "Moral Emblems",
+      "Robert Louis Stevenson"
+    ],
+    "value": "For certain soldiers lately dead"
+  },
+  {
+    "book_id": "gbp_book_785",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "785",
+        "book_title": "On the Nature of Things",
+        "author": "Titus, 95? BCE-50? BCE Lucretius Carus",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_785_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_785",
+      "gbp_author_titus-95-bce-50-bce-lucretius-carus"
+    ],
+    "relatedKeywordStrings": [
+      "On the Nature of Things",
+      "Titus, 95? BCE-50? BCE Lucretius Carus"
+    ],
+    "value": "Mother of Rome, delight of Gods and men,"
+  },
+  {
+    "book_id": "gbp_book_791",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "791",
+        "book_title": "The Princess",
+        "author": "Alfred Tennyson, Baron Tennyson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_791_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_791",
+      "gbp_author_alfred-tennyson-baron-tennyson"
+    ],
+    "relatedKeywordStrings": [
+      "The Princess",
+      "Alfred Tennyson, Baron Tennyson"
+    ],
+    "value": "Sir Walter Vivian all a summer's day"
+  },
+  {
+    "book_id": "gbp_book_795",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "795",
+        "book_title": "Ballads and Lyrics of Old France, with Other Poems",
+        "author": "Andrew, 1844-1912 [Translator] Lang",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_795_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_795",
+      "gbp_author_andrew-1844-1912-translator-lang"
+    ],
+    "relatedKeywordStrings": [
+      "Ballads and Lyrics of Old France, with Other Poems",
+      "Andrew, 1844-1912 [Translator] Lang"
+    ],
+    "value": "returned to France, where he died in 1465.  His verses, for the"
+  },
+  {
+    "book_id": "gbp_book_835",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "835",
+        "book_title": "The Grey Brethren, and Other Fragments in Prose and Verse",
+        "author": "Michael Fairless",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_835_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_835",
+      "gbp_author_michael-fairless"
+    ],
+    "relatedKeywordStrings": [
+      "The Grey Brethren, and Other Fragments in Prose and Verse",
+      "Michael Fairless"
+    ],
+    "value": "A Lark's Song"
+  },
+  {
+    "book_id": "gbp_book_841",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "841",
+        "book_title": "Men, Women and Ghosts",
+        "author": "Amy Lowell",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_841_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_841",
+      "gbp_author_amy-lowell"
+    ],
+    "relatedKeywordStrings": [
+      "Men, Women and Ghosts",
+      "Amy Lowell"
+    ],
+    "value": "and the continuation is indented two spaces.  Some obvious errors"
+  },
+  {
+    "book_id": "gbp_book_845",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "845",
+        "book_title": "Poems of Henry Timrod; with Memoir",
+        "author": "Henry Timrod",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_845_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_845",
+      "gbp_author_henry-timrod"
+    ],
+    "relatedKeywordStrings": [
+      "Poems of Henry Timrod; with Memoir",
+      "Henry Timrod"
+    ],
+    "value": "A Year's Courtship"
+  },
+  {
+    "book_id": "gbp_book_937",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "937",
+        "book_title": "Poems: Patriotic, Religious, Miscellaneous",
+        "author": "Abram Joseph Ryan",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_937_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_937",
+      "gbp_author_abram-joseph-ryan"
+    ],
+    "relatedKeywordStrings": [
+      "Poems: Patriotic, Religious, Miscellaneous",
+      "Abram Joseph Ryan"
+    ],
+    "value": "Father Ryan's Poems"
+  },
+  {
+    "book_id": "gbp_book_941",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "941",
+        "book_title": "Just Folks",
+        "author": "Edgar A. (Edgar Albert) Guest",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_941_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_941",
+      "gbp_author_edgar-a-edgar-albert-guest"
+    ],
+    "relatedKeywordStrings": [
+      "Just Folks",
+      "Edgar A. (Edgar Albert) Guest"
+    ],
+    "value": "We're queer folks here."
+  },
+  {
+    "book_id": "gbp_book_962",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "962",
+        "book_title": "The Poems of Henry Kendall\nWith Biographical Note by Bertram Stevens",
+        "author": "Henry Kendall",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_962_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_962",
+      "gbp_author_henry-kendall"
+    ],
+    "relatedKeywordStrings": [
+      "The Poems of Henry Kendall\nWith Biographical Note by Bertram Stevens",
+      "Henry Kendall"
+    ],
+    "value": "To thee, O father of the stately peaks,"
+  },
+  {
+    "book_id": "gbp_book_981",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "981",
+        "book_title": "Beowulf",
+        "author": "Francis Barton, 1855-1919 [Translator] Gummere",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_981_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_981",
+      "gbp_author_francis-barton-1855-1919-translator-gummere"
+    ],
+    "relatedKeywordStrings": [
+      "Beowulf",
+      "Francis Barton, 1855-1919 [Translator] Gummere"
+    ],
+    "value": "LO, praise of the prowess of people-kings"
+  },
+  {
+    "book_id": "gbp_book_982",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "982",
+        "book_title": "The Book of Nonsense",
+        "author": "Edward Lear",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_982_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_982",
+      "gbp_author_edward-lear"
+    ],
+    "relatedKeywordStrings": [
+      "The Book of Nonsense",
+      "Edward Lear"
+    ],
+    "value": "There was an Old Derry down Derry,"
+  },
+  {
+    "book_id": "gbp_book_995",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "995",
+        "book_title": "Ballads of a Bohemian",
+        "author": "Robert W. (Robert William) Service",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_995_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_995",
+      "gbp_author_robert-w-robert-william-service"
+    ],
+    "relatedKeywordStrings": [
+      "Ballads of a Bohemian",
+      "Robert W. (Robert William) Service"
+    ],
+    "value": "\"Rhymes of a Red Cross Man\", etc."
+  },
+  {
+    "book_id": "gbp_book_1001",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1001",
+        "book_title": "Divine Comedy, Longfellow's Translation, Hell",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1001_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1001",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Longfellow's Translation, Hell",
+      "Dante Alighieri"
+    ],
+    "value": "The River Phlegethon.  The Violent against their Neighbours."
+  },
+  {
+    "book_id": "gbp_book_1002",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1002",
+        "book_title": "Divine Comedy, Longfellow's Translation, Purgatory",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1002_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1002",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Longfellow's Translation, Purgatory",
+      "Dante Alighieri"
+    ],
+    "value": "who postponed Repentance till the last Hour.  Belacqua."
+  },
+  {
+    "book_id": "gbp_book_1003",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1003",
+        "book_title": "Divine Comedy, Longfellow's Translation, Paradise",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1003_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1003",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Longfellow's Translation, Paradise",
+      "Dante Alighieri"
+    ],
+    "value": "Sacred Vows, were forced to violate them.  The Lunar Spots."
+  },
+  {
+    "book_id": "gbp_book_1004",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1004",
+        "book_title": "Divine Comedy, Longfellow's Translation, Complete",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1004_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1004",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Longfellow's Translation, Complete",
+      "Dante Alighieri"
+    ],
+    "value": "The River Phlegethon.  The Violent against their Neighbours."
+  },
+  {
+    "book_id": "gbp_book_1005",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1005",
+        "book_title": "Divine Comedy, Cary's Translation, Hell",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1005_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1005",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Cary's Translation, Hell",
+      "Dante Alighieri"
+    ],
+    "value": "IN the midway of this our mortal life,"
+  },
+  {
+    "book_id": "gbp_book_1006",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1006",
+        "book_title": "Divine Comedy, Cary's Translation, Purgatory",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1006_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1006",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Cary's Translation, Purgatory",
+      "Dante Alighieri"
+    ],
+    "value": "O'er better waves to speed her rapid course"
+  },
+  {
+    "book_id": "gbp_book_1007",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1007",
+        "book_title": "Divine Comedy, Cary's Translation, Paradise",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1007_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1007",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Cary's Translation, Paradise",
+      "Dante Alighieri"
+    ],
+    "value": "His glory, by whose might all things are mov'd,"
+  },
+  {
+    "book_id": "gbp_book_1008",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1008",
+        "book_title": "Divine Comedy, Cary's Translation, Complete",
+        "author": "Dante Alighieri",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1008_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1008",
+      "gbp_author_dante-alighieri"
+    ],
+    "relatedKeywordStrings": [
+      "Divine Comedy, Cary's Translation, Complete",
+      "Dante Alighieri"
+    ],
+    "value": "IN the midway of this our mortal life,"
+  },
+  {
+    "book_id": "gbp_book_1019",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1019",
+        "book_title": "Poems by Currer, Ellis, and Acton Bell",
+        "author": "Charlotte Brontë",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1019_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1019",
+      "gbp_author_charlotte-bront"
+    ],
+    "relatedKeywordStrings": [
+      "Poems by Currer, Ellis, and Acton Bell",
+      "Charlotte Brontë"
+    ],
+    "value": "I've quench'd my lamp, I struck it in that start"
+  },
+  {
+    "book_id": "gbp_book_1020",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1020",
+        "book_title": "Sword Blades and Poppy Seed",
+        "author": "Amy Lowell",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1020_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1020",
+      "gbp_author_amy-lowell"
+    ],
+    "relatedKeywordStrings": [
+      "Sword Blades and Poppy Seed",
+      "Amy Lowell"
+    ],
+    "value": "_\"Face invisible! je t'ai gravée en médailles"
+  },
+  {
+    "book_id": "gbp_book_1021",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1021",
+        "book_title": "The Congo, and Other Poems",
+        "author": "Vachel Lindsay",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1021_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1021",
+      "gbp_author_vachel-lindsay"
+    ],
+    "relatedKeywordStrings": [
+      "The Congo, and Other Poems",
+      "Vachel Lindsay"
+    ],
+    "value": "I am tempted to quote from Mr. Lindsay's explanatory note which"
+  },
+  {
+    "book_id": "gbp_book_1030",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1030",
+        "book_title": "The Cavalier Songs and Ballads of England from 1642 to 1684",
+        "author": "Charles, 1814-1889 [Editor] Mackay",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1030_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1030",
+      "gbp_author_charles-1814-1889-editor-mackay"
+    ],
+    "relatedKeywordStrings": [
+      "The Cavalier Songs and Ballads of England from 1642 to 1684",
+      "Charles, 1814-1889 [Editor] Mackay"
+    ],
+    "value": "The Old Protestant's Litany"
+  },
+  {
+    "book_id": "gbp_book_1031",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1031",
+        "book_title": "Charmides, and Other Poems",
+        "author": "Oscar Wilde",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1031_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1031",
+      "gbp_author_oscar-wilde"
+    ],
+    "relatedKeywordStrings": [
+      "Charmides, and Other Poems",
+      "Oscar Wilde"
+    ],
+    "value": "He was a Grecian lad, who coming home"
+  },
+  {
+    "book_id": "gbp_book_1034",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1034",
+        "book_title": "Poems",
+        "author": "Wilfred Owen",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1034_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1034",
+      "gbp_author_wilfred-owen"
+    ],
+    "relatedKeywordStrings": [
+      "Poems",
+      "Wilfred Owen"
+    ],
+    "value": "Lines longer than 78 characters are broken and the continuation"
+  },
+  {
+    "book_id": "gbp_book_1035",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1035",
+        "book_title": "The Man Against the Sky: A Book of Poems",
+        "author": "Edwin Arlington Robinson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1035_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1035",
+      "gbp_author_edwin-arlington-robinson"
+    ],
+    "relatedKeywordStrings": [
+      "The Man Against the Sky: A Book of Poems",
+      "Edwin Arlington Robinson"
+    ],
+    "value": "Lines longer than 78 characters are broken and the continuation"
+  },
+  {
+    "book_id": "gbp_book_1040",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1040",
+        "book_title": "The Three Taverns: A Book of Poems",
+        "author": "Edwin Arlington Robinson",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1040_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1040",
+      "gbp_author_edwin-arlington-robinson"
+    ],
+    "relatedKeywordStrings": [
+      "The Three Taverns: A Book of Poems",
+      "Edwin Arlington Robinson"
+    ],
+    "value": "Lines longer than 78 characters are broken and the continuation"
+  },
+  {
+    "book_id": "gbp_book_1041",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1041",
+        "book_title": "Shakespeare's Sonnets",
+        "author": "William Shakespeare",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1041_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1041",
+      "gbp_author_william-shakespeare"
+    ],
+    "relatedKeywordStrings": [
+      "Shakespeare's Sonnets",
+      "William Shakespeare"
+    ],
+    "value": "From fairest creatures we desire increase,"
+  },
+  {
+    "book_id": "gbp_book_1042",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1042",
+        "book_title": "A Reading of Life, with Other Poems",
+        "author": "George Meredith",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1042_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1042",
+      "gbp_author_george-meredith"
+    ],
+    "relatedKeywordStrings": [
+      "A Reading of Life, with Other Poems",
+      "George Meredith"
+    ],
+    "value": "Or shall we run with Artemis"
+  },
+  {
+    "book_id": "gbp_book_1045",
+    "descriptions": {
+      "gutenberg": {
+        "gid": "1045",
+        "book_title": "Venus and Adonis",
+        "author": "William Shakespeare",
+        "line_number": 1
+      }
+    },
+    "line_id": "gbp_1045_l00001",
+    "line_number": 1,
+    "relatedKeywordIds": [
+      "gbp_book_1045",
+      "gbp_author_william-shakespeare"
+    ],
+    "relatedKeywordStrings": [
+      "Venus and Adonis",
+      "William Shakespeare"
+    ],
+    "value": "'Villa miretur vulgus; mihi flavus Apollo"
+  }
+]

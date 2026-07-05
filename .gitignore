@@ -1,7 +1,10 @@
-# ---- Data: never commit (large + licensing); mounted at runtime ----
-app/LOCALDB/
+# ---- Data: the real databases + images are never committed (large + licensing;
+#      mounted at runtime on the server). LOCALDB/ itself IS tracked so it can ship
+#      JSONs/, build_scripts/, convert_json_to_db.py and its README. ----
+app/LOCALDB/*.db
+app/LOCALDB/images/
 app/generated_maps/
-LOCALDB/
+/LOCALDB/
 generated_maps/
 *.db
 *.sqlite

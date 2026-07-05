@@ -58,11 +58,16 @@ body { padding: 10px; }
     margin: 0 auto;
 }
 
+.title-bar{
+    padding: 5px;
+    height: 2.5em;
+}
+
 .paper-window {
     width: 100%;
     box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.35);
 }
-.paper-window .title-bar-text { letter-spacing: 0.03em; }
+.paper-window .title-bar-text { letter-spacing: 0.05em; }
 
 .paper-window .window-body {
     margin: 0;
@@ -116,36 +121,56 @@ body { background: linear-gradient(180deg, #CDE9F9 0%, #FFFFFF 42%, #FFF5EF 88%)
 
 .container { max-width: 1400px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
 
-/* .header and .table-container are given `.window` in the markup; make them
-   full-width and drop the old white-card look */
+/* the .header is the only `.window` in the markup now (the table sits in a
+   tabbed fieldset below); make it full-width and drop the old white-card look */
 .container .window { width: 100%; margin-bottom: 20px; }
 .header {
-    background: silver;
+    background: #dfdfdf;
     border-radius: 0;
     box-shadow: none;
     padding: 0;
 }
 .header .window-body { margin: 0; padding: 14px 16px; }
-.header h1 { color: #1C4ECF; font-size: 1.15em; line-height: 1.25; }
+.header h1 { color: #804f18; font-size: 1.5em; line-height: 1.25; }
 
-.table-container {
-    background: silver;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: visible;
+/* ── table lives in a tabbed fieldset (section.tabs), no window/title-bar ── */
+.tabs { position: relative; z-index: 1; margin-bottom: 20px; }
+.tabs [role="tabpanel"] { position: relative; z-index: 2; }
+/* flatten the per-dataset wrapper so its buttons become tabs directly in the
+   tablist row; switchDb still toggles each wrapper's inline display (which wins) */
+.tabs menu[role="tablist"] .table-selector { display: contents; }
+/* the table-type buttons → xp.css folder tabs (overrides admin_styles' .table-btn) */
+.tabs menu[role="tablist"] .table-btn {
+    -webkit-font-smoothing: none;
+    font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
+    font-size: 13px;
+    color: #000 !important;
+    background: #ece9d8 !important;
+    border: 1px solid #919b9c !important;
+    border-bottom: none !important;
+    border-radius: 0 !important;
+    margin: 2px 1px 0 0 !important;
+    padding: 4px 14px !important;
+    box-shadow: inset 1px 1px #fff !important;
+    position: relative;
+}
+.tabs menu[role="tablist"] .table-btn.active {
+    background: #f4f3ee !important;
+    margin-top: 0 !important;
+    padding-bottom: 6px !important;
+    z-index: 8;
 }
 
 /* ── db-switcher tabs & table buttons → real xp raised buttons ── */
 .db-tab,
-.table-btn,
 .page-btn,
 .crumb-btn {
     -webkit-font-smoothing: none;
     font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: normal;
     color: #000 !important;
-    background: silver !important;
+    background: #dadada !important;
     border: none !important;
     border-radius: 0 !important;
     min-height: 23px;
@@ -155,18 +180,15 @@ body { background: linear-gradient(180deg, #CDE9F9 0%, #FFFFFF 42%, #FFF5EF 88%)
     transition: none;
 }
 .db-tab:hover,
-.table-btn:hover,
 .page-btn:hover:not(:disabled),
 .crumb-btn:hover {
     background: silver !important;
     color: #000 !important;
 }
 .db-tab:active,
-.table-btn:active,
 .page-btn:active:not(:disabled),
 .crumb-btn:active,
-.db-tab.active,
-.table-btn.active {
+.db-tab.active {
     box-shadow: inset -1px -1px #fff, inset 1px 1px #0a0a0a,
                 inset -2px -2px #dfdfdf, inset 2px 2px grey;
     background: silver !important;
@@ -185,12 +207,13 @@ a.db-tab { display: inline-flex; align-items: center; text-decoration: none; }
 #search-bar,
 .container select {
     font-family: 'Pixelated MS Sans Serif', Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
+    padding: 10px;
 }
 
 /* ── the records table → classic list-view look ── */
-.table-container table { background: #fff; }
-.table-container th {
+#table-content table { background: #fff; }
+#table-content th {
     background: silver;
     color: #000;
     font-weight: normal;
@@ -198,9 +221,9 @@ a.db-tab { display: inline-flex; align-items: center; text-decoration: none; }
     box-shadow: inset -1px -1px grey, inset 1px 1px #fff;
     padding: 6px 12px;
 }
-.table-container th:hover { background: #d4d0c8; }
-.table-container td { padding: 7px 12px; border-bottom: 1px solid #e4e2dd; }
-.table-container tr:hover { background: #dff0ff; }
+#table-content th:hover { background: #d4d0c8; }
+#table-content td { padding: 7px 12px; border-bottom: 1px solid #e4e2dd; }
+#table-content tr:hover { background: #dff0ff; }
 
 /* badges keep a flat, low-key look */
 .type-badge { border-radius: 0; background: #1C4ECF; }
