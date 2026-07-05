@@ -212,7 +212,10 @@ a.db-tab { display: inline-flex; align-items: center; text-decoration: none; }
 }
 
 /* ── the records table → classic list-view look ── */
-#table-content table { background: #fff; }
+/* when the table is wider than the panel (many columns / mobile), scroll it
+   horizontally inside the panel instead of letting it spill past the container */
+#table-content { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+#table-content table { background: #fff; min-width: 100%; }
 #table-content th {
     background: silver;
     color: #000;
