@@ -16,6 +16,17 @@ set -euo pipefail
 IMAGE="${IMAGE:-shmistorical-art-data-server:local}"
 NAME="${NAME:-art-data-server}"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+# Run the image at the server's architecture (linux/amd64). On Apple Silicon this
+# runs emulated, which is required because sqlite-vec's native vec0.so is x86_64
+# (an arm64 image fails with "wrong ELF class"). On an amd64 host this is a no-op.
+# Override with PLATFORM=... ( PLATFORM="" forces native ).
+if [ -z "${PLATFORM:-}" ]; then
+  case "$(uname -m)" in
+    arm64|aarch64) PLATFORM="linux/amd64" ;;
+    *)             PLATFORM="" ;;
+  esac
+fi
 LOCALDB_PATH="${LOCALDB_PATH:-$SCRIPT_DIR/app/LOCALDB}"
 GENERATED_MAPS="${GENERATED_MAPS:-$SCRIPT_DIR/app/generated_maps}"
 MODEL_CACHE="${MODEL_CACHE:-$HOME/model_cache}"
@@ -33,6 +44,7 @@ fi
 mkdir -p "$GENERATED_MAPS" "$MODEL_CACHE" "$TRANSFORMERS_CACHE"
 
 echo "Image:          $IMAGE"
+echo "Platform:       ${PLATFORM:-native}"
 echo "LOCALDB_PATH:   $LOCALDB_PATH"
 echo "GENERATED_MAPS: $GENERATED_MAPS"
 
@@ -41,6 +53,7 @@ docker stop "$NAME" 2>/dev/null || true
 docker rm "$NAME" 2>/dev/null || true
 
 docker run -d --name "$NAME" --restart unless-stopped -p 8080:8080 \
+  ${PLATFORM:+--platform $PLATFORM} \
   -v "$LOCALDB_PATH:/app/LOCALDB" \
   -v "$GENERATED_MAPS:/app/generated_maps" \
   -v "$MODEL_CACHE:/root/.cache/torch/hub" \
