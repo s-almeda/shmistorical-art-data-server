@@ -231,13 +231,15 @@ a.db-tab { display: inline-flex; align-items: center; text-decoration: none; }
 /* ── modal → xp window chrome ── */
 .modal-content {
     border-radius: 0;
-    background: silver;
+    background: #dadada;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf,
                 inset -2px -2px grey, inset 2px 2px #fff, 4px 4px 10px rgba(0,0,0,0.4);
     overflow: hidden;
+
 }
+.modal-content a { color: #0013ff; }
 .modal-header {
-    background: linear-gradient(180deg, #0058ee 0%, #3993ff 8%, #288eff 40%, #127dff 88%, #036ffc 93%, #0262ee 95%, #0057e5 96%, #0054e3 100%);
+    background:  #0058ee;
     color: #fff;
     padding: 3px 3px 3px 6px;
 }
