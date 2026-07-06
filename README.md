@@ -1,6 +1,6 @@
 # shmistorical-art-data-server
 
-This repo contains the code for the bacend Flask program(s) that shm used / continues to use to build up their art history "knowledgebase" and serve it to the frontend browser hosted on [data.snailbunny.site](https://data.snailbunny.site) and applications like [Artographer](https://shmuh.co/artographer) and [ArtiFactor](https://arti-factor.vercel.app/)--- this repo runs as a cloud server (via Akamai Linode)and supports similarity-searching and other fun functionalities (e.g. voronoi similarity map stuff for artographer) via a growing list of Flask templates and API routes...
+This repo contains the code for the backend Flask program(s) that [shm](https://shmuh.co/) used / continues to use to build up their art history "knowledgebase" and serve it to the frontend browser hosted on [data.snailbunny.site](https://data.snailbunny.site) and applications like [Artographer](https://shmuh.co/artographer) and [ArtiFactor](https://arti-factor.vercel.app/)--- this repo runs as a cloud server (via Akamai Linode)and supports similarity-searching and other fun functionalities (e.g. voronoi similarity map stuff for artographer) via a growing list of Flask templates and API routes...
 
 This github repo doesn't contain the data itself, but you can download chunks of it in JSON form on [data.snailbunny.site](https://data.snailbunny.site) and 
 
@@ -9,7 +9,7 @@ This github repo doesn't contain the data itself, but you can download chunks of
 ### Where does the data come from?
 
 The historical artworks and art terms are the most substantial part of this corpus
-(**_[N]_ artworks**, **_[N]_ text entries** including artist names and art / aesthetic /
+( 26,886 artworks, 1,643 text entries including artist names and art / aesthetic /
 cultural terms). We assembled it by combining public-domain art and metadata from
 [WikiArt](https://www.wikiart.org/) with labels from
 [The Artsy Genome Project](https://www.artsy.net/categories), an art-classification

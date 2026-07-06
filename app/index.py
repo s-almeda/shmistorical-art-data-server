@@ -1,7 +1,7 @@
 # index.py
 # run me with './bootstrap.sh' in terminal
 import json
-from flask import Flask, jsonify, request, g, render_template
+from flask import Flask, jsonify, request, g, render_template, redirect
 # 
 import requests
 
@@ -131,7 +131,7 @@ def browse_database():
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return redirect('https://github.com/s-almeda/shmistorical-art-data-server#shmistorical-art-data-server', code=302)
 
 @app.route("/api/browse_database")
 def api_browse_database():

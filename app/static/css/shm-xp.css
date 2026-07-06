@@ -1,8 +1,5 @@
 /* shm-xp.css
-   shared XP.css-flavored styling for the PUBLIC pages of the art data server:
-     - the / database browser        (database_browser.html)
-     - the About page                (about.html)
-
+   shared XP.css-flavored styling for the PUBLIC pages
    built on top of xp.css. load order in each page's <head>:
        <link rel="stylesheet" href="/static/css/admin_styles.css">   (browser only)
        ... any inline <style> ...
